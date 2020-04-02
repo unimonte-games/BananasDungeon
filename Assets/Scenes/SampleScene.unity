@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -340,6 +340,50 @@ MonoBehaviour:
   - {fileID: 8991820413073380224, guid: 1375d71057c143946b64fdc8b02e95ce, type: 3}
   - {fileID: 8991820413073380224, guid: 7808003a9dd881b458c83da586949823, type: 3}
   - {fileID: 8991820413073380224, guid: 6dddfd5bae9a9b4499060612248153be, type: 3}
+--- !u!1 &1115213199
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1115213201}
+  - component: {fileID: 1115213200}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1115213200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1115213199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 446b0256bde40fd4eb4e04a2b775ae75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tipoInimigo: 
+--- !u!4 &1115213201
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1115213199}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1593211751
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,6 +585,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chtr: {fileID: 0}
+  vMove: {x: 0, y: 0, z: 0}
   h: 0
   v: 0
   xPos: 0
@@ -548,6 +593,8 @@ MonoBehaviour:
   vel: 0.5
   chaoNovo: {fileID: 0}
   chaoAtual: {fileID: 0}
+  rb: {fileID: 0}
+  slow: 0.45
 --- !u!54 &1987032820
 Rigidbody:
   m_ObjectHideFlags: 0
