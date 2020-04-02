@@ -24,24 +24,15 @@ public class Move : MonoBehaviour
 
         var pos = transform.position;
         var look = new Vector3(pos.x + h, transform.position.y, pos.z + v);
-        transform.LookAt(look);
-        print(velMovimento());
-        transform.Translate(Vector3.forward * velMovimento());
-
-        if (Input.GetButtonDown("Fire2"))
-        {
-            print("oi eu sou o dash!!");
-            dash();
-        }
 
         if (Input.GetKeyDown(KeyCode.Space))
             transform.position = new Vector3(0, 1, 0);
-    }
 
-    void dash()
-    {
-        //rgb.AddForce(Vector3.forward * 50);
-        rb.AddForce(Vector3.forward, ForceMode.Impulse);
+        transform.LookAt(look);
+        print(velMovimento());
+        
+        transform.Translate(Vector3.forward * velMovimento());
+        print(Input.inputString);
     }
 
     float velMovimento()
