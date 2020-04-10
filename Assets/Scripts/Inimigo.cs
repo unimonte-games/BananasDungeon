@@ -5,5 +5,5 @@ using UnityEngine;
 public class Inimigo : MonoBehaviour
 {
     public enum Tipo { Soldado, Aranha, Bonus};
-    public Tipo[] tipoInimigo;
+    public Tipo TipoInimigo;
 }
