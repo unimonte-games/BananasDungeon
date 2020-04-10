@@ -23,7 +23,8 @@ public class GeradordeCenario : MonoBehaviour
     void RandomizaMapa()
     {
         randomdoMapa.Add(inicio);
-        for (int x = 0; x < 5; x++)
+        randomdoMapa.Add(mapas[0]);
+        for (int x = 0; x < 4; x++)
         {
             int rnd = Random.Range(0, mapas.Length - 1);
             randomdoMapa.Add(mapas[rnd]);
@@ -36,6 +37,7 @@ public class GeradordeCenario : MonoBehaviour
             randomdoMapa.Add(mapas[rnd]);
         }
         randomdoMapa.Add(final);
+        
         string maps = "MAPA: ";
         for (int x = 0; x < randomdoMapa.Count; x++)
         {
