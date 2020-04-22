@@ -21,12 +21,11 @@ public class Projetil : MonoBehaviour
             transform.Translate(Vector3.forward * velocidade * Time.deltaTime);
     }
 
-    void OnCollisionEnter (Collision colisor)
+    void OnTriggerEnter (Collider c)
     {
-        print("Bateu porra");
-        if (colisor.gameObject.tag == "Enemy")
+        if (c.gameObject.tag == "Enemy")
         {
-            Destroy(colisor.gameObject);
+            Destroy(c.gameObject);
             Destroy(gameObject);
         }
     }
