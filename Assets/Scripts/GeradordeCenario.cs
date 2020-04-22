@@ -38,12 +38,13 @@ public class GeradordeCenario : MonoBehaviour
         }
         randomdoMapa.Add(final);
         
-        string maps = "MAPA: ";
-        for (int x = 0; x < randomdoMapa.Count; x++)
-        {
-            maps += randomdoMapa[x].name + " ";
-        }
-        maps += "FIM DO MAPA";
-        print(maps);
+        // printa o cenário randomizado
+        // string maps = "MAPA: ";
+        // for (int x = 0; x < randomdoMapa.Count; x++)
+        // {
+        //     maps += randomdoMapa[x].name + " ";
+        // }
+        // maps += "FIM DO MAPA";
+        // print(maps);
     }
 }
