@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Interruptor : MonoBehaviour
 {
+    public GameObject[] Portas;
     Light luz;
-    public bool estadoInterruptor = false;
+    bool estadoInterruptor = false;
 
     void Awake()
     {
