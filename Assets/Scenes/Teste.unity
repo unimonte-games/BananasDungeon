@@ -324,22 +324,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c3e9a17ceea2f042bccdf7fdb4f8cd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inicio: {fileID: 8991820413073380224, guid: 6db3bd21d4c42c24ebe1c1e090b62432, type: 3}
-  final: {fileID: 8991820413073380224, guid: d2a164ff5228edb4591522858b7e70bb, type: 3}
+  inicio: {fileID: 7460596458227001391, guid: 6db3bd21d4c42c24ebe1c1e090b62432, type: 3}
+  final: {fileID: 7460596458227001391, guid: 3ccb606fdfb09524f987b3692ff10259, type: 3}
   chekpoint:
   - {fileID: 8991820413073380224, guid: a6ad7f74981853747a928d9262952dc5, type: 3}
-  - {fileID: 8991820413073380224, guid: 2d3a32b1fa3fc7e439b1263f3c819997, type: 3}
+  - {fileID: 8991820413073380224, guid: c66bf4b3271a39646a967fc314f228b2, type: 3}
   mapas:
   - {fileID: 6015909768819924987, guid: d1f3546e0ffa1894ea3a118cf64a464a, type: 3}
-  - {fileID: 8991820413073380224, guid: 206b6d64acedffa47b00601f8cae08a9, type: 3}
-  - {fileID: 8991820413073380224, guid: 7da5d775117f32444a74e90de7c65a13, type: 3}
-  - {fileID: 8991820413073380224, guid: 2e09e7265ee850844ba533d69189b3f9, type: 3}
-  - {fileID: 8991820413073380224, guid: c84245caaf1e3f14583640f8b312007b, type: 3}
-  - {fileID: 8991820413073380224, guid: a8710417058238c4bb8e10b2413ea21e, type: 3}
-  - {fileID: 8991820413073380224, guid: 99a5966d2af3a7148be620a3ab54bfd8, type: 3}
-  - {fileID: 8991820413073380224, guid: 1375d71057c143946b64fdc8b02e95ce, type: 3}
-  - {fileID: 8991820413073380224, guid: 7808003a9dd881b458c83da586949823, type: 3}
-  - {fileID: 8991820413073380224, guid: 6dddfd5bae9a9b4499060612248153be, type: 3}
+  - {fileID: 6015909768819924987, guid: f63248a75fb846f4285ae617b486140b, type: 3}
 --- !u!1001 &6234940615060422609
 PrefabInstance:
   m_ObjectHideFlags: 0
