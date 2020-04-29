@@ -39,6 +39,12 @@ public class Move : MonoBehaviour
             bala.SetActive(true);
         }
 
+        if (Input.GetAxis("Right/Left") != 0)
+            print("Right/Left: " + Input.GetAxis("Right/Left"));
+        
+        if (Input.GetAxis("Up/Down") != 0)
+            print("Up/Down: " + Input.GetAxis("Up/Down"));
+
         if (Input.GetButtonDown("B"))
             print("B");
         
