@@ -30,7 +30,6 @@ public class ControledeCenario : MonoBehaviour
                 var scala =transform.parent.transform.localScale;
                 //var gbj = Instantiate(GeradordeCenario.randomdoMapa[i + 1], new Vector3(pos.x + 100, 0, 0), Quaternion.identity);
                 var gbjScala = GeradordeCenario.randomdoMapa[i + 1].gameObject.transform.Find("Chao").transform.localScale;
-                print(pos.x + "" + scala.x + "" +  gbjScala.x);
                 var gbj = Instantiate(GeradordeCenario.randomdoMapa[i + 1], new Vector3(pos.x + (((scala.x + gbjScala.x) / 2) * 10), 0, 0), Quaternion.identity);
                 gbj.GetComponent<Modulo>().indice = i + 1;
                 GeradordeCenario.mapa.Add(gbj);

@@ -65,13 +65,13 @@ public class GeradordeCenario : MonoBehaviour
         }
 
         //printa o cenário randomizado
-        string maps = "MAPA: ";
-        for (int x = 0; x < randomdoMapa.Count; x++)
-        {
-            maps += randomdoMapa[x].name + " ";
-        }
-        maps += "FIM DO MAPA";
-        print(maps);
+        // string maps = "MAPA: ";
+        // for (int x = 0; x < randomdoMapa.Count; x++)
+        // {
+        //     maps += randomdoMapa[x].name + " ";
+        // }
+        // maps += "FIM DO MAPA";
+        // print(maps);
     }
     
     void AddInicioFim()
