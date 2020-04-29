@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Modulo : MonoBehaviour
 {
-    public enum ModuloTipo { inicio, final, checkpoint, mapa};
+    public enum ModuloTipo { inicio, final, checkpoint, mapa, bonus, boss};
     public ModuloTipo Tipo;
     public int indice;
 }

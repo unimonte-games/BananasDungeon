@@ -1,0 +1,13 @@
+15051
+1303031
+15030*1
+130+1
+150*1
+
+
+Legenda:
+1 = inicio/fim
+2~9 = mapas
+0 = checkpoint
++ = bonus
+* = boss

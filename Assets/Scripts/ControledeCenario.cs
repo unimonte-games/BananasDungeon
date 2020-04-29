@@ -19,14 +19,19 @@ public class ControledeCenario : MonoBehaviour
 
     void ioMapaDireita(int i)
     {
-        if (i >= 2)
-            GeradordeCenario.mapa[i - 2].SetActive(false);
-        if (i < 12)
+        if (i >= 1)
+            GeradordeCenario.mapa[i - 1].SetActive(false);
+        //if (i < 12)
+        if (GetComponentInParent<Modulo>().Tipo != Modulo.ModuloTipo.final)
         {
             if (i + 1 > GeradordeCenario.mapa.Count - 1)
             {
-                var pos = GetComponentInParent<Transform>().position;
-                var gbj = Instantiate(GeradordeCenario.randomdoMapa[i + 1], new Vector3(pos.x + 100, 0, 0), Quaternion.identity);
+                var pos = transform.parent.transform.position;
+                var scala =transform.parent.transform.localScale;
+                //var gbj = Instantiate(GeradordeCenario.randomdoMapa[i + 1], new Vector3(pos.x + 100, 0, 0), Quaternion.identity);
+                var gbjScala = GeradordeCenario.randomdoMapa[i + 1].gameObject.transform.Find("Chao").transform.localScale;
+                print(pos.x + "" + scala.x + "" +  gbjScala.x);
+                var gbj = Instantiate(GeradordeCenario.randomdoMapa[i + 1], new Vector3(pos.x + (((scala.x + gbjScala.x) / 2) * 10), 0, 0), Quaternion.identity);
                 gbj.GetComponent<Modulo>().indice = i + 1;
                 GeradordeCenario.mapa.Add(gbj);
             }

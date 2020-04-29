@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1294400355538492167}
   - component: {fileID: 1294400355538492160}
   - component: {fileID: 1294400355538492163}
+  - component: {fileID: 1621348475}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -113,8 +114,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c3e9a17ceea2f042bccdf7fdb4f8cd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inicio: {fileID: 7460596458227001391, guid: 6db3bd21d4c42c24ebe1c1e090b62432, type: 3}
-  final: {fileID: 8991820413073380224, guid: d2a164ff5228edb4591522858b7e70bb, type: 3}
+  inicio:
+  - {fileID: 7460596458227001391, guid: 6db3bd21d4c42c24ebe1c1e090b62432, type: 3}
+  final:
+  - {fileID: 7460596458227001391, guid: 3ccb606fdfb09524f987b3692ff10259, type: 3}
+  bonus:
+  - {fileID: 7460596458227001391, guid: 2a94d58ac0e516a47b0f6d8c1b9792fd, type: 3}
+  boss:
+  - {fileID: 7460596458227001391, guid: 3975575e75509f14e925b6727b8d8a19, type: 3}
   chekpoint:
   - {fileID: 8991820413073380224, guid: a6ad7f74981853747a928d9262952dc5, type: 3}
   - {fileID: 8991820413073380224, guid: c66bf4b3271a39646a967fc314f228b2, type: 3}
@@ -129,3 +136,26 @@ MonoBehaviour:
   - {fileID: 6015909768819924987, guid: 6d433fdeffb394e4b9b36bc2b8c0313e, type: 3}
   - {fileID: 6015909768819924987, guid: 4e614840ee39e2a4d84a155f40cc6112, type: 3}
   - {fileID: 6015909768819924987, guid: ee64c96c61fdc52458515140b0dedc3e, type: 3}
+--- !u!114 &1621348475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294400355538492164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 145557004ba74fb49b80f22a60be186f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Maps:
+  - Modelo: 15051
+    Porcentagem: 45
+  - Modelo: 1303031
+    Porcentagem: 45
+  - Modelo: 15030*1
+    Porcentagem: 5
+  - Modelo: 130+1
+    Porcentagem: 5
+  - Modelo: 150*1
+    Porcentagem: 0
