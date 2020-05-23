@@ -20,6 +20,5 @@ public class Atributos : MonoBehaviour
     void Update()
     {
         barraVida.value = vidaAtual;
-        print("VidaAtual: " + vidaAtual);
     }
 }

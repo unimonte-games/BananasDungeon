@@ -38,7 +38,7 @@ public class ControledeTrap : MonoBehaviour
     {
         do
         {
-            espinhos.transform.position = new Vector3(espinhos.transform.position.x, espinhos.transform.position.y + .1f, espinhos.transform.position.z);
+            espinhos.transform.position = NormalizaSubindo(espinhos.transform.position, velSubida, 0);
             yield return new WaitForSeconds(.01f);
         } while (espinhos.transform.position.y < 0);
         yield return new WaitForSeconds(tempoAtivo);
@@ -49,10 +49,26 @@ public class ControledeTrap : MonoBehaviour
     {
         do
         {
-            espinhos.transform.position = new Vector3(espinhos.transform.position.x, espinhos.transform.position.y - .05f, espinhos.transform.position.z);
+            espinhos.transform.position = NormalizaDescendo(espinhos.transform.position, velDescida, -1.15f);
             yield return new WaitForSeconds(.01f);
         } while (espinhos.transform.position.y > -1.15);
         yield return new WaitForSeconds(tempoDesativado);
         estado = 1;
+    }
+
+    Vector3 NormalizaDescendo(Vector3 valor, float variante, float limite)
+    {
+        var y = valor.y;
+        y -= variante;
+        y = y < limite ? limite : y;
+        return new Vector3 (valor.x, y, valor.z);
+    }
+
+    Vector3 NormalizaSubindo(Vector3 valor, float variante, float limite)
+    {
+        var y = valor.y;
+        y += variante;
+        y = y > limite ? limite : y;
+        return new Vector3 (valor.x, y, valor.z);
     }
 }
