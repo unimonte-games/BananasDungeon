@@ -12,12 +12,19 @@ public class ControledeTrap : MonoBehaviour
     public float danoFixo = 3;
     public float danoPercentual = 0;
     public TipoDano Tipo = TipoDano.Fixo;
+    public GameObject espinhos;
+    int estado = 1;
+    public AudioClip TrapAcionando;
+    public AudioSource Reprodutor;
+
     public enum TipoDano
     {
         Percentual, Fixo
     }
-    public GameObject espinhos;
-    int estado = 1;
+    void Awake()
+    {
+        Reprodutor = GetComponent<AudioSource>();
+    }
 
     void Update()
     {
@@ -36,11 +43,12 @@ public class ControledeTrap : MonoBehaviour
 
     IEnumerator Ativar()
     {
+        Reprodutor.PlayOneShot(TrapAcionando);
         do
         {
             espinhos.transform.position = NormalizaSubindo(espinhos.transform.position, velSubida, 0);
             yield return new WaitForSeconds(.01f);
-        } while (espinhos.transform.position.y < 0);
+        } while (espinhos.transform.position.y < 0f);
         yield return new WaitForSeconds(tempoAtivo);
         estado = 2;
     }
@@ -51,7 +59,7 @@ public class ControledeTrap : MonoBehaviour
         {
             espinhos.transform.position = NormalizaDescendo(espinhos.transform.position, velDescida, -1.15f);
             yield return new WaitForSeconds(.01f);
-        } while (espinhos.transform.position.y > -1.15);
+        } while (espinhos.transform.position.y > -1.15f);
         yield return new WaitForSeconds(tempoDesativado);
         estado = 1;
     }

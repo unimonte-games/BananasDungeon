@@ -106,6 +106,8 @@ GameObject:
   - component: {fileID: 6234940616904231230}
   - component: {fileID: 6234940616904231202}
   - component: {fileID: 6234940616904231205}
+  - component: {fileID: 1491549878}
+  - component: {fileID: 3728939807134255611}
   m_Layer: 0
   m_Name: Homer
   m_TagString: Player
@@ -200,7 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef5ae9ff9be3e524582c98d0a7cc64a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerIndice: 0
+  playerIndice: 1
   chtr: {fileID: 0}
   vMove: {x: 0, y: 0, z: 0}
   h: 0
@@ -224,3 +226,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &1491549878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6234940616904231228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d631c853a0b34424b9606d2ba6d3ce0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Vida: 1000
+  vidaAtual: 1000
+  barraVida: {fileID: 0}
+--- !u!81 &3728939807134255611
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6234940616904231228}
+  m_Enabled: 1

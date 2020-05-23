@@ -17,8 +17,9 @@ public class Atributos : MonoBehaviour
         barraVida.value = vidaAtual;
     }
 
-    void Update()
+    public void CausarDano(int Dano)
     {
+         vidaAtual -= Dano;
         barraVida.value = vidaAtual;
     }
 }

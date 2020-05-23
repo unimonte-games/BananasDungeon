@@ -5,7 +5,8 @@ using UnityEngine;
 public class Espinhos : MonoBehaviour
 {
     public List<GameObject> Alvos = new List<GameObject>();
-
+    float timer = 0;
+    ControledeTrap ctr;
     [System.Serializable]
     public struct Alvo
     {
@@ -13,12 +14,16 @@ public class Espinhos : MonoBehaviour
         public bool dano;
     }
 
+    void Awake()
+    {
+        ctr = GetComponentInParent<ControledeTrap>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") || other.CompareTag("Enemy"))
         {
             Alvos.Add(other.gameObject);
-            StartCoroutine(DanoEspinho(other.gameObject));
         }
     }
 
@@ -28,32 +33,39 @@ public class Espinhos : MonoBehaviour
         {
             if (Alvos.Contains(other.gameObject))
                 Alvos.Remove(other.gameObject);
+            if (Alvos.Count == 0)
+                timer = 0;
         }
     }
 
-    IEnumerator DanoEspinho(GameObject alvo)
+    void OnTriggerStay(Collider col)
     {
-        var atributos = alvo.GetComponent<Atributos>();
-        if (atributos.Vida > 0)
+        if (Alvos.Count > 0)
+            timer += Time.deltaTime;
+        else
+            return;
+        
+        if (timer >= ctr.delayDano)
         {
-            AplicarDano(atributos);
+            for (int x = 0; x < Alvos.Count; x++)
+            {
+                AplicarDano(Alvos[x]);
+            }
+            timer = 0;
         }
-        yield return new WaitForSeconds(transform.GetComponentInParent<ControledeTrap>().delayDano);
-        if (Alvos.Contains(alvo))
-            StartCoroutine(DanoEspinho(alvo));
     }
 
-    public void AplicarDano(Atributos atb)
+    public void AplicarDano(GameObject alvo)
     {
-        var ctr = gameObject.transform.GetComponentInParent<ControledeTrap>();
+        var atb = alvo.GetComponent<Atributos>();
         switch (ctr.Tipo)
         {
             case ControledeTrap.TipoDano.Fixo:
-                atb.vidaAtual -= (int)ctr.danoFixo;
+                atb.CausarDano((int)ctr.danoFixo);
                 break;
             case ControledeTrap.TipoDano.Percentual:
                 float dano = ((ctr.danoPercentual / 100) * atb.Vida);
-                atb.vidaAtual -= (int)dano;
+                atb.CausarDano((int)dano);
                 break;
         }
     }
