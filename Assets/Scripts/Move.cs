@@ -5,7 +5,7 @@ using UnityEngine;
 public class Move : MonoBehaviour
 {
     //UNITY_WSA
-    public enum PlayerIndice { P1 = 1, P2 = 2} //teste de muti players
+    public enum PlayerIndice { P1 = 1, P2, P3, P4} //teste de multiplayers
     public PlayerIndice playerIndice;
     public CharacterController chtr;
     public Vector3 vMove = Vector3.zero;
