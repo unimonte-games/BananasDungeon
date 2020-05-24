@@ -7,7 +7,8 @@ public class Move : MonoBehaviour
     //UNITY_WSA
     public enum PlayerIndice { P1 = 1, P2, P3, P4} //teste de multiplayers
     public PlayerIndice playerIndice;
-    public CharacterController chtr;
+    CharacterController chtr;
+    ControleDeAnimacao ctrAnim;
     public Vector3 vMove = Vector3.zero;
     public float h, v, vel = 20;
     public Rigidbody rb;
@@ -19,25 +20,35 @@ public class Move : MonoBehaviour
         if (!chtr)
             chtr = GetComponent<CharacterController>();
         rb = GetComponent<Rigidbody>();
+        ctrAnim = GetComponent<ControleDeAnimacao>();
     }
     
     void Update()
     {
-        h = Input.GetAxis("Horizontal");
-        v = Input.GetAxis("Vertical");
+        h = Input.GetAxis(playerIndice.ToString() + "Horizontal");
+        v = Input.GetAxis(playerIndice.ToString() + "Vertical");
         // h = Input.GetAxis("Right/Left");
         // v = Input.GetAxis("Up/Down");
 
-        var pos = transform.position;
-        var look = new Vector3(pos.x + h, transform.position.y, pos.z + v);
-
-        if (Input.GetButtonDown("A"))
+        if (!ctrAnim.Atacando)
         {
-            print("A");
-            var bala = Instantiate(Resources.Load<GameObject>("Bala"), transform.position + transform.forward, transform.rotation);
-            bala.transform.GetComponent<Projetil>().Atirador = gameObject;
-            bala.SetActive(true);
+            var pos = transform.position;
+            var look = new Vector3(pos.x + h, transform.position.y, pos.z + v);
+
+
+            transform.LookAt(look);
+            redutor = 1;
+
+            if (Input.GetKey(KeyCode.LeftControl))
+                redutor = slow;
+
+            transform.Translate(Vector3.forward * ctrAnim.Velocidade(velMovimento() * redutor) * vel * Time.deltaTime);
         }
+
+        if (velMovimento() == 0)
+            ctrAnim.Idle();
+        else
+            ctrAnim.Andar();
 
         if (Input.GetAxis("Right/Left") != 0)
             print("Right/Left: " + Input.GetAxis("Right/Left"));
@@ -45,8 +56,17 @@ public class Move : MonoBehaviour
         if (Input.GetAxis("Up/Down") != 0)
             print("Up/Down: " + Input.GetAxis("Up/Down"));
 
+        if (Input.GetButtonDown("A"))
+        {
+            print("A");
+            ctrAnim.Ataque(0);
+        }
+
         if (Input.GetButtonDown("B"))
+        {
             print("B");
+            ctrAnim.Ataque(1);
+        }
         
         if (Input.GetButtonDown("Y"))
             print("Y");
@@ -77,12 +97,6 @@ public class Move : MonoBehaviour
         
         if (Input.GetButtonDown("LB3"))
             print("LB3");
-
-        transform.LookAt(look);
-        redutor = 1;
-        if (Input.GetKey(KeyCode.LeftControl))
-            redutor = slow;
-        transform.Translate(Vector3.forward * (velMovimento() * redutor) * vel * Time.deltaTime);
     }
 
     float velMovimento()
@@ -90,10 +104,12 @@ public class Move : MonoBehaviour
         float _h = h;
         float _v = v;
 
-        if (_v == 1 || _h == 1)
+        if (Mathf.Abs(_v) + Mathf.Abs(_h) < 0.3f)
+            return 0;
+
+        if (Mathf.Abs(_v) + Mathf.Abs(_h) > 1)
             return 1f;
-        if (Mathf.Abs(_v) + Mathf.Abs(_h) >= 1)
-            return 1f;
+
         return Mathf.Abs(_v) + Mathf.Abs(_h);
     }
 }

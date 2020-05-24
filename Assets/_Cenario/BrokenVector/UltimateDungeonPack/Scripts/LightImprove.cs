@@ -8,7 +8,7 @@ using UnityEngine;
      public float setBias = -1f;
  
      // Update is called once per frame
-     void Update () {
+     void Update (){
          GetComponent<Light>().shadowBias = setBias;
      }
  }
