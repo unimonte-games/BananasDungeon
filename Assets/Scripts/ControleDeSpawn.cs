@@ -7,6 +7,18 @@ public class ControleDeSpawn : MonoBehaviour
     public Horda[] Hordas;
     public bool ativo = false;
 
+    void Awake()
+    {
+        GetComponent<MeshRenderer>().enabled = false;
+        for (int x = 0; x < Hordas.Length; x++)
+        {
+            for (int y = 0; y < Hordas[x].Spawns.Length; y++)
+            {
+                Hordas[x].Spawns[y].GetComponent<MeshRenderer>().enabled = false;
+            }
+        }
+    }
+
     [System.Serializable]
     public struct Horda
     {
