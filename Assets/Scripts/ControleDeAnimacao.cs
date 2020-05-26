@@ -34,15 +34,8 @@ public class ControleDeAnimacao : MonoBehaviour
 
     public void Ataque(int atk)
     {
-        print("Ataque");
-        //Atacando = true;
-        anim.SetInteger("Move", 2);
         anim.SetInteger("Ataque", atk);
-    }
-
-    public void Apanhando()
-    {
-
+        anim.SetInteger("Move", 2);
     }
 
     public void Morrendo()
@@ -50,6 +43,7 @@ public class ControleDeAnimacao : MonoBehaviour
 
     }
 
+    #region Evento de animação
     public void IniciouAtaque()
     {
         Atacando = true;
@@ -59,4 +53,5 @@ public class ControleDeAnimacao : MonoBehaviour
     {
         Atacando = false;
     }
+    #endregion
 }

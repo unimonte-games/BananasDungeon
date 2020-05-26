@@ -42,6 +42,7 @@ public class Move : MonoBehaviour
             if (Input.GetKey(KeyCode.LeftControl))
                 redutor = slow;
 
+            print(Time.deltaTime);
             transform.Translate(Vector3.forward * ctrAnim.Velocidade(velMovimento() * redutor) * vel * Time.deltaTime);
         }
 
@@ -98,6 +99,21 @@ public class Move : MonoBehaviour
         if (Input.GetButtonDown("LB3"))
             print("LB3");
     }
+
+    // void FixedUpdate()
+    // {
+
+    //     float vel = rb.velocity.magnitude;
+
+    //     //limite de velocidade
+    //     rb.AddForce((move * forcemove)/ (vel*2+1));
+    //     anim.SetFloat("Velocity", vel);
+
+    //     //velocidade sem y
+    //     Vector3 velwoy = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+    //     //drag manual
+    //     rb.AddForce(-velwoy * drag);
+    // }
 
     float velMovimento()
     {

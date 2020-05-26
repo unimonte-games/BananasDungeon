@@ -114,7 +114,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6234940616904231203
 Transform:
   m_ObjectHideFlags: 0
@@ -203,11 +203,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerIndice: 1
-  chtr: {fileID: 0}
   vMove: {x: 0, y: 0, z: 0}
   h: 0
   v: 0
-  vel: 20
+  vel: 10
   rb: {fileID: 0}
   slow: 0.45
 --- !u!54 &6234940616904231205

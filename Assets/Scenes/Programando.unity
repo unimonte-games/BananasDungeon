@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 60763975}
   - component: {fileID: 60763974}
   - component: {fileID: 60763973}
+  - component: {fileID: 60763977}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -219,31 +220,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &130553392 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 499248386727698310, guid: c484f0688bcf21f4d81e27de9a26add9,
-    type: 3}
-  m_PrefabInstance: {fileID: 4236347815719045297}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &130553400
+--- !u!114 &60763977
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 130553392}
+  m_GameObject: {fileID: 60763972}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b271fb8c320bc414d918e6be2e7e88ca, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d62c1480ecf54846b822b14ab421ff8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Arsenal:
-  - Arma: 0
-    Local: {fileID: 0}
-  - Arma: 1
-    Local: {fileID: 0}
-  - Arma: 2
-    Local: {fileID: 0}
 --- !u!1 &174263410
 GameObject:
   m_ObjectHideFlags: 0
@@ -891,20 +879,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -1666133354837620276, guid: c484f0688bcf21f4d81e27de9a26add9,
-        type: 3}
-      propertyPath: m_Height
-      value: 1.75
-      objectReference: {fileID: 0}
     - target: {fileID: 499248386727698310, guid: c484f0688bcf21f4d81e27de9a26add9,
         type: 3}
       propertyPath: m_Name
       value: Olliver Riggado Mixamo
-      objectReference: {fileID: 0}
-    - target: {fileID: 499248386727698310, guid: c484f0688bcf21f4d81e27de9a26add9,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3510263558996864405, guid: c484f0688bcf21f4d81e27de9a26add9,
         type: 3}
@@ -959,56 +937,6 @@ PrefabInstance:
     - target: {fileID: 3510263558996864405, guid: c484f0688bcf21f4d81e27de9a26add9,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3510263558996864405, guid: c484f0688bcf21f4d81e27de9a26add9,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3510263558996864405, guid: c484f0688bcf21f4d81e27de9a26add9,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3510263558996864405, guid: c484f0688bcf21f4d81e27de9a26add9,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4334477316843951929, guid: c484f0688bcf21f4d81e27de9a26add9,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 112
-      objectReference: {fileID: 0}
-    - target: {fileID: 6336455921598753761, guid: c484f0688bcf21f4d81e27de9a26add9,
-        type: 3}
-      propertyPath: playerIndice
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6336455921598753761, guid: c484f0688bcf21f4d81e27de9a26add9,
-        type: 3}
-      propertyPath: vel
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6336455921598753761, guid: c484f0688bcf21f4d81e27de9a26add9,
-        type: 3}
-      propertyPath: slow
-      value: 0.55
-      objectReference: {fileID: 0}
-    - target: {fileID: 8337458665767633704, guid: c484f0688bcf21f4d81e27de9a26add9,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8337458665767633704, guid: c484f0688bcf21f4d81e27de9a26add9,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8337458665767633704, guid: c484f0688bcf21f4d81e27de9a26add9,
-        type: 3}
-      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
