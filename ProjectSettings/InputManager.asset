@@ -246,7 +246,7 @@ InputManager:
     axis: 1
     joyNum: 2
   - serializedVersion: 3
-    m_Name: Right/Left
+    m_Name: P1Right/Left
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -262,7 +262,7 @@ InputManager:
     axis: 5
     joyNum: 1
   - serializedVersion: 3
-    m_Name: Up/Down
+    m_Name: P1Up/Down
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 

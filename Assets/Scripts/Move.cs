@@ -7,9 +7,7 @@ public class Move : MonoBehaviour
     //UNITY_WSA
     public enum PlayerIndice { P1 = 1, P2, P3, P4} //teste de multiplayers
     public PlayerIndice playerIndice;
-    CharacterController chtr;
     ControleDeAnimacao ctrAnim;
-    public Vector3 vMove = Vector3.zero;
     public float h, v, vel = 20;
     public Rigidbody rb;
     public float slow = 0.7f;
@@ -17,21 +15,23 @@ public class Move : MonoBehaviour
 
     void Awake()
     {
-        if (!chtr)
-            chtr = GetComponent<CharacterController>();
         rb = GetComponent<Rigidbody>();
         ctrAnim = GetComponent<ControleDeAnimacao>();
     }
     
-    void Update()
+    void FixedUpdate()
     {
         h = Input.GetAxis(playerIndice.ToString() + "Horizontal");
         v = Input.GetAxis(playerIndice.ToString() + "Vertical");
-        // h = Input.GetAxis("Right/Left");
-        // v = Input.GetAxis("Up/Down");
+        h += Input.GetAxis(playerIndice.ToString() + "Right/Left");
+        v += Input.GetAxis(playerIndice.ToString() + "Up/Down");
 
-        if (!ctrAnim.Atacando)
+        if (!ctrAnim.Atacando && Mathf.Abs(h + v) > .2f)
         {
+
+            //Vector3 direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0 , Input.GetAxisRaw("Vertical"));
+            //rigidbody.MovePosition(transform.position + direction * movementSpeed * Time.fixedDeltaTime);
+
             var pos = transform.position;
             var look = new Vector3(pos.x + h, transform.position.y, pos.z + v);
 
@@ -45,17 +45,20 @@ public class Move : MonoBehaviour
             print(Time.deltaTime);
             transform.Translate(Vector3.forward * ctrAnim.Velocidade(velMovimento() * redutor) * vel * Time.deltaTime);
         }
+    }
 
+    void Update()
+    {
         if (velMovimento() == 0)
             ctrAnim.Idle();
         else
             ctrAnim.Andar();
 
-        if (Input.GetAxis("Right/Left") != 0)
-            print("Right/Left: " + Input.GetAxis("Right/Left"));
+        if (Input.GetAxis(playerIndice.ToString() + "Right/Left") != 0)
+            print("Right/Left: " + Input.GetAxis(playerIndice.ToString() + "Right/Left"));
         
-        if (Input.GetAxis("Up/Down") != 0)
-            print("Up/Down: " + Input.GetAxis("Up/Down"));
+        if (Input.GetAxis(playerIndice.ToString() + "Up/Down") != 0)
+            print("Up/Down: " + Input.GetAxis(playerIndice.ToString() + "Up/Down"));
 
         if (Input.GetButtonDown("A"))
         {
@@ -100,32 +103,14 @@ public class Move : MonoBehaviour
             print("LB3");
     }
 
-    // void FixedUpdate()
-    // {
-
-    //     float vel = rb.velocity.magnitude;
-
-    //     //limite de velocidade
-    //     rb.AddForce((move * forcemove)/ (vel*2+1));
-    //     anim.SetFloat("Velocity", vel);
-
-    //     //velocidade sem y
-    //     Vector3 velwoy = new Vector3(rb.velocity.x, 0, rb.velocity.z);
-    //     //drag manual
-    //     rb.AddForce(-velwoy * drag);
-    // }
-
     float velMovimento()
     {
-        float _h = h;
-        float _v = v;
-
-        if (Mathf.Abs(_v) + Mathf.Abs(_h) < 0.3f)
+        if (Mathf.Abs(v) + Mathf.Abs(h) < 0.3f)
             return 0;
 
-        if (Mathf.Abs(_v) + Mathf.Abs(_h) > 1)
+        if (Mathf.Abs(v) + Mathf.Abs(h) > 1)
             return 1f;
 
-        return Mathf.Abs(_v) + Mathf.Abs(_h);
+        return Mathf.Abs(v) + Mathf.Abs(h);
     }
 }
