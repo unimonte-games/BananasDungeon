@@ -26,6 +26,9 @@ public class Move : MonoBehaviour
         h += Input.GetAxis(playerIndice.ToString() + "Right/Left");
         v += Input.GetAxis(playerIndice.ToString() + "Up/Down");
 
+        h += Input.GetAxis("Horizontal");
+        v += Input.GetAxis("Vertical");
+
         if (!ctrAnim.Atacando && Mathf.Abs(h + v) > .2f)
         {
 
@@ -59,25 +62,25 @@ public class Move : MonoBehaviour
         if (Input.GetAxis(playerIndice.ToString() + "Up/Down") != 0)
             print("Up/Down: " + Input.GetAxis(playerIndice.ToString() + "Up/Down"));
 
-        if (Input.GetButtonDown(playerIndice.ToString() + "A"))
+        if (Input.GetButtonDown(playerIndice.ToString() + "A") || Input.GetKeyDown(KeyCode.Z))
         {
             print("A");
             ctrAnim.Ataque(0);
         }
 
-        if (Input.GetButtonDown(playerIndice.ToString() + "B"))
+        if (Input.GetButtonDown(playerIndice.ToString() + "B") || Input.GetKeyDown(KeyCode.X))
             print("B");
         
-        if (Input.GetButtonDown(playerIndice.ToString() + "Y"))
-            print("Y");
-        
-        if (Input.GetButtonDown(playerIndice.ToString() + "X"))
+        if (Input.GetButtonDown(playerIndice.ToString() + "X") || Input.GetKeyDown(KeyCode.C))
         {
             print("X");
             ctrAnim.Ataque(1);
         }
         
-        if (Input.GetButtonDown(playerIndice.ToString() + "Start"))
+        if (Input.GetButtonDown(playerIndice.ToString() + "Y") || Input.GetKeyDown(KeyCode.V))
+            print("Y");
+        
+        if (Input.GetButtonDown(playerIndice.ToString() + "Start") || Input.GetKeyDown(KeyCode.Return))
             print("Start");
         
         if (Input.GetButtonDown(playerIndice.ToString() + "Select"))
@@ -89,11 +92,11 @@ public class Move : MonoBehaviour
         if (Input.GetButtonDown(playerIndice.ToString() + "LB"))
             print("LB");
         
-        if (Input.GetAxis("LT") != 0)
-            print(Input.GetAxis(playerIndice.ToString() + "LT"));
+        if (Input.GetAxis(playerIndice.ToString() + "LT") != 0)
+            print("LT");
         
-        if (Input.GetAxis("RT") != 0)
-            print(Input.GetAxis(playerIndice.ToString() + "RT"));
+        if (Input.GetAxis(playerIndice.ToString() + "RT") != 0)
+            print("RT");
         
         if (Input.GetButtonDown(playerIndice.ToString() + "RB3"))
             print("RB3");
