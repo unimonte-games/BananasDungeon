@@ -9,7 +9,13 @@ public class ControleDeArmas : MonoBehaviour
     public Inventario[] Arsenal;
     public enum Armas
     {
-        Espada, Machado, Arco, Lanca, Alabarda, Cajado
+        Nenhum,
+        Alabarda,
+        Arco,
+        Cajado,
+        Espada,
+        Lanca,
+        Machado
     }
     
     [System.Serializable]

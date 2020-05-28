@@ -46,11 +46,13 @@ public class ControleDeAnimacao : MonoBehaviour
     #region Evento de animação
     public void IniciouAtaque()
     {
+        print("Iniciou o Ataque");
         Atacando = true;
     }
 
     public void ParouAtaque()
     {
+        print("Terminou o Ataque");
         Atacando = false;
     }
     #endregion
