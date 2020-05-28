@@ -4,14 +4,23 @@ using UnityEngine;
 
 public class Interruptor : MonoBehaviour
 {
-    public GameObject[] Portas;
+    
+    public GameObject Portas;
     Light luz;
     bool estadoInterruptor = false;
+    Animator anim;
+
+    public enum Alavanca
+    {
+        Parado = 0,
+        Ativar,
+        Desativar//caso queiram q seja desativado
+    }
 
     void Awake()
     {
+        anim = GetComponent<Animator>();
         luz = GetComponent<Light>();
-        //luz.enabled = false;
         luz.color = Color.white;
     }
 
@@ -28,7 +37,7 @@ public class Interruptor : MonoBehaviour
 
     void OnTriggerStay (Collider colisor)
     {
-        if (Input.GetButton("A") &&  !estadoInterruptor)
+        if (Input.GetButton("B") &&  !estadoInterruptor)
             AtivarInterruptor();
     }
 
@@ -48,5 +57,6 @@ public class Interruptor : MonoBehaviour
         print("Ativando interruptor");
         estadoInterruptor = true;
         luz.color = Color.green;
+        anim.SetInteger("Alavanca", (int)Alavanca.Ativar);
     }
 }
