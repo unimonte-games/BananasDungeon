@@ -35,6 +35,12 @@ public class Move : MonoBehaviour
             //Vector3 direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0 , Input.GetAxisRaw("Vertical"));
             //rigidbody.MovePosition(transform.position + direction * movementSpeed * Time.fixedDeltaTime);
 
+            // Vector3 look = new Vector3(h, 0, v) + transform.position;
+            // transform.LookAt(look);
+            // rb.MovePosition(transform.forward + look * vel * redutor * Time.fixedDeltaTime);
+            // ctrAnim.Velocidade(velMovimento());
+
+            //atual sistema dew movimentação
             var pos = transform.position;
             var look = new Vector3(pos.x + h, transform.position.y, pos.z + v);
 
