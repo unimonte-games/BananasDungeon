@@ -37,7 +37,7 @@ public class Interruptor : MonoBehaviour
 
     void OnTriggerStay (Collider colisor)
     {
-        if (Input.GetButton("B") &&  !estadoInterruptor)
+        if (Input.GetButton(colisor.gameObject.GetComponent<Move>().playerIndice.ToString() + "B") &&  !estadoInterruptor)
             AtivarInterruptor();
     }
 
