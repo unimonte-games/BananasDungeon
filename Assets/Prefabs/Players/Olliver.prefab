@@ -1541,6 +1541,7 @@ GameObject:
   - component: {fileID: 6773838847556859607}
   - component: {fileID: 8567334442000147865}
   - component: {fileID: 6135224502065286864}
+  - component: {fileID: 7087668226809175292}
   m_Layer: 0
   m_Name: Olliver
   m_TagString: Player
@@ -1680,6 +1681,14 @@ MonoBehaviour:
     Local: {fileID: 3403923283560152847}
   - Arma: 2
     Local: {fileID: 2251197033255926433}
+--- !u!81 &7087668226809175292
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4713170496004897430}
+  m_Enabled: 1
 --- !u!1 &4769996419443366415
 GameObject:
   m_ObjectHideFlags: 0

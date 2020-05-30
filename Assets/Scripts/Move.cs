@@ -18,7 +18,7 @@ public class Move : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         ctrAnim = GetComponent<ControleDeAnimacao>();
     }
-    
+
     void FixedUpdate()
     {
         h = Input.GetAxis(playerIndice.ToString() + "Horizontal");
@@ -35,23 +35,23 @@ public class Move : MonoBehaviour
             //Vector3 direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0 , Input.GetAxisRaw("Vertical"));
             //rigidbody.MovePosition(transform.position + direction * movementSpeed * Time.fixedDeltaTime);
 
-            // Vector3 look = new Vector3(h, 0, v) + transform.position;
-            // transform.LookAt(look);
-            // rb.MovePosition(transform.forward + look * vel * redutor * Time.fixedDeltaTime);
-            // ctrAnim.Velocidade(velMovimento());
-
-            //atual sistema dew movimentação
-            var pos = transform.position;
-            var look = new Vector3(pos.x + h, transform.position.y, pos.z + v);
-
-
-            transform.LookAt(look);
+            Vector3 look = new Vector3(h, 0, v);
+            transform.LookAt(look + transform.forward);
             redutor = 1;
 
             if (Input.GetKey(KeyCode.LeftControl))
                 redutor = slow;
 
-            transform.Translate(Vector3.forward * ctrAnim.Velocidade(velMovimento() * redutor) * vel * Time.deltaTime);
+            rb.AddForce(look * vel * redutor * Time.fixedDeltaTime);
+            ctrAnim.Velocidade(velMovimento());
+
+
+            //atual sistema dew movimentação
+            // var look = new Vector3(h, 0, v) + transform.position;
+
+            // transform.LookAt(look);
+
+            // transform.Translate(Vector3.forward * ctrAnim.Velocidade(velMovimento() * redutor) * vel * Time.deltaTime);
         }
     }
 
@@ -64,7 +64,7 @@ public class Move : MonoBehaviour
 
         if (Input.GetAxis(playerIndice.ToString() + "Right/Left") != 0)
             print("Right/Left: " + Input.GetAxis(playerIndice.ToString() + "Right/Left"));
-        
+
         if (Input.GetAxis(playerIndice.ToString() + "Up/Down") != 0)
             print("Up/Down: " + Input.GetAxis(playerIndice.ToString() + "Up/Down"));
 
@@ -76,43 +76,44 @@ public class Move : MonoBehaviour
 
         if (Input.GetButtonDown(playerIndice.ToString() + "B") || Input.GetKeyDown(KeyCode.X))
             print("B");
-        
+
         if (Input.GetButtonDown(playerIndice.ToString() + "X") || Input.GetKeyDown(KeyCode.C))
         {
             print("X");
             ctrAnim.Ataque(1);
         }
-        
+
         if (Input.GetButtonDown(playerIndice.ToString() + "Y") || Input.GetKeyDown(KeyCode.V))
             print("Y");
-        
+
         if (Input.GetButtonDown(playerIndice.ToString() + "Start") || Input.GetKeyDown(KeyCode.Return))
             print("Start");
-        
+
         if (Input.GetButtonDown(playerIndice.ToString() + "Select"))
             print("Select");
-        
+
         if (Input.GetButtonDown(playerIndice.ToString() + "RB"))
             print("RB");
-        
+
         if (Input.GetButtonDown(playerIndice.ToString() + "LB"))
             print("LB");
-        
+
         if (Input.GetAxis(playerIndice.ToString() + "LT") != 0)
             print("LT");
-        
+
         if (Input.GetAxis(playerIndice.ToString() + "RT") != 0)
             print("RT");
-        
+
         if (Input.GetButtonDown(playerIndice.ToString() + "RB3"))
             print("RB3");
-        
+
         if (Input.GetButtonDown(playerIndice.ToString() + "LB3"))
             print("LB3");
     }
 
     float velMovimento()
     {
+
         if (Mathf.Abs(v) + Mathf.Abs(h) < 0.3f)
             return 0;
 
