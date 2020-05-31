@@ -6,6 +6,7 @@ public class AutoSave : MonoBehaviour
 {
     public enum Players
     {
+        Nenhum,
         Amazona,
         Oliver
     }

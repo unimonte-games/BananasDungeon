@@ -19,11 +19,12 @@ public class ControleDeAnimacao : MonoBehaviour
         return vel;
     }
 
-    public void Idle()
+    public void Idle(int idle)
     {
-        int rndIdle = Random.Range(0,2);
+        if (idle == -1)
+            idle = Random.Range(0,2);
 
-        anim.SetInteger("Idle", rndIdle);
+        anim.SetInteger("Idle", idle);
         anim.SetInteger("Move", 0);
     }
 

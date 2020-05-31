@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -131,16 +131,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Olliver
-      objectReference: {fileID: 0}
-    - target: {fileID: 6359296027117163402, guid: 2faeaf070990f774ea4a9a25b4b79e01,
-        type: 3}
-      propertyPath: m_CollisionDetection
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6359296027117163402, guid: 2faeaf070990f774ea4a9a25b4b79e01,
-        type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8589440090196920453, guid: 2faeaf070990f774ea4a9a25b4b79e01,
         type: 3}
@@ -745,21 +735,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1294400355538492160, guid: 5f5b1124b12a3cf4a8fbbc8419567fbf,
-        type: 3}
-      propertyPath: y
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 1294400355538492160, guid: 5f5b1124b12a3cf4a8fbbc8419567fbf,
-        type: 3}
-      propertyPath: z
-      value: -18
-      objectReference: {fileID: 0}
-    - target: {fileID: 1294400355538492160, guid: 5f5b1124b12a3cf4a8fbbc8419567fbf,
-        type: 3}
-      propertyPath: x
-      value: -9
-      objectReference: {fileID: 0}
     - target: {fileID: 1294400355538492161, guid: 5f5b1124b12a3cf4a8fbbc8419567fbf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -815,20 +790,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1294400355538492163, guid: 5f5b1124b12a3cf4a8fbbc8419567fbf,
-        type: 3}
-      propertyPath: mapas.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 1294400355538492164, guid: 5f5b1124b12a3cf4a8fbbc8419567fbf,
         type: 3}
       propertyPath: m_Name
       value: Main Camera
-      objectReference: {fileID: 0}
-    - target: {fileID: 1294400355538492167, guid: 5f5b1124b12a3cf4a8fbbc8419567fbf,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f5b1124b12a3cf4a8fbbc8419567fbf, type: 3}

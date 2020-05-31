@@ -5,13 +5,14 @@ using UnityEngine;
 public class Move : MonoBehaviour
 {
     //UNITY_WSA
-    public enum PlayerIndice { P1 = 1, P2, P3, P4} //teste de multiplayers
+    public enum PlayerIndice {Vazio = 0, P1 = 1, P2, P3, P4} //teste de multiplayers
     public PlayerIndice playerIndice;
     ControleDeAnimacao ctrAnim;
     public float h, v, vel = 20;
     public Rigidbody rb;
     public float slow = 0.7f;
     float redutor = 1;
+
 
     void Awake()
     {
@@ -31,34 +32,20 @@ public class Move : MonoBehaviour
 
         if (!ctrAnim.Atacando && Mathf.Abs(h + v) > .2f)
         {
-
-            //Vector3 direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0 , Input.GetAxisRaw("Vertical"));
-            //rigidbody.MovePosition(transform.position + direction * movementSpeed * Time.fixedDeltaTime);
-
-            Vector3 look = new Vector3(h, 0, v);
-            transform.LookAt(look + transform.forward);
-            redutor = 1;
-
-            if (Input.GetKey(KeyCode.LeftControl))
-                redutor = slow;
-
-            rb.AddForce(look * vel * redutor * Time.fixedDeltaTime);
-            ctrAnim.Velocidade(velMovimento());
-
-
             //atual sistema dew movimentação
-            // var look = new Vector3(h, 0, v) + transform.position;
+            var look = new Vector3(h, 0, v) + transform.position;
 
-            // transform.LookAt(look);
+            transform.LookAt(look);
 
-            // transform.Translate(Vector3.forward * ctrAnim.Velocidade(velMovimento() * redutor) * vel * Time.deltaTime);
+            transform.Translate(Vector3.forward * ctrAnim.Velocidade(velMovimento() * redutor) * vel * Time.deltaTime);
+            
         }
     }
 
     void Update()
     {
         if (velMovimento() == 0)
-            ctrAnim.Idle();
+            ctrAnim.Idle(-1);
         else
             ctrAnim.Andar();
 

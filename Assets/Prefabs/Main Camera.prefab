@@ -85,7 +85,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1294400355538492164}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!114 &1294400355538492160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,10 +98,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d6be790bf2089244b756d0a493f0bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: 0
-  y: 6
-  z: -7
-  Player: {fileID: 0}
+  x: -10
+  y: 21
+  z: -18
+  Players: []
 --- !u!114 &1294400355538492163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,12 +130,6 @@ MonoBehaviour:
   - {fileID: 6015909768819924987, guid: f63248a75fb846f4285ae617b486140b, type: 3}
   - {fileID: 6015909768819924987, guid: 6f8ab5ab4f7b23f41bf1fb1865efea3f, type: 3}
   - {fileID: 6015909768819924987, guid: 1e9d0a0ee1cffaf4c8eff394b9675dd2, type: 3}
-  - {fileID: 6015909768819924987, guid: 5e8529fe9a2fe954dbc081e576022358, type: 3}
-  - {fileID: 6015909768819924987, guid: 13e62e974d73abf4d874f2acc0dee672, type: 3}
-  - {fileID: 6015909768819924987, guid: b63d2b4704c202248aacf351d73e41ad, type: 3}
-  - {fileID: 6015909768819924987, guid: 6d433fdeffb394e4b9b36bc2b8c0313e, type: 3}
-  - {fileID: 6015909768819924987, guid: 4e614840ee39e2a4d84a155f40cc6112, type: 3}
-  - {fileID: 6015909768819924987, guid: ee64c96c61fdc52458515140b0dedc3e, type: 3}
 --- !u!114 &1621348475
 MonoBehaviour:
   m_ObjectHideFlags: 0

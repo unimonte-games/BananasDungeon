@@ -18,14 +18,9 @@ public class Menu : MonoBehaviour
     }
 #endif
 
-    void Start()
-    {
-        //btnJogar.GetComponent<Button>().
-    }
-
     public void Jogar()
     {
-        print("Play");
+        SceneManager.LoadScene("Selecao");
     }
 
     public void Config()
