@@ -14,14 +14,6 @@ public class Selecao : MonoBehaviour
     void Start()
     {
         txtTimer.text = "";
-
-        print("+++++++++++++++++++++++++++++++");
-        print(Input.GetJoystickNames().Length);
-        for (int x = 0; x < Input.GetJoystickNames().Length; x++)
-        {
-            print(Input.GetJoystickNames()[x].ToString());
-        }
-        
     }
 
     void Update()
@@ -31,13 +23,7 @@ public class Selecao : MonoBehaviour
             for (int y = 0; y < 20; y++)
             {
                 if (Input.GetKeyDown("joystick " + x.ToString() + " button " + y.ToString()))
-                //if (Input.GetKeyDown("joystick button" + y.ToString()))
                     print("joystick" + x + "button " + y);
-
-                //if (Input.GetAxis())
-                {
-                    
-                }
             }
         }
 

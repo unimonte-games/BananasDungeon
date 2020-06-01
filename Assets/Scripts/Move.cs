@@ -91,11 +91,11 @@ public class Move : MonoBehaviour
         if (Input.GetAxis(playerIndice.ToString() + "RT") != 0)
             print("RT");
 
-        if (Input.GetButtonDown(playerIndice.ToString() + "RB3"))
-            print("RB3");
+        if (Input.GetButtonDown(playerIndice.ToString() + "RSB3"))
+            print("RSB3");
 
-        if (Input.GetButtonDown(playerIndice.ToString() + "LB3"))
-            print("LB3");
+        if (Input.GetButtonDown(playerIndice.ToString() + "LSB3"))
+            print("LSB3");
     }
 
     float velMovimento()

@@ -26,8 +26,11 @@ public class SelecaoDePersonagem : MonoBehaviour
             Personagens[x].GetComponent<Rigidbody>().isKinematic = true;
             Personagens[x].GetComponent<AudioListener>().enabled = false;
             Personagens[x].GetComponent<Move>().enabled = false;
-            Personagens[x].GetComponent<ControleDeAnimacao>().Idle(1);
-
+            var ctrAnim = Personagens[x].GetComponent<ControleDeAnimacao>();
+            Animator anim = Personagens[x].GetComponent<Animator>();
+            var arma = Personagens[x].GetComponent<ControleDeArmas>().ArmaInicial.ToString();
+            ctrAnim.Idle(1);
+            anim.SetBool(arma, true);
             Personagens[x].SetActive(false);
             print("ué");
         }
@@ -38,38 +41,27 @@ public class SelecaoDePersonagem : MonoBehaviour
         if (Personagens.Length == 0)
             return;
 
-        if (Input.GetButtonDown(playerIndice.ToString() + "Start") && !Selecao)
-        //if (Input.GetButtonDown("joystick " + playerIndice.ToString().Substring(1, 1) + " button 7") && !Selecao)
-        {
-            print(playerIndice.ToString() + "Start");
-            Selecao = true;
-            Debug.Log(Personagens.Length, gameObject);
-            Personagens[0].SetActive(true);
-            Personagens[0].GetComponent<ControleDeAnimacao>().Idle(1);
-            Person = Personagens[0].GetComponent<Atributos>().Personagem;
-            print("Ativa porra");
-        }
-
         if (Selecao)
         {
-            switch (Input.GetAxis(playerIndice.ToString() + "Right/Left"))
+            if (Input.GetAxis(playerIndice.ToString() + "Right/Left") != 0)
             {
-                case 1:
-                    MudarPersonagem(indice++);
-                    break;
-                case -1:
-                    MudarPersonagem(indice--);
-                    break;
+                switch (Input.GetAxis(playerIndice.ToString() + "Right/Left"))
+                {
+                    case 1:
+                        MudarPersonagem(indice++);
+                        break;
+                    case -1:
+                        MudarPersonagem(indice--);
+                        break;
+                }
             }
 
             if (Input.GetButtonDown(playerIndice.ToString() + "A"))
             {
                 print("A");
+                print(FindObjectOfType<Selecao>().PodeSelecionar(Person));
                 if (FindObjectOfType<Selecao>().PodeSelecionar(Person))
-                {
                     Confirmado = true;
-
-                }
             }
 
             if (Input.GetButtonDown(playerIndice.ToString() + "B") && Confirmado)
@@ -77,7 +69,8 @@ public class SelecaoDePersonagem : MonoBehaviour
                 print("B");
                 Confirmado = false;
             }
-            else
+
+            if (Input.GetButtonDown(playerIndice.ToString() + "B") && !Confirmado)
             {
                 Selecao = false;
                 for (int x = 0; x < Personagens.Length; x++)
@@ -87,6 +80,17 @@ public class SelecaoDePersonagem : MonoBehaviour
                 Person = AutoSave.Players.Nenhum;
                 indice = 0;
             }
+        }
+
+        if (Input.GetButtonDown(playerIndice.ToString() + "Start") && !Selecao)
+        {
+            print(playerIndice.ToString() + "Start");
+            Selecao = true;
+            Debug.Log(Personagens.Length, gameObject);
+            Personagens[0].SetActive(true);
+            Personagens[0].GetComponent<ControleDeAnimacao>().Idle(1);
+            Person = Personagens[0].GetComponent<Atributos>().Personagem;
+            print("Ativa porra");
         }
     }
 
