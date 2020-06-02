@@ -30,7 +30,7 @@ public class Move : MonoBehaviour
         h += Input.GetAxis("Horizontal");
         v += Input.GetAxis("Vertical");
 
-        if (!ctrAnim.Atacando && Mathf.Abs(h + v) > .2f)
+        if (!ctrAnim.Atacando && Mathf.Abs(h) + Mathf.Abs(v) > .2f)
         {
             //atual sistema dew movimentação
             var look = new Vector3(h, 0, v) + transform.position;
@@ -49,11 +49,11 @@ public class Move : MonoBehaviour
         else
             ctrAnim.Andar();
 
-        if (Input.GetAxis(playerIndice.ToString() + "Right/Left") != 0)
-            print("Right/Left: " + Input.GetAxis(playerIndice.ToString() + "Right/Left"));
+        if (Input.GetAxisRaw(playerIndice.ToString() + "Right/Left") != 0)
+            print("Right/Left: " + Input.GetAxisRaw(playerIndice.ToString() + "Right/Left"));
 
-        if (Input.GetAxis(playerIndice.ToString() + "Up/Down") != 0)
-            print("Up/Down: " + Input.GetAxis(playerIndice.ToString() + "Up/Down"));
+        if (Input.GetAxisRaw(playerIndice.ToString() + "Up/Down") != 0)
+            print("Up/Down: " + Input.GetAxisRaw(playerIndice.ToString() + "Up/Down"));
 
         if (Input.GetButtonDown(playerIndice.ToString() + "A") || Input.GetKeyDown(KeyCode.Z))
         {
@@ -85,10 +85,10 @@ public class Move : MonoBehaviour
         if (Input.GetButtonDown(playerIndice.ToString() + "LB"))
             print("LB");
 
-        if (Input.GetAxis(playerIndice.ToString() + "LT") != 0)
+        if (Input.GetAxis(playerIndice.ToString() + "LT") != 0f)
             print("LT");
 
-        if (Input.GetAxis(playerIndice.ToString() + "RT") != 0)
+        if (Input.GetAxis(playerIndice.ToString() + "RT") != 0f)
             print("RT");
 
         if (Input.GetButtonDown(playerIndice.ToString() + "RSB3"))
