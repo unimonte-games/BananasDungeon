@@ -281,6 +281,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Olliver (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4713170496004897430, guid: 2faeaf070990f774ea4a9a25b4b79e01,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6773838847556859607, guid: 2faeaf070990f774ea4a9a25b4b79e01,
         type: 3}
       propertyPath: Personagem
@@ -536,10 +541,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Olliver
       objectReference: {fileID: 0}
+    - target: {fileID: 4713170496004897430, guid: 2faeaf070990f774ea4a9a25b4b79e01,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6773838847556859607, guid: 2faeaf070990f774ea4a9a25b4b79e01,
         type: 3}
       propertyPath: Personagem
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8589440090196920453, guid: 2faeaf070990f774ea4a9a25b4b79e01,
         type: 3}
@@ -886,9 +896,10 @@ MonoBehaviour:
   txtBotaoPlayer: {fileID: 1571488085}
   Personagens: []
   indice: 0
+  timer: 1.5
   Selecao: 0
   playerIndice: 2
-  Person: 0
+  Person: -1
   Confirmado: 0
 --- !u!1 &1247502234
 GameObject:
@@ -980,9 +991,10 @@ MonoBehaviour:
   txtBotaoPlayer: {fileID: 151092501}
   Personagens: []
   indice: 0
+  timer: 1.5
   Selecao: 0
   playerIndice: 3
-  Person: 0
+  Person: -1
   Confirmado: 0
 --- !u!1 &1303297576
 GameObject:
@@ -1074,9 +1086,10 @@ MonoBehaviour:
   txtBotaoPlayer: {fileID: 1921314185}
   Personagens: []
   indice: 0
+  timer: 1.5
   Selecao: 0
   playerIndice: 4
-  Person: 0
+  Person: -1
   Confirmado: 0
 --- !u!1 &1402741320
 GameObject:
@@ -1415,9 +1428,10 @@ MonoBehaviour:
   - {fileID: 1590901399}
   - {fileID: 491954087}
   indice: 0
+  timer: 1.5
   Selecao: 0
   playerIndice: 1
-  Person: 0
+  Person: -1
   Confirmado: 0
 --- !u!1 &1707897133
 GameObject:
