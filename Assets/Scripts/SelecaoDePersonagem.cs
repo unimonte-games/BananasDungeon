@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SelecaoDePersonagem : MonoBehaviour
 {
     public Text txtBotaoPlayer;
     public GameObject[] Personagens;
     public int indice = 0;
-
+    public float timer = 1.5f;
     public bool Selecao = false;
-    public Move.PlayerIndice playerIndice;
-    public AutoSave.Players Person = AutoSave.Players.Nenhum;
+    public Dados.PlayerIndice playerIndice;
+    public Dados.Personagens Person = Dados.Personagens.Nenhum;
     public bool Confirmado = false;
 
 
@@ -24,34 +25,41 @@ public class SelecaoDePersonagem : MonoBehaviour
         for (int x = 0; x < Personagens.Length; x++)
         {
             Personagens[x].GetComponent<Rigidbody>().isKinematic = true;
-            Personagens[x].GetComponent<AudioListener>().enabled = false;
             Personagens[x].GetComponent<Move>().enabled = false;
-            var ctrAnim = Personagens[x].GetComponent<ControleDeAnimacao>();
             Animator anim = Personagens[x].GetComponent<Animator>();
-            var arma = Personagens[x].GetComponent<ControleDeArmas>().ArmaInicial.ToString();
-            ctrAnim.Idle(1);
-            anim.SetBool(arma, true);
+            Dados.Personagens person = Personagens[x].GetComponent<Atributos>().Personagem;
+            Dados.Armas arma = AutoSave.QualArma(person);
+            Dados.ArmaNivel nivel = AutoSave.QualNivel(arma);
+
             Personagens[x].SetActive(false);
-            print("ué");
         }
     }
 
     void Update()
     {
+        timer += Time.deltaTime;
         if (Personagens.Length == 0)
             return;
 
+        if (Input.GetButtonDown(playerIndice.ToString() + "B") && !Selecao)
+            SceneManager.LoadScene("Menu");
+
         if (Selecao)
         {
-            if (Input.GetAxis(playerIndice.ToString() + "Right/Left") != 0)
+            if (Input.GetAxisRaw(playerIndice.ToString() + "Right/Left") != 0 && timer > 1.5f)
             {
-                switch (Input.GetAxis(playerIndice.ToString() + "Right/Left"))
+                timer = 0;
+                switch (Input.GetAxisRaw(playerIndice.ToString() + "Right/Left"))
                 {
                     case 1:
-                        MudarPersonagem(indice++);
+                        indice += 1;
+                        MudarPersonagem(indice);
+                        print("Muda +");
                         break;
                     case -1:
-                        MudarPersonagem(indice--);
+                        indice -= 1;
+                        MudarPersonagem(indice);
+                        print("Muda -");
                         break;
                 }
             }
@@ -59,53 +67,67 @@ public class SelecaoDePersonagem : MonoBehaviour
             if (Input.GetButtonDown(playerIndice.ToString() + "A"))
             {
                 print("A");
-                print(FindObjectOfType<Selecao>().PodeSelecionar(Person));
                 if (FindObjectOfType<Selecao>().PodeSelecionar(Person))
-                    Confirmado = true;
-            }
-
-            if (Input.GetButtonDown(playerIndice.ToString() + "B") && Confirmado)
-            {
-                print("B");
-                Confirmado = false;
-            }
-
-            if (Input.GetButtonDown(playerIndice.ToString() + "B") && !Confirmado)
-            {
-                Selecao = false;
-                for (int x = 0; x < Personagens.Length; x++)
                 {
-                    Personagens[x].SetActive(false);
+                    print("A");
+                    Confirmado = true;
+                    Personagens[indice].GetComponent<ControleDeAnimacao>().Selecionar();
+                    GetComponent<Image>().color = Color.yellow;
                 }
-                Person = AutoSave.Players.Nenhum;
-                indice = 0;
+            }
+
+            if (Input.GetButtonDown(playerIndice.ToString() + "B"))
+            {
+                if (Confirmado)
+                {
+                    print("B");
+                    Confirmado = false;
+                    Personagens[indice].GetComponent<ControleDeAnimacao>().DesSelecionar();
+                    GetComponent<Image>().color = Color.white;
+                }
+                else
+                {
+                    Selecao = false;
+                    for (int x = 0; x < Personagens.Length; x++)
+                    {
+                        Personagens[x].SetActive(false);
+                    }
+                    Person = Dados.Personagens.Nenhum;
+                    indice = 0;
+                    txtBotaoPlayer.enabled = true;
+                }
             }
         }
+        
 
         if (Input.GetButtonDown(playerIndice.ToString() + "Start") && !Selecao)
         {
-            print(playerIndice.ToString() + "Start");
             Selecao = true;
             Debug.Log(Personagens.Length, gameObject);
             Personagens[0].SetActive(true);
             Personagens[0].GetComponent<ControleDeAnimacao>().Idle(1);
             Person = Personagens[0].GetComponent<Atributos>().Personagem;
-            print("Ativa porra");
+            ControleDeArmas ctrArmas = Personagens[0].GetComponent<ControleDeArmas>();
+            ctrArmas.AtivarArma(ctrArmas.arma, ctrArmas.nivel);
+            txtBotaoPlayer.enabled = false;
         }
     }
 
-    public void MudarPersonagem(int indice)
+    public void MudarPersonagem(int i)
     {
-        if (indice > Personagens.Length - 1)
-            indice = 0;
+        if (i > Personagens.Length - 1)
+            i = 0;
 
-        if (indice < 0)
-            indice = Personagens.Length - 1;
-
+        if (i < 0)
+            i = Personagens.Length - 1;
         for (int x = 0; x < Personagens.Length; x++)
         {
-            Personagens[x].SetActive(x == indice ? true : false);
+            print(Personagens[x].name + " " + (x == i ? true : false));
+            Personagens[x].SetActive(x == i ? true : false);
             Person = Personagens[x].GetComponent<Atributos>().Personagem;
+            ControleDeArmas ctrArmas = Personagens[x].GetComponent<ControleDeArmas>();
+            ctrArmas.AtivarArma(ctrArmas.arma, ctrArmas.nivel);
         }
+        indice = i;
     }
 }

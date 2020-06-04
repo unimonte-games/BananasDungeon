@@ -39,21 +39,33 @@ public class Selecao : MonoBehaviour
                 txtTimer.text = string.Format("Começando em {0}...", (int)timer);
         }
 
-        if (Input.GetButtonDown("P1Start") && FindObjectsOfType<SelecaoDePersonagem>()[0].Selecao)
+        if (Input.GetButtonDown("P1Start"))
         {
-            print("Seleção: " + "P1Start");
-            bool Iniciar = true;
-            var players = FindObjectsOfType<SelecaoDePersonagem>();
-            
-            for (int x = 0; x < players.Length; x++)
+            bool SelecionarP1 = false;
+            var sp = FindObjectsOfType<SelecaoDePersonagem>();
+            for (int x = 0; x < sp.Length; x++)
             {
-                if (players[x].Selecao && !players[x].Confirmado)
-                    Iniciar = false;
+                if (sp[x].playerIndice == Dados.PlayerIndice.P1)
+                {
+                    SelecionarP1 = sp[x].Selecao;
+                }
             }
-            
+            if (SelecionarP1)
+            {
+                print("Seleção: " + "P1Start");
+                bool Iniciar = true;
+                var players = FindObjectsOfType<SelecaoDePersonagem>();
+                
+                for (int x = 0; x < players.Length; x++)
+                {
+                    if (players[x].Selecao && !players[x].Confirmado)
+                        Iniciar = false;
+                }
+                
 
-            if (Iniciar)
-                Contagem(true);
+                if (Iniciar)
+                    Contagem(true);
+            }
         }
 
         if (Input.GetButtonDown("P1B"))
@@ -75,7 +87,7 @@ public class Selecao : MonoBehaviour
         }
     }
 
-    public bool PodeSelecionar(AutoSave.Players person)
+    public bool PodeSelecionar(Dados.Personagens person)
     {
         var ps = FindObjectsOfType<SelecaoDePersonagem>();
         bool pode = true;

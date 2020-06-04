@@ -22,10 +22,22 @@ public class CameraMove : MonoBehaviour
 
     void Update()
     {
-        if (Players.Count == 1)
+        Vector3 pos = Vector3.zero;
+        switch (Players.Count)
         {
-            var pos = Players[0].transform.position;
-            transform.position = new Vector3(pos.x + x, pos.y + y, pos.z + z);
+            case 1:
+                pos = Players[0].transform.position;
+                transform.position = new Vector3(pos.x + x, pos.y + y, pos.z + z);
+                break;
+            case 2:
+                Vector3 p1 = Players[0].transform.position;
+                Vector3 p2 = Players[1].transform.position;
+                pos = (((p1 - p2) *- 1) / 2);
+                
+                break;
+            default:
+                print("Nenhum player na cena");
+                break;
         }
     }
 }
