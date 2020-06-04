@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 235474333228623151}
   - component: {fileID: 7155706466631895426}
   - component: {fileID: 5474485341984569892}
+  - component: {fileID: -5177982449882267467}
   m_Layer: 0
   m_Name: Spawn
   m_TagString: Untagged
@@ -92,3 +93,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-5177982449882267467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8040126724216328590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f140945d1c5118f49b4e3fd61bac0d0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Inimigo: {fileID: 0}
+  quantidade: 0
+  delaySpawn: 0
+  TipoSpawn: 0
