@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DetectorDeDano : MonoBehaviour
 {
@@ -12,20 +13,27 @@ public class DetectorDeDano : MonoBehaviour
 
     void Awake()
     {
-        DisparadordeSons = GameObject.Find("EfeitoSonoro").GetComponent<AudioSource>();
+        if (SceneManager.GetActiveScene().name == "Jogo")
+            DisparadordeSons = GameObject.Find("EfeitoSonoro").GetComponent<AudioSource>();
+            
         Dano = GetComponent<DanoArma>();
     }
+
+    public ControleDeArmas ctrArma;
+    public DanoArma danoArma ;
+    public Atributos atb;
 
     void OnTriggerEnter(Collider other)
     {
         switch (Principal.tag)
         {
             case "Player":
+                print("Player: " + other.tag);
                 if (other.CompareTag("Enemy"))
                 {
-                    var ctrArma = Principal.GetComponent<ControleDeArmas>();
-                    var danoArma = ctrArma.PegarArma().GetComponent<DanoArma>();
-                    var atb = other.GetComponent<Atributos>();
+                    ControleDeArmas ctrArma = Principal.GetComponent<ControleDeArmas>();
+                    DanoArma danoArma = GetComponent<DanoArma>();
+                    Atributos atb = other.GetComponent<Atributos>();
                     
                     int danoCalculado = (int)(danoArma.Dano * ctrArma.multi);
                     int variacao = Random.Range(-5, 6);
@@ -33,6 +41,18 @@ public class DetectorDeDano : MonoBehaviour
                 }
                 break;
             case "Enemy":
+                print("Enemy: " + other.tag);
+                if (other.CompareTag("Player"))
+                {
+                    danoArma = GetComponent<DanoArma>();
+                    atb = other.GetComponent<Atributos>();
+                    // DanoArma danoArma = GetComponent<DanoArma>();
+                    // Atributos atb = other.GetComponent<Atributos>();
+                    
+                    int danoCalculado = (int)(danoArma.Dano);
+                    int variacao = Random.Range(-5, 6);
+                    atb.CausarDano(Dados.Armas.Nenhum, danoCalculado + variacao);
+                }
                 break;
         }
     }

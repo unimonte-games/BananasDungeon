@@ -1527,7 +1527,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8589440090196920453
 Transform:
   m_ObjectHideFlags: 0
@@ -1624,6 +1624,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Personagem: 1
+  Especialidade: 0
   Vida: 1000
   vidaAtual: 1000
   barraVida: {fileID: 0}
@@ -1641,6 +1642,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
   Atacando: 0
+  Morto: 0
 --- !u!114 &6135224502065286864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1655,6 +1657,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arma: 0
   nivel: 0
+  multi: 0
   Arsenal:
   - Arma: 4
     Local: {fileID: 897025002206218532}
@@ -3004,6 +3007,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -50.529003
       objectReference: {fileID: 0}
+    - target: {fileID: 9207654897478936108, guid: 09d55b1a4fad8ef429b4f80df52652e2,
+        type: 3}
+      propertyPath: Principal
+      value: 
+      objectReference: {fileID: 4713170496004897430}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09d55b1a4fad8ef429b4f80df52652e2, type: 3}
 --- !u!1 &897025002206218532 stripped
@@ -3025,6 +3033,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4922673737201355484}
     m_Modifications:
+    - target: {fileID: -5384355757633593298, guid: 67bc70dd03a2e1644ab831067e8907a5,
+        type: 3}
+      propertyPath: Principal
+      value: 
+      objectReference: {fileID: 4713170496004897430}
     - target: {fileID: 4798201352733711210, guid: 67bc70dd03a2e1644ab831067e8907a5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3106,6 +3119,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8555412210974398298}
     m_Modifications:
+    - target: {fileID: -4545581190131407512, guid: a64a1b65173dc34449158eb1f8fa64a3,
+        type: 3}
+      propertyPath: Principal
+      value: 
+      objectReference: {fileID: 4713170496004897430}
     - target: {fileID: 6142432161969418042, guid: a64a1b65173dc34449158eb1f8fa64a3,
         type: 3}
       propertyPath: m_Name

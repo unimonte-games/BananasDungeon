@@ -8,12 +8,12 @@ public class IAInimigo : MonoBehaviour
     public float distMinimaAtaque = 10f;
     public float distAtaque = 2f;
     public float velMov = 4.8f;
-    ControledeAnimacaoInimigo ctrAnimIni;
+    ControledeAnimacaoInimigo ctrAnim;
     Atributos atrib;
 
     void Awake()
     {
-        ctrAnimIni = GetComponent<ControledeAnimacaoInimigo>();
+        ctrAnim = GetComponent<ControledeAnimacaoInimigo>();
         atrib = GetComponent<Atributos>();
     }
 
@@ -24,7 +24,7 @@ public class IAInimigo : MonoBehaviour
 
     void Update()
     {
-        if (ctrAnimIni.Atacando)
+        if (ctrAnim.Atacando || ctrAnim.Morto)
             return;
 
         transform.LookAt(AlvoPerto().transform);
@@ -33,20 +33,20 @@ public class IAInimigo : MonoBehaviour
         {
             float distAlvo = Vector3.Distance(transform.position, alvo.transform.position);
             if (distAlvo > distMinimaAtaque)
-                ctrAnimIni.Idle();
+                ctrAnim.Idle();
             else
             {
                 if (distAlvo > distAtaque)
                 {
-                    ctrAnimIni.Walk();
+                    ctrAnim.Walk();
                     transform.Translate(Vector3.forward * velMov * Time.deltaTime);
                 }
                 else
-                    ctrAnimIni.Ataque(TipoAtaque());
+                    ctrAnim.Ataque(TipoAtaque());
             }
         }
         else
-            ctrAnimIni.Idle();
+            ctrAnim.Idle();
     }
 
     public int TipoAtaque()

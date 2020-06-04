@@ -5,6 +5,7 @@ using UnityEngine;
 public class ControledeAnimacaoInimigo : MonoBehaviour
 {
     public bool Atacando = false;
+    public bool Morto = false;
     Animator Anim;
     enum Estado
     {
@@ -36,6 +37,7 @@ public class ControledeAnimacaoInimigo : MonoBehaviour
 
     public void Morte()
     {
+        print("Morte");
         Anim.SetInteger("Move", -1);
     }
     

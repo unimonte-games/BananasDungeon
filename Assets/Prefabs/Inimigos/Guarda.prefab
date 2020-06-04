@@ -840,6 +840,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Atacando: 0
+  Morto: 0
 --- !u!114 &6576367741833988744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -869,6 +870,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Personagem: -1
+  Especialidade: 0
   Vida: 100
   vidaAtual: 100
   barraVida: {fileID: 0}
@@ -2570,6 +2572,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Sword
+      objectReference: {fileID: 0}
+    - target: {fileID: 8863971484114857015, guid: f42b4b240d7e126498e3bc7c1d87c9bc,
+        type: 3}
+      propertyPath: m_Height
+      value: 0.6490505
+      objectReference: {fileID: 0}
+    - target: {fileID: 8863971484114857015, guid: f42b4b240d7e126498e3bc7c1d87c9bc,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.03314471
+      objectReference: {fileID: 0}
+    - target: {fileID: 8863971484114857015, guid: f42b4b240d7e126498e3bc7c1d87c9bc,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0.0020210643
+      objectReference: {fileID: 0}
+    - target: {fileID: 8863971484114857015, guid: f42b4b240d7e126498e3bc7c1d87c9bc,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.35863018
+      objectReference: {fileID: 0}
+    - target: {fileID: 8863971484114857015, guid: f42b4b240d7e126498e3bc7c1d87c9bc,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -0.0022374364
       objectReference: {fileID: 0}
     - target: {fileID: 9020366153968511443, guid: f42b4b240d7e126498e3bc7c1d87c9bc,
         type: 3}

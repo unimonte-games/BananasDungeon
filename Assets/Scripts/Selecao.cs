@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class Selecao : MonoBehaviour
 {
     public Text txtTimer;
+    public SelecaoDePersonagem[] selecao;
     bool liberaTimer = false;
     float timer = 6;
 
@@ -42,29 +43,28 @@ public class Selecao : MonoBehaviour
         if (Input.GetButtonDown("P1Start"))
         {
             bool SelecionarP1 = false;
-            var sp = FindObjectsOfType<SelecaoDePersonagem>();
-            for (int x = 0; x < sp.Length; x++)
+            for (int x = 0; x < selecao.Length; x++)
             {
-                if (sp[x].playerIndice == Dados.PlayerIndice.P1)
-                {
-                    SelecionarP1 = sp[x].Selecao;
-                }
+                if (selecao[x].playerIndice == Dados.PlayerIndice.P1)
+                    SelecionarP1 = selecao[x].Selecao;
             }
+
             if (SelecionarP1)
             {
                 print("Seleção: " + "P1Start");
                 bool Iniciar = true;
-                var players = FindObjectsOfType<SelecaoDePersonagem>();
                 
-                for (int x = 0; x < players.Length; x++)
+                for (int x = 0; x < selecao.Length; x++)
                 {
-                    if (players[x].Selecao && !players[x].Confirmado)
+                    if (selecao[x].Selecao && !selecao[x].Confirmado)
                         Iniciar = false;
                 }
-                
 
                 if (Iniciar)
+                {
+                    Selecionados.Jogadores.Clear();
                     Contagem(true);
+                }
             }
         }
 
@@ -78,7 +78,21 @@ public class Selecao : MonoBehaviour
     void Contagem(bool Iniciar)
     {
         if (Iniciar)
+        {
+            print("Inicio da contagem");
             liberaTimer = true;
+            if (Selecionados.Jogadores.Count == 0)
+            {
+                print("Adicionando jogadores: " + selecao.Length);
+                for (int x = 0; x < selecao.Length; x++)
+                {
+                    print(selecao[x].PersonagemSelecionado.playerIndice.ToString());
+                    print(selecao[x].PersonagemSelecionado.personagem.ToString());
+                    Selecionados.Jogadores.Add(selecao[x].PersonagemSelecionado);
+                }
+                print("Adicionado jogadores: " + selecao.Length);
+            }
+        }
         else
         {
             txtTimer.text = "";
@@ -89,11 +103,10 @@ public class Selecao : MonoBehaviour
 
     public bool PodeSelecionar(Dados.Personagens person)
     {
-        var ps = FindObjectsOfType<SelecaoDePersonagem>();
         bool pode = true;
-        for (int x = 0; x < ps.Length; x++)
+        for (int x = 0; x < selecao.Length; x++)
         {
-            if (ps[x].Person == person && ps[x].Confirmado)
+            if (selecao[x].Person == person && selecao[x].Confirmado)
                 return false;
         }
 

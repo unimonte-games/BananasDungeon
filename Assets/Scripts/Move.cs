@@ -36,7 +36,7 @@ public class Move : MonoBehaviour
             redutor = 1;
 
 
-        if (!ctrAnim.Atacando && Mathf.Abs(h) + Mathf.Abs(v) > .2f)
+        if (!ctrAnim.Morto && !ctrAnim.Atacando && Mathf.Abs(h) + Mathf.Abs(v) > .2f)
         {
             if (aceleracao < 1)
                 aceleracao += velAceleracao;
@@ -54,6 +54,9 @@ public class Move : MonoBehaviour
 
     void Update()
     {
+        if (ctrAnim.Morto)
+            return;
+
         if (velMovimento() == 0)
             ctrAnim.Idle(-1);
         else

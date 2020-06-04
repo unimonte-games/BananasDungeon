@@ -43,6 +43,8 @@ public class ControleDeArmas : MonoBehaviour
             {
                 Arsenal[x].Local.SetActive(true);
                 multi = Arsenal[x].Local.GetComponent<NivelArma>().DefinirNivel(N);
+                print(A.ToString());
+                print(multi);
                 break;
             }
         }

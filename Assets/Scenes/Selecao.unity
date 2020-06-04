@@ -1486,6 +1486,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   txtTimer: {fileID: 271779840}
+  selecao:
+  - {fileID: 1624350071}
+  - {fileID: 1234883383}
+  - {fileID: 1247502238}
+  - {fileID: 1303297580}
 --- !u!1 &1717890221
 GameObject:
   m_ObjectHideFlags: 0

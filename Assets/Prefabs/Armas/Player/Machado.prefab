@@ -246,6 +246,8 @@ GameObject:
   - component: {fileID: 7162153155701628201}
   - component: {fileID: 7814675694502293719}
   - component: {fileID: 4619945585487377385}
+  - component: {fileID: -4545581190131407512}
+  - component: {fileID: 6071315474256681582}
   m_Layer: 0
   m_Name: Machado
   m_TagString: Untagged
@@ -309,6 +311,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Dano: 35
+--- !u!114 &-4545581190131407512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6142432161969418042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf8f298f3a3a9cb4c8a1b2c5c5b70e1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Principal: {fileID: 0}
+  Dano: {fileID: 0}
+  SomDano: {fileID: 0}
+  DisparadordeSons: {fileID: 0}
+--- !u!65 &6071315474256681582
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6142432161969418042}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4238754, y: 0.30829042, z: 0.10179062}
+  m_Center: {x: -0.29564288, y: 0.48988596, z: 0.29316124}
 --- !u!1 &7548335986756069992
 GameObject:
   m_ObjectHideFlags: 0

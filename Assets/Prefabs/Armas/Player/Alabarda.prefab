@@ -323,6 +323,8 @@ GameObject:
   - component: {fileID: 4751749441330968479}
   - component: {fileID: 2580768241981389298}
   - component: {fileID: 1209952115791312923}
+  - component: {fileID: -1854351920565585393}
+  - component: {fileID: 6422277508572045375}
   m_Layer: 0
   m_Name: Alabarda
   m_TagString: Untagged
@@ -385,3 +387,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Dano: 30
+--- !u!114 &-1854351920565585393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8622919013248763276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf8f298f3a3a9cb4c8a1b2c5c5b70e1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Principal: {fileID: 0}
+  Dano: {fileID: 0}
+  SomDano: {fileID: 0}
+  DisparadordeSons: {fileID: 0}
+--- !u!65 &6422277508572045375
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8622919013248763276}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.43966833, y: 0.66683006, z: 0.12921464}
+  m_Center: {x: 0.05300443, y: 1.5674136, z: 0.21580333}

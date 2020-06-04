@@ -167,6 +167,8 @@ GameObject:
   - component: {fileID: 8132131254555132814}
   - component: {fileID: 1810439133984074788}
   - component: {fileID: 3039635503921501930}
+  - component: {fileID: 9207654897478936108}
+  - component: {fileID: 3683787521960087421}
   m_Layer: 0
   m_Name: Espada
   m_TagString: Untagged
@@ -230,6 +232,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Dano: 20
+--- !u!114 &9207654897478936108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5080196249505411485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf8f298f3a3a9cb4c8a1b2c5c5b70e1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Principal: {fileID: 0}
+  Dano: {fileID: 0}
+  SomDano: {fileID: 0}
+  DisparadordeSons: {fileID: 0}
+--- !u!65 &3683787521960087421
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5080196249505411485}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.09877068, y: 0.82404137, z: 0.18775296}
+  m_Center: {x: 0.80198, y: 1.5980828, z: 0.29432547}
 --- !u!1 &6256588941398913878
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,6 +10,37 @@ public class CameraMove : MonoBehaviour
 
     void Awake()
     {
+        ProcuraPlayer();
+    }
+
+    void Update()
+    {
+        Vector3 pos = transform.position;
+        if (Players.Count == 0)
+            ProcuraPlayer();
+        else
+        {
+            switch (Players.Count)
+            {
+                case 1:
+                    pos = Players[0].transform.position;
+                    transform.position = new Vector3(pos.x + x, pos.y + y, pos.z + z);
+                    break;
+                case 2:
+                    Vector3 p1 = Players[0].transform.position;
+                    Vector3 p2 = Players[1].transform.position;
+                    pos = (((p1 - p2) *- 1) / 2);
+                    
+                    break;
+                default:
+                    print("Nenhum player na cena");
+                    break;
+            }
+        }
+    }
+
+    public void ProcuraPlayer()
+    {
         if (Players.Count == 0)
         {
             var p = FindObjectsOfType<Move>();
@@ -17,27 +48,6 @@ public class CameraMove : MonoBehaviour
             {
                 Players.Add(p[x].gameObject);
             }
-        }
-    }
-
-    void Update()
-    {
-        Vector3 pos = Vector3.zero;
-        switch (Players.Count)
-        {
-            case 1:
-                pos = Players[0].transform.position;
-                transform.position = new Vector3(pos.x + x, pos.y + y, pos.z + z);
-                break;
-            case 2:
-                Vector3 p1 = Players[0].transform.position;
-                Vector3 p2 = Players[1].transform.position;
-                pos = (((p1 - p2) *- 1) / 2);
-                
-                break;
-            default:
-                print("Nenhum player na cena");
-                break;
         }
     }
 }

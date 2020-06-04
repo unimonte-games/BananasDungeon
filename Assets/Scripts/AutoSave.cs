@@ -27,6 +27,7 @@ public class AutoSave : MonoBehaviour
             return;
 
         //sanguineo
+        
         //pergaminho da arma
 
         for (int x = 0; x < ArmaPadrao.Length; x++)

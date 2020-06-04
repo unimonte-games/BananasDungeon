@@ -14,6 +14,7 @@ public class SelecaoDePersonagem : MonoBehaviour
     public Dados.PlayerIndice playerIndice;
     public Dados.Personagens Person = Dados.Personagens.Nenhum;
     public bool Confirmado = false;
+    public Selecionados.Jogador PersonagemSelecionado;
 
 
     void Start()
@@ -46,7 +47,7 @@ public class SelecaoDePersonagem : MonoBehaviour
 
         if (Selecao)
         {
-            if (Input.GetAxisRaw(playerIndice.ToString() + "Right/Left") != 0 && timer > 1.5f)
+            if (Input.GetAxisRaw(playerIndice.ToString() + "Right/Left") != 0 && timer > 1f)
             {
                 timer = 0;
                 switch (Input.GetAxisRaw(playerIndice.ToString() + "Right/Left"))
@@ -73,6 +74,8 @@ public class SelecaoDePersonagem : MonoBehaviour
                     Confirmado = true;
                     Personagens[indice].GetComponent<ControleDeAnimacao>().Selecionar();
                     GetComponent<Image>().color = Color.yellow;
+                    PersonagemSelecionado.personagem = Person;
+                    PersonagemSelecionado.playerIndice = playerIndice;
                 }
             }
 
@@ -84,6 +87,8 @@ public class SelecaoDePersonagem : MonoBehaviour
                     Confirmado = false;
                     Personagens[indice].GetComponent<ControleDeAnimacao>().DesSelecionar();
                     GetComponent<Image>().color = Color.white;
+                    PersonagemSelecionado.personagem = Dados.Personagens.Nenhum;
+                    PersonagemSelecionado.playerIndice = Dados.PlayerIndice.Vazio;
                 }
                 else
                 {

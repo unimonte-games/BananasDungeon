@@ -20,7 +20,7 @@ public class Atributos : MonoBehaviour
         if (gameObject.CompareTag("Player"))
         {
             var aux = GetComponent<Move>().playerIndice;
-            barraVida = GameObject.Find("HP" + aux.ToString()).GetComponentInChildren<Slider>();
+            barraVida = FindObjectOfType<HUD>().PegarBarra(GetComponent<Move>().playerIndice).GetComponentInChildren<Slider>();
             barraVida.maxValue = Vida;
             barraVida.value = vidaAtual;
         }
@@ -47,11 +47,10 @@ public class Atributos : MonoBehaviour
                 GetComponent<ControleDeAnimacao>().Morte();
             }
             else
+            {
                 barraVida.value = vidaAtual;
-        }
-        else
-        {
-            GetComponent<ControledeAnimacaoInimigo>().Morte();
+                GetComponent<ControledeAnimacaoInimigo>().Morte();
+            }
         }
     }
 }

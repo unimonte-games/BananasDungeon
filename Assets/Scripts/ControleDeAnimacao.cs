@@ -13,6 +13,7 @@ public class ControleDeAnimacao : MonoBehaviour
     }
     public Animator anim;
     public bool Atacando = false;
+    public bool Morto = false;
     
 
     void Awake()
