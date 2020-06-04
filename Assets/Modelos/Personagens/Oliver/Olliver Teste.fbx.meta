@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 983a5bcc91437e444894ef4f6d3a0976
+guid: df9f6a3a9534ffd44bc94e8bcdb4a424
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
@@ -23,7 +23,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -69,7 +69,7 @@ ModelImporter:
     normalSmoothingSource: 0
   referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
+  copyAvatar: 1
   humanDescription:
     serializedVersion: 3
     human: []
@@ -426,7 +426,8 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 983a5bcc91437e444894ef4f6d3a0976,
+    type: 3}
   animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
