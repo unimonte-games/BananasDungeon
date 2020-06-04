@@ -5,8 +5,9 @@ using UnityEngine;
 public class Interruptor : MonoBehaviour
 {
     
-    public GameObject Portas;
+    public GameObject[] Portas;
     Light luz;
+    public Color CorPorta = Color.white;
     bool estadoInterruptor = false;
     Animator anim;
 
@@ -37,8 +38,11 @@ public class Interruptor : MonoBehaviour
 
     void OnTriggerStay (Collider colisor)
     {
-        if (Input.GetButton(colisor.gameObject.GetComponent<Move>().playerIndice.ToString() + "B") &&  !estadoInterruptor)
-            AtivarInterruptor();
+        if (colisor.CompareTag("Player"))
+        {
+            if (Input.GetButton(colisor.gameObject.GetComponent<Move>().playerIndice.ToString() + "B") &&  !estadoInterruptor)
+                AtivarInterruptor();
+        }
     }
 
     void OnTriggerExit (Collider colisor)
@@ -58,5 +62,9 @@ public class Interruptor : MonoBehaviour
         estadoInterruptor = true;
         luz.color = Color.green;
         anim.SetInteger("Alavanca", (int)Alavanca.Ativar);
+        for (int x = 0; x < Portas.Length; x++)
+        {
+            Portas[x].GetComponent<Animator>().SetBool("Abrir", true);
+        }
     }
 }

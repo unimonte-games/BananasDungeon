@@ -5,18 +5,18 @@ using UnityEngine;
 public class Move : MonoBehaviour
 {
     //UNITY_WSA
-    public enum PlayerIndice {Vazio = 0, P1 = 1, P2, P3, P4} //teste de multiplayers
-    public PlayerIndice playerIndice;
+    public Dados.PlayerIndice playerIndice;
     ControleDeAnimacao ctrAnim;
-    public float h, v, vel = 20;
-    public Rigidbody rb;
+    float h, v;
+    public float vel = 5;
     public float slow = 0.7f;
     float redutor = 1;
+    public float aceleracao = 0;
+    public float velAceleracao = .5f;
 
 
     void Awake()
     {
-        rb = GetComponent<Rigidbody>();
         ctrAnim = GetComponent<ControleDeAnimacao>();
     }
 
@@ -30,14 +30,24 @@ public class Move : MonoBehaviour
         h += Input.GetAxis("Horizontal");
         v += Input.GetAxis("Vertical");
 
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+            redutor = slow;
+        else
+            redutor = 1;
+
+
         if (!ctrAnim.Atacando && Mathf.Abs(h) + Mathf.Abs(v) > .2f)
         {
-            //atual sistema dew movimentação
+            if (aceleracao < 1)
+                aceleracao += velAceleracao;
+            else
+                aceleracao = 1;
+
             var look = new Vector3(h, 0, v) + transform.position;
 
             transform.LookAt(look);
 
-            transform.Translate(Vector3.forward * ctrAnim.Velocidade(velMovimento() * redutor) * vel * Time.deltaTime);
+            transform.Translate(Vector3.forward * ctrAnim.Velocidade(velMovimento() * redutor) * (vel * aceleracao) * Time.deltaTime);
             
         }
     }
@@ -100,9 +110,11 @@ public class Move : MonoBehaviour
 
     float velMovimento()
     {
-
         if (Mathf.Abs(v) + Mathf.Abs(h) < 0.3f)
+        {
+            aceleracao = 0;
             return 0;
+        }
 
         if (Mathf.Abs(v) + Mathf.Abs(h) > 1)
             return 1f;

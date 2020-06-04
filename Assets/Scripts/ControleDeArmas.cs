@@ -4,45 +4,60 @@ using UnityEngine;
 
 public class ControleDeArmas : MonoBehaviour
 {
-    Animator Anim;
-    public Armas ArmaInicial;
+    Atributos atbPlayer;
+    ControleDeAnimacao ctrAnim;
+
+    public Dados.Armas arma;
+    public Dados.ArmaNivel nivel;
+    public float multi;
+
     public Inventario[] Arsenal;
-    public enum Armas
-    {
-        Nenhum,
-        Alabarda,
-        Arco,
-        Cajado,
-        Espada,
-        Lanca,
-        Machado
-    }
-    
     [System.Serializable]
     public struct Inventario
     {
-        public Armas Arma;
+        public Dados.Armas Arma;
         public GameObject Local;
+    }
+
+    void Awake()
+    {
+        atbPlayer = GetComponent<Atributos>();
+        ctrAnim = GetComponent<ControleDeAnimacao>();
+
+        arma = AutoSave.QualArma(atbPlayer.Personagem);
+        nivel = AutoSave.QualNivel(arma);
     }
 
     void Start()
     {
-        if (true)//caso não tenha uma arma selecionada
-        {
-            AtivarArma(ArmaInicial, NivelArma.Nivel.Nivel1);
-        }
-        //else caseo tenha uma arma definida, ativar arma/nivel
+        AtivarArma(arma, nivel);
     }
 
-    public void AtivarArma(Armas Arma, NivelArma.Nivel nivel)
+    public void AtivarArma(Dados.Armas A, Dados.ArmaNivel N)
+    {
+        print("Ativar arma");
+        ctrAnim.TrocaArma(A);
+        for (int x = 0; x < Arsenal.Length; x++)
+        {
+            if (Arsenal[x].Arma == A)
+            {
+                Arsenal[x].Local.SetActive(true);
+                multi = Arsenal[x].Local.GetComponent<NivelArma>().DefinirNivel(N);
+                break;
+            }
+        }
+    }
+
+    public GameObject PegarArma()
     {
         for (int x = 0; x < Arsenal.Length; x++)
         {
-            if (Arsenal[x].Arma == Arma)
+            if (Arsenal[x].Arma == arma)
             {
-                Arsenal[x].Local.SetActive(true);
-                Arsenal[x].Local.GetComponent<NivelArma>().DefinirNivel(nivel);
+                return Arsenal[x].Local;
             }
         }
+
+        return null;
     }
 }

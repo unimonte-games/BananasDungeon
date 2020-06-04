@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class ControleDeAnimacao : MonoBehaviour
 {
-    Animator anim;
+    public enum Estado
+    {
+        Morte = -1,
+        Idle = 0,
+        Andando,
+        Atacando
+    }
+    public Animator anim;
     public bool Atacando = false;
-
+    
 
     void Awake()
     {
@@ -25,23 +32,63 @@ public class ControleDeAnimacao : MonoBehaviour
             idle = Random.Range(0,2);
 
         anim.SetInteger("Idle", idle);
-        anim.SetInteger("Move", 0);
+        anim.SetInteger("Move", (int)Estado.Idle);
     }
 
     public void Andar()
     {
-        anim.SetInteger("Move", 1);
+        anim.SetInteger("Move", (int)Estado.Andando);
     }
 
     public void Ataque(int atk)
     {
         anim.SetInteger("Ataque", atk);
-        anim.SetInteger("Move", 2);
+        anim.SetInteger("Move", (int)Estado.Atacando);
     }
 
-    public void Morrendo()
+    public void Morte()
     {
+        int i = Random.Range(0,2);
 
+        anim.SetInteger(Estado.Morte.ToString(), i);
+        anim.SetInteger("Move", (int)Estado.Morte);
+    }
+
+    public void Desequipar()
+    {
+        anim.SetBool(Dados.Armas.Arco.ToString(), false);
+        anim.SetBool(Dados.Armas.Espada.ToString(), false);
+        anim.SetBool(Dados.Armas.Machado.ToString(), false);
+        anim.SetBool(Dados.Armas.Alabarda.ToString(), false);
+        anim.SetBool(Dados.Armas.Lanca.ToString(), false);
+        anim.SetBool(Dados.Armas.Cajado.ToString(), false);
+    }
+
+    public void TrocaArma(Dados.Armas arma)
+    {
+        Desequipar();
+        Idle(1);
+        anim.SetBool(arma.ToString(), true);
+    }
+
+    public void Selecionar()
+    {
+        print("Selecionar");
+        anim.SetBool("Selecao", true);
+        var arma = GetComponent<ControleDeArmas>().arma;
+        Desequipar();
+        Idle(0);
+        anim.SetBool(arma.ToString(), true);
+    }
+
+    public void DesSelecionar()
+    {
+        print("DesSelecionar");
+        anim.SetBool("Selecao", true);
+        var arma = GetComponent<ControleDeArmas>().arma;
+        Desequipar();
+        Idle(1);
+        anim.SetBool(arma.ToString(), true);
     }
 
     #region Evento de animação

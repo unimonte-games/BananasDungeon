@@ -4,294 +4,294 @@ using UnityEngine;
 
 public class NivelArma : MonoBehaviour
 {
-    public Niveis NiveisArma;
-
-    public enum Nivel
-    {
-        Nivel1, Nivel2, Nivel3, Nivel4, Nivel5
-    }
+    public Niveis[] NiveisArma;
+    [Space(20)]
+    public Dados.Armas arma;
 
     [System.Serializable]
     public struct Niveis
     {
-        public ControleDeArmas.Armas arma;
-        public GameObject[] nivel;
+        public GameObject nivel;
+        public float multiplicador;
     }
 
-    public void DefinirNivel(Nivel nivel)
+    public float DefinirNivel(Dados.ArmaNivel nivel)
     {
-        switch (NiveisArma.arma)
+        switch (arma)
         {
-            case ControleDeArmas.Armas.Arco:
+            case Dados.Armas.Alabarda:
+                //NivelAlabarda(nivel);
+                return NiveisArma[(int)nivel].multiplicador;
+            case Dados.Armas.Arco:
                 NivelArco(nivel);
-                break;
-            case ControleDeArmas.Armas.Espada:
+                return NiveisArma[(int)nivel].multiplicador;
+            case Dados.Armas.Cajado:
+                //NivelCajado(nivel);
+                return NiveisArma[(int)nivel].multiplicador;
+            case Dados.Armas.Espada:
                 NivelEspada(nivel);
-                break;
-            case ControleDeArmas.Armas.Machado:
+                return NiveisArma[(int)nivel].multiplicador;
+            case Dados.Armas.Lanca:
+                //NivelLanca(nivel);
+                return NiveisArma[(int)nivel].multiplicador;
+            case Dados.Armas.Machado:
                 NivelMachado(nivel);
+                return NiveisArma[(int)nivel].multiplicador;
+            default:
+                return 1;
+        }
+    }
+
+    void NivelAlabarda(Dados.ArmaNivel nivel)
+    {
+        switch (nivel)
+        {
+            case Dados.ArmaNivel.Nivel1:
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
                 break;
-            case ControleDeArmas.Armas.Alabarda:
-                NivelAlabarda(nivel);
+            case Dados.ArmaNivel.Nivel2:
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
                 break;
-            case ControleDeArmas.Armas.Cajado:
-                NivelCajado(nivel);
+            case Dados.ArmaNivel.Nivel3:
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
                 break;
-            case ControleDeArmas.Armas.Lanca:
-                NivelLanca(nivel);
+            case Dados.ArmaNivel.Nivel4:
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
+                break;
+            case Dados.ArmaNivel.Nivel5:
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
                 break;
         }
     }
 
-    void NivelAlabarda(Nivel nivel)
+    void NivelArco(Dados.ArmaNivel nivel)
     {
         switch (nivel)
         {
-            case Nivel.Nivel1:
-                NiveisArma.nivel[0].SetActive(true);
-                NiveisArma.nivel[1].SetActive(false);
-                NiveisArma.nivel[2].SetActive(false);
-                NiveisArma.nivel[3].SetActive(false);
-                //NiveisArma.nivel[4].SetActive(false);
+            case Dados.ArmaNivel.Nivel1:
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
                 break;
-            case Nivel.Nivel2:
-                NiveisArma.nivel[0].SetActive(true);
-                NiveisArma.nivel[1].SetActive(true);
-                NiveisArma.nivel[2].SetActive(false);
-                NiveisArma.nivel[3].SetActive(false);
-                //NiveisArma.nivel[4].SetActive(false);
+            case Dados.ArmaNivel.Nivel2:
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
                 break;
-            case Nivel.Nivel3:
-                NiveisArma.nivel[0].SetActive(true);
-                NiveisArma.nivel[1].SetActive(true);
-                NiveisArma.nivel[2].SetActive(true);
-                NiveisArma.nivel[3].SetActive(false);
-                //NiveisArma.nivel[4].SetActive(false);
+            case Dados.ArmaNivel.Nivel3:
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
                 break;
-            case Nivel.Nivel4:
-                NiveisArma.nivel[0].SetActive(true);
-                NiveisArma.nivel[1].SetActive(true);
-                NiveisArma.nivel[2].SetActive(true);
-                NiveisArma.nivel[3].SetActive(true);
-                //NiveisArma.nivel[4].SetActive(false);
+            case Dados.ArmaNivel.Nivel4:
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
                 break;
-            case Nivel.Nivel5:
-                NiveisArma.nivel[0].SetActive(true);
-                NiveisArma.nivel[1].SetActive(true);
-                NiveisArma.nivel[2].SetActive(true);
-                NiveisArma.nivel[3].SetActive(true);
-                //NiveisArma.nivel[4].SetActive(true);
-                break;
-        }
-    }
-
-    void NivelArco(Nivel nivel)
-    {
-        switch (nivel)
-        {
-            case Nivel.Nivel1:
-                NiveisArma.nivel[0].SetActive(true);
-                NiveisArma.nivel[1].SetActive(false);
-                NiveisArma.nivel[2].SetActive(false);
-                NiveisArma.nivel[3].SetActive(false);
-                //NiveisArma.nivel[4].SetActive(false);
-                break;
-            case Nivel.Nivel2:
-                NiveisArma.nivel[0].SetActive(true);
-                NiveisArma.nivel[1].SetActive(true);
-                NiveisArma.nivel[2].SetActive(false);
-                NiveisArma.nivel[3].SetActive(false);
-                //NiveisArma.nivel[4].SetActive(false);
-                break;
-            case Nivel.Nivel3:
-                NiveisArma.nivel[0].SetActive(true);
-                NiveisArma.nivel[1].SetActive(true);
-                NiveisArma.nivel[2].SetActive(true);
-                NiveisArma.nivel[3].SetActive(false);
-                //NiveisArma.nivel[4].SetActive(false);
-                break;
-            case Nivel.Nivel4:
-                NiveisArma.nivel[0].SetActive(true);
-                NiveisArma.nivel[1].SetActive(true);
-                NiveisArma.nivel[2].SetActive(true);
-                NiveisArma.nivel[3].SetActive(true);
-                //NiveisArma.nivel[4].SetActive(false);
-                break;
-            case Nivel.Nivel5:
-                NiveisArma.nivel[0].SetActive(true);
-                NiveisArma.nivel[1].SetActive(true);
-                NiveisArma.nivel[2].SetActive(true);
-                NiveisArma.nivel[3].SetActive(true);
-                //NiveisArma.nivel[4].SetActive(true);
+            case Dados.ArmaNivel.Nivel5:
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
                 break;
         }
     }
     
-    void NivelCajado(Nivel nivel)
+    void NivelCajado(Dados.ArmaNivel nivel)
     {
         switch (nivel)
         {
-            case Nivel.Nivel1:
-                NiveisArma.nivel[0].SetActive(true);
-                NiveisArma.nivel[1].SetActive(false);
-                NiveisArma.nivel[2].SetActive(false);
-                NiveisArma.nivel[3].SetActive(false);
-                //NiveisArma.nivel[4].SetActive(false);
+            case Dados.ArmaNivel.Nivel1:
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
                 break;
-            case Nivel.Nivel2:
-                NiveisArma.nivel[0].SetActive(true);
-                NiveisArma.nivel[1].SetActive(true);
-                NiveisArma.nivel[2].SetActive(false);
-                NiveisArma.nivel[3].SetActive(false);
-                //NiveisArma.nivel[4].SetActive(false);
+            case Dados.ArmaNivel.Nivel2:
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
                 break;
-            case Nivel.Nivel3:
-                NiveisArma.nivel[0].SetActive(true);
-                NiveisArma.nivel[1].SetActive(true);
-                NiveisArma.nivel[2].SetActive(true);
-                NiveisArma.nivel[3].SetActive(false);
-                //NiveisArma.nivel[4].SetActive(false);
+            case Dados.ArmaNivel.Nivel3:
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
                 break;
-            case Nivel.Nivel4:
-                NiveisArma.nivel[0].SetActive(true);
-                NiveisArma.nivel[1].SetActive(true);
-                NiveisArma.nivel[2].SetActive(true);
-                NiveisArma.nivel[3].SetActive(true);
-                //NiveisArma.nivel[4].SetActive(false);
+            case Dados.ArmaNivel.Nivel4:
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
                 break;
-            case Nivel.Nivel5:
-                NiveisArma.nivel[0].SetActive(true);
-                NiveisArma.nivel[1].SetActive(true);
-                NiveisArma.nivel[2].SetActive(true);
-                NiveisArma.nivel[3].SetActive(true);
-                //NiveisArma.nivel[4].SetActive(true);
+            case Dados.ArmaNivel.Nivel5:
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
                 break;
         }
     }
 
-    void NivelMachado(Nivel nivel)
+    void NivelMachado(Dados.ArmaNivel nivel)
     {
         switch (nivel)
         {
-            case Nivel.Nivel1:
-                NiveisArma.nivel[0].SetActive(true);
-                NiveisArma.nivel[1].SetActive(false);
-                NiveisArma.nivel[2].SetActive(false);
-                NiveisArma.nivel[3].SetActive(false);
-                //NiveisArma.nivel[4].SetActive(false);
+            case Dados.ArmaNivel.Nivel1:
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
                 break;
-            case Nivel.Nivel2:
-                NiveisArma.nivel[0].SetActive(true);
-                NiveisArma.nivel[1].SetActive(true);
-                NiveisArma.nivel[2].SetActive(false);
-                NiveisArma.nivel[3].SetActive(false);
-                //NiveisArma.nivel[4].SetActive(false);
+            case Dados.ArmaNivel.Nivel2:
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
                 break;
-            case Nivel.Nivel3:
-                NiveisArma.nivel[0].SetActive(true);
-                NiveisArma.nivel[1].SetActive(false);
-                NiveisArma.nivel[2].SetActive(true);
-                NiveisArma.nivel[3].SetActive(false);
-                //NiveisArma.nivel[4].SetActive(false);
+            case Dados.ArmaNivel.Nivel3:
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
                 break;
-            case Nivel.Nivel4:
-                NiveisArma.nivel[0].SetActive(true);
-                NiveisArma.nivel[1].SetActive(false);
-                NiveisArma.nivel[2].SetActive(true);
-                NiveisArma.nivel[3].SetActive(true);
-                //NiveisArma.nivel[4].SetActive(false);
+            case Dados.ArmaNivel.Nivel4:
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
                 break;
-            case Nivel.Nivel5:
-                NiveisArma.nivel[0].SetActive(true);
-                NiveisArma.nivel[1].SetActive(false);
-                NiveisArma.nivel[2].SetActive(true);
-                NiveisArma.nivel[3].SetActive(true);
-                //NiveisArma.nivel[4].SetActive(true);
+            case Dados.ArmaNivel.Nivel5:
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
                 break;
         }
     }
 
-    void NivelEspada(Nivel nivel)
+    void NivelEspada(Dados.ArmaNivel nivel)
     {
         switch (nivel)
         {
-            case Nivel.Nivel1:
-                NiveisArma.nivel[0].SetActive(true);
-                NiveisArma.nivel[1].SetActive(false);
-                NiveisArma.nivel[2].SetActive(false);
-                NiveisArma.nivel[3].SetActive(false);
-                //NiveisArma.nivel[4].SetActive(false);
+            case Dados.ArmaNivel.Nivel1:
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
                 break;
-            case Nivel.Nivel2:
-                NiveisArma.nivel[0].SetActive(false);
-                NiveisArma.nivel[1].SetActive(true);
-                NiveisArma.nivel[2].SetActive(false);
-                NiveisArma.nivel[3].SetActive(false);
-                //NiveisArma.nivel[4].SetActive(false);
+            case Dados.ArmaNivel.Nivel2:
+                NiveisArma[(int)nivel].nivel.SetActive(false);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
                 break;
-            case Nivel.Nivel3:
-                NiveisArma.nivel[0].SetActive(false);
-                NiveisArma.nivel[1].SetActive(true);
-                NiveisArma.nivel[2].SetActive(true);
-                NiveisArma.nivel[3].SetActive(false);
-                //NiveisArma.nivel[4].SetActive(false);
+            case Dados.ArmaNivel.Nivel3:
+                NiveisArma[(int)nivel].nivel.SetActive(false);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
                 break;
-            case Nivel.Nivel4:
-                NiveisArma.nivel[0].SetActive(false);
-                NiveisArma.nivel[1].SetActive(true);
-                NiveisArma.nivel[2].SetActive(true);
-                NiveisArma.nivel[3].SetActive(true);
-                //NiveisArma.nivel[4].SetActive(false);
+            case Dados.ArmaNivel.Nivel4:
+                NiveisArma[(int)nivel].nivel.SetActive(false);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
                 break;
-            case Nivel.Nivel5:
-                NiveisArma.nivel[0].SetActive(false);
-                NiveisArma.nivel[1].SetActive(true);
-                NiveisArma.nivel[2].SetActive(true);
-                NiveisArma.nivel[3].SetActive(true);
-                //NiveisArma.nivel[4].SetActive(true);
+            case Dados.ArmaNivel.Nivel5:
+                NiveisArma[(int)nivel].nivel.SetActive(false);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
                 break;
         }
     }
 
-    void NivelLanca(Nivel nivel)
+    void NivelLanca(Dados.ArmaNivel nivel)
     {
         switch (nivel)
         {
-            case Nivel.Nivel1:
-                NiveisArma.nivel[0].SetActive(true);
-                NiveisArma.nivel[1].SetActive(false);
-                NiveisArma.nivel[2].SetActive(false);
-                NiveisArma.nivel[3].SetActive(false);
-                //NiveisArma.nivel[4].SetActive(false);
+            case Dados.ArmaNivel.Nivel1:
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
                 break;
-            case Nivel.Nivel2:
-                NiveisArma.nivel[0].SetActive(true);
-                NiveisArma.nivel[1].SetActive(true);
-                NiveisArma.nivel[2].SetActive(false);
-                NiveisArma.nivel[3].SetActive(false);
-                //NiveisArma.nivel[4].SetActive(false);
+            case Dados.ArmaNivel.Nivel2:
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
                 break;
-            case Nivel.Nivel3:
-                NiveisArma.nivel[0].SetActive(true);
-                NiveisArma.nivel[1].SetActive(true);
-                NiveisArma.nivel[2].SetActive(true);
-                NiveisArma.nivel[3].SetActive(false);
-                //NiveisArma.nivel[4].SetActive(false);
+            case Dados.ArmaNivel.Nivel3:
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
                 break;
-            case Nivel.Nivel4:
-                NiveisArma.nivel[0].SetActive(true);
-                NiveisArma.nivel[1].SetActive(true);
-                NiveisArma.nivel[2].SetActive(false);
-                NiveisArma.nivel[3].SetActive(true);
-                //NiveisArma.nivel[4].SetActive(false);
+            case Dados.ArmaNivel.Nivel4:
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
                 break;
-            case Nivel.Nivel5:
-                NiveisArma.nivel[0].SetActive(true);
-                NiveisArma.nivel[1].SetActive(true);
-                NiveisArma.nivel[2].SetActive(false);
-                NiveisArma.nivel[3].SetActive(true);
-                //NiveisArma.nivel[4].SetActive(true);
+            case Dados.ArmaNivel.Nivel5:
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(false);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
+                NiveisArma[(int)nivel].nivel.SetActive(true);
                 break;
         }
     }
+
 }
