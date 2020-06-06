@@ -27,10 +27,11 @@ public class IAInimigo : MonoBehaviour
         if (ctrAnim.Atacando || ctrAnim.Morto)
             return;
 
-        transform.LookAt(AlvoPerto().transform);
         GameObject alvo = AlvoPerto();
-        if (alvo)
+
+        if (alvo != null)
         {
+            transform.LookAt(alvo.transform);
             float distAlvo = Vector3.Distance(transform.position, alvo.transform.position);
             if (distAlvo > distMinimaAtaque)
                 ctrAnim.Idle();
