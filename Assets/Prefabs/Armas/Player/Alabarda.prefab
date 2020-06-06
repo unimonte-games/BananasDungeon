@@ -165,13 +165,17 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 971470585085874984}
+  - component: {fileID: 9062721583386850324}
+  - component: {fileID: 7209252328800435895}
+  - component: {fileID: 5802475507342253939}
+  - component: {fileID: 7457090437341792512}
   m_Layer: 0
   m_Name: Alabarda
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &971470585085874984
 Transform:
   m_ObjectHideFlags: 0
@@ -190,6 +194,75 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9062721583386850324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4260408002485297467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61fb1c56c69aa4b4d826539254777b9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dano: 30
+--- !u!114 &7209252328800435895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4260408002485297467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf8f298f3a3a9cb4c8a1b2c5c5b70e1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Principal: {fileID: 0}
+  Dano: {fileID: 0}
+  SomDano: {fileID: 8300000, guid: b9319cba81e98f14e8a5202f27ede9c3, type: 3}
+  DisparadordeSons: {fileID: 0}
+  ctrArma: {fileID: 0}
+  danoArma: {fileID: 0}
+  atb: {fileID: 0}
+--- !u!114 &5802475507342253939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4260408002485297467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28ec8d1aa8a4d2d498d687b281c8c8b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NiveisArma:
+  - nivel: {fileID: 3131030255077991408}
+    multiplicador: 1
+  - nivel: {fileID: 7267242762753051876}
+    multiplicador: 1.2
+  - nivel: {fileID: 5042073490529103634}
+    multiplicador: 1.3
+  - nivel: {fileID: 495216287151400041}
+    multiplicador: 1.4
+  - nivel: {fileID: 0}
+    multiplicador: 0
+  arma: 1
+--- !u!65 &7457090437341792512
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4260408002485297467}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.63424146, y: 1.1344528, z: 0.09925163}
+  m_Center: {x: 0.07369763, y: 2.678361, z: 0.37394708}
 --- !u!1 &5042073490529103634
 GameObject:
   m_ObjectHideFlags: 0

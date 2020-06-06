@@ -253,7 +253,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6844286781142356900
 Transform:
   m_ObjectHideFlags: 0
@@ -325,6 +325,9 @@ MonoBehaviour:
   Dano: {fileID: 0}
   SomDano: {fileID: 0}
   DisparadordeSons: {fileID: 0}
+  ctrArma: {fileID: 0}
+  danoArma: {fileID: 0}
+  atb: {fileID: 0}
 --- !u!65 &656004710373223200
 BoxCollider:
   m_ObjectHideFlags: 0

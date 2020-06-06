@@ -165,6 +165,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 583952010939878617}
+  - component: {fileID: 8410023910899661515}
+  - component: {fileID: 2248353098151645027}
+  - component: {fileID: 2286361873477794294}
+  - component: {fileID: 335161727399681646}
   m_Layer: 0
   m_Name: Cajado
   m_TagString: Untagged
@@ -191,6 +195,75 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8410023910899661515
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4486082871662264010}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.897671, y: 0.78693247, z: 0.052343667}
+  m_Center: {x: -0.24692452, y: 2.6664503, z: 0.33145723}
+--- !u!114 &2248353098151645027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4486082871662264010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61fb1c56c69aa4b4d826539254777b9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dano: 15
+--- !u!114 &2286361873477794294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4486082871662264010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf8f298f3a3a9cb4c8a1b2c5c5b70e1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Principal: {fileID: 0}
+  Dano: {fileID: 0}
+  SomDano: {fileID: 8300000, guid: 91bb9ccfdd927b348a690e25660bc3ac, type: 3}
+  DisparadordeSons: {fileID: 0}
+  ctrArma: {fileID: 0}
+  danoArma: {fileID: 0}
+  atb: {fileID: 0}
+--- !u!114 &335161727399681646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4486082871662264010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28ec8d1aa8a4d2d498d687b281c8c8b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NiveisArma:
+  - nivel: {fileID: 3319823037357243393}
+    multiplicador: 1
+  - nivel: {fileID: 7042408058031837973}
+    multiplicador: 1.2
+  - nivel: {fileID: 4654695868884857059}
+    multiplicador: 1.3
+  - nivel: {fileID: 269822962073287576}
+    multiplicador: 1.4
+  - nivel: {fileID: 5896911893770481528}
+    multiplicador: 1.5
+  arma: 3
 --- !u!1 &4654695868884857059
 GameObject:
   m_ObjectHideFlags: 0
@@ -362,17 +435,17 @@ PrefabInstance:
     - target: {fileID: 7660771054853945142, guid: 82862708955b15d44be9ea6459e8c9e9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.8637452
+      value: -0.26
       objectReference: {fileID: 0}
     - target: {fileID: 7660771054853945142, guid: 82862708955b15d44be9ea6459e8c9e9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.51895547
+      value: 2.599
       objectReference: {fileID: 0}
     - target: {fileID: 7660771054853945142, guid: 82862708955b15d44be9ea6459e8c9e9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.24126396
+      value: 0.339
       objectReference: {fileID: 0}
     - target: {fileID: 7660771054853945142, guid: 82862708955b15d44be9ea6459e8c9e9,
         type: 3}
@@ -416,6 +489,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82862708955b15d44be9ea6459e8c9e9, type: 3}
+--- !u!1 &5896911893770481528 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7660771054853945141, guid: 82862708955b15d44be9ea6459e8c9e9,
+    type: 3}
+  m_PrefabInstance: {fileID: 4289270384233994317}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5896911893770481531 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7660771054853945142, guid: 82862708955b15d44be9ea6459e8c9e9,
