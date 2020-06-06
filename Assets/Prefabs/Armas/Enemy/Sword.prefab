@@ -28,13 +28,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5437426816214703040}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.065, y: -0.014, z: 0.032}
+  m_LocalRotation: {x: -0.008653412, y: -0.008534596, z: -0.7016714, w: -0.71239704}
+  m_LocalPosition: {x: -0.12523204, y: -0.05118339, z: 0.042275295}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!33 &33145355859186661
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -93,10 +93,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 9.07
-  m_Height: 106.86991
+  m_Radius: 0.05
+  m_Height: 1.088625
   m_Direction: 1
-  m_Center: {x: 0.0000019685128, y: 59.73221, z: -0.0015585877}
+  m_Center: {x: 0.000000029485479, y: 0.60999256, z: -0.000015952179}
 --- !u!114 &-118249496240058977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,6 +124,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Principal: {fileID: 0}
   Dano: {fileID: 0}
-  SomDano: {fileID: 0}
+  SomDano: {fileID: 8300000, guid: e7eb79dc009798241b2d80c814c1872a, type: 3}
   DisparadordeSons: {fileID: 0}
-  IA: {fileID: 0}
+  ctrArma: {fileID: 0}
+  danoArma: {fileID: 0}
+  atb: {fileID: 0}

@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 
 public class Loja : MonoBehaviour
 {
+    public Text Titulo;
     float delayBotao = 1.5f;
     public Dados.PlayerIndice Player;
     [Space(20)]
@@ -23,11 +24,12 @@ public class Loja : MonoBehaviour
 
     void Start()
     {
+        IniciaArma();
         for (int x = 0; x < Itens.Length; x++)
         {
             for (int y = 0; y < Itens[x].ArmaNiveis.Length; y++)
             {
-                Itens[x].ArmaNiveis[y].SetActive(x == 0 ? true : false);
+                Itens[x].ArmaNiveis[y].SetActive(x == 2 ? true : false);
             }
         }
     }
@@ -52,32 +54,38 @@ public class Loja : MonoBehaviour
         }
     }
 
-    public void IniciaArma(Dados.Armas arma)
+    public void IniciaArma()
     {
-        
         for (int x = 0; x < Itens.Length; x++)
         {
-            if (Itens[x].Arma == arma)
+            for (int y = 0; y < Itens[x].ArmaNiveis.Length; y++)
             {
-                
+                Itens[x].ArmaNiveis[y].GetComponent<NivelArma>().DefinirNivel((Dados.ArmaNivel)y);
             }
         }
     }
 
     public void ArmaSeguinte()
     {
-        indice = 1;
+        indice += 1;
         TrocaArma();
     }
 
     public void ArmaAnterior()
     {
-        indice = 0;
+        indice -= 1;
         TrocaArma();
     }
 
     public void TrocaArma()
     {
+        if (indice > Itens.Length - 1)
+            indice = 0;
+
+        if(indice < 0)
+            indice = Itens.Length - 1;
+
+
         for (int x = 0; x < Itens.Length; x++)
         {
             for (int y = 0; y < Itens[x].ArmaNiveis.Length; y++)
