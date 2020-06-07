@@ -35845,6 +35845,12 @@ PrefabInstance:
       propertyPath: delaySpawn
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: -5177982449882267467, guid: 348444adaea052a43908803ee852936e,
+        type: 3}
+      propertyPath: Inimigo
+      value: 
+      objectReference: {fileID: 1658156942106582157, guid: a63060cd3fc46a3479276fd0be45b1d9,
+        type: 3}
     - target: {fileID: 4042366307695865539, guid: 348444adaea052a43908803ee852936e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -38479,6 +38485,12 @@ PrefabInstance:
       propertyPath: delaySpawn
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: -5177982449882267467, guid: 348444adaea052a43908803ee852936e,
+        type: 3}
+      propertyPath: Inimigo
+      value: 
+      objectReference: {fileID: 8350064302669605269, guid: 901de132342f33741838beb1574c9111,
+        type: 3}
     - target: {fileID: 4042366307695865539, guid: 348444adaea052a43908803ee852936e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -40910,6 +40922,17 @@ PrefabInstance:
         type: 3}
       propertyPath: delaySpawn
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -5177982449882267467, guid: 348444adaea052a43908803ee852936e,
+        type: 3}
+      propertyPath: Inimigo
+      value: 
+      objectReference: {fileID: 2909921880125164444, guid: 2f7b48b651f88a74499db7c169f63283,
+        type: 3}
+    - target: {fileID: -5177982449882267467, guid: 348444adaea052a43908803ee852936e,
+        type: 3}
+      propertyPath: TipoSpawn
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4042366307695865539, guid: 348444adaea052a43908803ee852936e,
         type: 3}
