@@ -1826,7 +1826,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8000132001230232059}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 324.57288
   m_Height: 1074.7562
@@ -1908,8 +1908,8 @@ GameObject:
   - component: {fileID: 3112050183887189756}
   - component: {fileID: -5297914039742732995}
   - component: {fileID: -2940470470642225353}
-  - component: {fileID: 3636297968718917576}
   - component: {fileID: 6737289756204015063}
+  - component: {fileID: 3884700116981954807}
   m_Layer: 0
   m_Name: AranhaG
   m_TagString: Untagged
@@ -1955,7 +1955,7 @@ Animator:
   m_GameObject: {fileID: 8350064302669605269}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: c518bc1abecacb04e8f6f89d47967766, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e169354617b29c3409369c27e8b6c9a8, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1997,21 +1997,6 @@ MonoBehaviour:
   Vida: 1000
   vidaAtual: 1000
   barraVida: {fileID: 0}
---- !u!114 &3636297968718917576
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8350064302669605269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 563e71023cc579a41b11582f87621f5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 0}
-  Atacando: 0
-  Morto: 0
 --- !u!136 &6737289756204015063
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2026,6 +2011,20 @@ CapsuleCollider:
   m_Height: 11.696975
   m_Direction: 1
   m_Center: {x: 0, y: 5.732137, z: 0.022569656}
+--- !u!114 &3884700116981954807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8350064302669605269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54531a715dd37fe43903107c13af98e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Atacando: 0
+  Morto: 0
 --- !u!1 &8473658809105581099
 GameObject:
   m_ObjectHideFlags: 0

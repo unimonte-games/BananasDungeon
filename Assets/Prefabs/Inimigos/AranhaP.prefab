@@ -164,7 +164,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 857296230156791011}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 243.7139
   m_Height: 611.8833
@@ -335,8 +335,8 @@ GameObject:
   - component: {fileID: 5752133483583374308}
   - component: {fileID: -4741485830870920878}
   - component: {fileID: 9161931573218528939}
-  - component: {fileID: 691234363674314595}
   - component: {fileID: 839649527259852673}
+  - component: {fileID: 2833600464145482720}
   m_Layer: 0
   m_Name: AranhaP
   m_TagString: Untagged
@@ -382,7 +382,7 @@ Animator:
   m_GameObject: {fileID: 1658156942106582157}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: c518bc1abecacb04e8f6f89d47967766, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e169354617b29c3409369c27e8b6c9a8, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -405,8 +405,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   players: []
   distMinimaAtaque: 10
-  distAtaque: 2
-  velMov: 4.8
+  distAtaque: 0.3
+  velMov: 3
 --- !u!114 &9161931573218528939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -419,26 +419,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d631c853a0b34424b9606d2ba6d3ce0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Personagem: 0
+  Personagem: -1
   Especialidade: 0
   Vida: 1000
   vidaAtual: 1000
   barraVida: {fileID: 0}
---- !u!114 &691234363674314595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1658156942106582157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 563e71023cc579a41b11582f87621f5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 0}
-  Atacando: 0
-  Morto: 0
 --- !u!136 &839649527259852673
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -453,6 +438,20 @@ CapsuleCollider:
   m_Height: 29.629412
   m_Direction: 1
   m_Center: {x: 0, y: 14.554582, z: -0.14900684}
+--- !u!114 &2833600464145482720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658156942106582157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54531a715dd37fe43903107c13af98e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Atacando: 0
+  Morto: 0
 --- !u!1 &1705766747116049389
 GameObject:
   m_ObjectHideFlags: 0
