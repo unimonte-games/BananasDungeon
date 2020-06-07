@@ -2544,7 +2544,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Personagem: 1
-  Especialidade: 0
+  Especialidade: 6
   Vida: 1000
   vidaAtual: 1000
   barraVida: {fileID: 0}

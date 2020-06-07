@@ -20,7 +20,7 @@ public class Atributos : MonoBehaviour
         if (gameObject.CompareTag("Player"))
         {
             var aux = GetComponent<Move>().playerIndice;
-            barraVida = FindObjectOfType<HUD>().PegarBarra(GetComponent<Move>().playerIndice).GetComponentInChildren<Slider>();
+            //barraVida = FindObjectOfType<HUD>().PegarBarra(GetComponent<Move>().playerIndice).GetComponentInChildren<Slider>();
             barraVida.maxValue = Vida;
             barraVida.value = vidaAtual;
         }

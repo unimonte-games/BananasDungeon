@@ -6,15 +6,17 @@ using UnityEngine.EventSystems;
 
 public class Loja : MonoBehaviour
 {
+    public GameObject loja;
     public Text Titulo;
-    float delayBotao = 1.5f;
+    float delayBotao = .5f;
+    Dados.Personagens Personagem;
+    Dados.Armas Arma;
     public Dados.PlayerIndice Player;
     [Space(20)]
     public Item[] Itens;
     [System.Serializable]
     public struct Item
     {
-        public string NomeArma;
         public Dados.Armas Arma;
         public GameObject[] ArmaNiveis;
     }
@@ -22,39 +24,43 @@ public class Loja : MonoBehaviour
     int indice = 0;
 
 
-    void Start()
+    void Awake()
     {
-        IniciaArma();
-        for (int x = 0; x < Itens.Length; x++)
-        {
-            for (int y = 0; y < Itens[x].ArmaNiveis.Length; y++)
-            {
-                Itens[x].ArmaNiveis[y].SetActive(x == 2 ? true : false);
-            }
-        }
+        IniciaNivelArma();
     }
 
     void Update()
     {
-        delayBotao += Time.deltaTime;
-
         if (Player == Dados.PlayerIndice.Vazio)
             return;
 
-        if (Input.GetButtonDown(Player.ToString() + "RB") && delayBotao > 1.5f)//Próximo
+        delayBotao += Time.deltaTime;
+
+        if (Input.GetButtonDown(Player.ToString() + "RB") && delayBotao > .5f)//Próximo
         {
             delayBotao = 0;
             ArmaSeguinte();
         }
 
-        if (Input.GetButtonDown(Player.ToString() + "LB") && delayBotao > 1.5f)//Anterior
+        if (Input.GetButtonDown(Player.ToString() + "LB") && delayBotao > .5f)//Anterior
         {
             delayBotao = 0;
             ArmaAnterior();
         }
+
+        if (Input.GetButtonDown(Selecionados.VezLoja.ToString() + "B"))
+        {
+            Selecionados.VezLoja = Dados.PlayerIndice.Vazio;
+            FecharLoja();
+        }
+
+        if (Input.GetButtonDown(Player.ToString() + "A") && delayBotao > .5f)//Selecionar Arma
+        {
+
+        }
     }
 
-    public void IniciaArma()
+    public void IniciaNivelArma()
     {
         for (int x = 0; x < Itens.Length; x++)
         {
@@ -85,13 +91,75 @@ public class Loja : MonoBehaviour
         if(indice < 0)
             indice = Itens.Length - 1;
 
+        for (int x = 0; x < Itens.Length; x++)
+        {
+            if (x == indice)
+                TrocaTitulo(Itens[x].Arma);
+
+            for (int y = 0; y < Itens[x].ArmaNiveis.Length; y++)
+            {
+                Itens[x].ArmaNiveis[y].SetActive(x == indice);
+            }
+        }
+    }
+
+    public void DefinirArma(Dados.Armas a)
+    {
+        int NivelDesbloqueio = 0;
+        for (int x = 0; x < AutoSave.ArmasNiveis.Count; x++)
+        {
+            if (AutoSave.ArmasNiveis[x].arma == a)
+            {
+                NivelDesbloqueio = (int)AutoSave.ArmasNiveis[x].nivel;
+            }
+        }
 
         for (int x = 0; x < Itens.Length; x++)
         {
+            bool ativar = Itens[x].Arma == Arma;
+            if (ativar)
+                indice = x;
             for (int y = 0; y < Itens[x].ArmaNiveis.Length; y++)
             {
-                Itens[x].ArmaNiveis[y].SetActive(x == indice ? true : false);
+                Itens[x].ArmaNiveis[y].SetActive(ativar);
+                Itens[x].ArmaNiveis[y].GetComponentInParent<Image>().color = NivelDesbloqueio >= y ? Color.yellow : Color.gray;
             }
         }
+        TrocaTitulo(a);
+    }
+
+    void TrocaTitulo(Dados.Armas a)
+    {
+        Titulo.text = string.Format("{0} - {1}", Personagem.ToString(), NomeArma(a));
+    }
+
+    string NomeArma(Dados.Armas a)
+    {
+        switch (a)
+        {
+            case Dados.Armas.Lanca:
+                return "Lança";
+            default:
+                return a.ToString();
+        }
+    }
+
+    public void AbrirLoja(GameObject gbj)
+    {
+        Selecionados.LojaAberta = true;
+        Player = gbj.GetComponent<Move>().playerIndice;
+        Personagem = gbj.GetComponent<Atributos>().Personagem;
+        Arma = gbj.GetComponent<ControleDeArmas>().arma;
+        loja.SetActive(true);
+        DefinirArma(Arma);
+    }
+
+    public void FecharLoja()
+    {
+        loja.SetActive(false);
+        Selecionados.LojaAberta = false;
+        Arma = Dados.Armas.Nenhum;
+        Personagem = Dados.Personagens.Nenhum;
+        Player = Dados.PlayerIndice.Vazio;
     }
 }

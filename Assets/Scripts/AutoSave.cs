@@ -30,33 +30,9 @@ public class AutoSave : MonoBehaviour
         
         //pergaminho da arma
 
-        for (int x = 0; x < ArmaPadrao.Length; x++)
-        {
-            if (!PlayerPrefs.HasKey(ArmaPadrao[x].player.ToString() + "Arma"))
-            {
-                PlayerPrefs.SetInt(ArmaPadrao[x].player.ToString() + "Arma", (int)ArmaPadrao[x].arma);
-                AddPlayerArma(ArmaPadrao[x].player, ArmaPadrao[x].arma);
-            }
-            else
-            {
-                int arma = PlayerPrefs.GetInt(ArmaPadrao[x].player.ToString() + "Arma");
-                AddPlayerArma(ArmaPadrao[x].player, (Dados.Armas)arma);
-            }
-        }
+        CarregarArmaPlayer();
 
-        for (int x = 0; x < Armas.Length; x++)
-        {
-            if (!PlayerPrefs.HasKey(Armas[x].ToString() + "Nivel"))
-            {
-                PlayerPrefs.SetInt(Armas[x].ToString() + "Nivel", (int)Dados.ArmaNivel.Nivel1);
-                AddNivelArma(Armas[x], Dados.ArmaNivel.Nivel1);
-            }
-            else
-            {
-                int nivel = PlayerPrefs.GetInt(Armas[x].ToString() + "Nivel");
-                AddNivelArma(Armas[x], (Dados.ArmaNivel)nivel);
-            }
-        }
+        CarregarArmaNivel();
     }
 
     void Update()
@@ -103,5 +79,53 @@ public class AutoSave : MonoBehaviour
                 return ArmasNiveis[x].nivel;
         }
         return Dados.ArmaNivel.Nivel1;
+    }
+
+    public void AtualizarNivelArma(Dados.Armas arma)
+    {
+        for (int x = 0; x < ArmasNiveis.Count; x++)
+        {
+            if (ArmasNiveis[x].arma == arma)
+            {
+                PlayerPrefs.SetInt(arma.ToString() + "Nivel", (int)ArmasNiveis[x].nivel);
+            }
+        }
+        CarregarArmaNivel();
+    }
+
+    void CarregarArmaPlayer()
+    {
+        PlayersArmas.Clear();
+        for (int x = 0; x < ArmaPadrao.Length; x++)
+        {
+            if (!PlayerPrefs.HasKey(ArmaPadrao[x].player.ToString() + "Arma"))
+            {
+                PlayerPrefs.SetInt(ArmaPadrao[x].player.ToString() + "Arma", (int)ArmaPadrao[x].arma);
+                AddPlayerArma(ArmaPadrao[x].player, ArmaPadrao[x].arma);
+            }
+            else
+            {
+                int arma = PlayerPrefs.GetInt(ArmaPadrao[x].player.ToString() + "Arma");
+                AddPlayerArma(ArmaPadrao[x].player, (Dados.Armas)arma);
+            }
+        }
+    }
+
+    void CarregarArmaNivel()
+    {
+        ArmasNiveis.Clear();
+        for (int x = 0; x < Armas.Length; x++)
+        {
+            if (!PlayerPrefs.HasKey(Armas[x].ToString() + "Nivel"))
+            {
+                PlayerPrefs.SetInt(Armas[x].ToString() + "Nivel", (int)Dados.ArmaNivel.Nivel1);
+                AddNivelArma(Armas[x], Dados.ArmaNivel.Nivel1);
+            }
+            else
+            {
+                int nivel = PlayerPrefs.GetInt(Armas[x].ToString() + "Nivel");
+                AddNivelArma(Armas[x], (Dados.ArmaNivel)nivel);
+            }
+        }
     }
 }

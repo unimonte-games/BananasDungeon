@@ -10,4 +10,6 @@ public class Selecionados : MonoBehaviour
         public Dados.PlayerIndice playerIndice;
         public Dados.Personagens personagem;
     }
+    public static bool LojaAberta = false;
+    public static Dados.PlayerIndice VezLoja = Dados.PlayerIndice.Vazio;
 }

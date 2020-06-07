@@ -382,16 +382,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5258187880161725103, guid: 1bdea12fc1e758447ba9e7b57285ac0e,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5258187880161725103, guid: 1bdea12fc1e758447ba9e7b57285ac0e,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5258187880285727124, guid: 1bdea12fc1e758447ba9e7b57285ac0e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -507,35 +497,5 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 617423095}
-    - target: {fileID: 5258187880879898050, guid: 1bdea12fc1e758447ba9e7b57285ac0e,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5258187880879898050, guid: 1bdea12fc1e758447ba9e7b57285ac0e,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5258187881531786411, guid: 1bdea12fc1e758447ba9e7b57285ac0e,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5258187881531786411, guid: 1bdea12fc1e758447ba9e7b57285ac0e,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5258187881832186493, guid: 1bdea12fc1e758447ba9e7b57285ac0e,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5258187881832186493, guid: 1bdea12fc1e758447ba9e7b57285ac0e,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bdea12fc1e758447ba9e7b57285ac0e, type: 3}

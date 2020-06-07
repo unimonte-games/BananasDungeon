@@ -7,7 +7,8 @@ public class Interruptor : MonoBehaviour
     public float intensidadePerto = 20;
     public float intensidadeLonge = 10;
     public GameObject[] Portas;
-    List<Light> Luz =  new List<Light>();
+    Light LuzAlavanca;
+    List<Light> LuzPorta =  new List<Light>();
     public Color CorAtivado = Color.white;
     bool estadoInterruptor = false;
     Animator anim;
@@ -23,15 +24,17 @@ public class Interruptor : MonoBehaviour
     {
         anim = GetComponent<Animator>();
 
-        Luz.Add(GetComponentInChildren<Light>());
+        LuzAlavanca = GetComponentInChildren<Light>();
         for (int x = 0; x < Portas.Length; x++)
         {
-            Luz.Add(Portas[x].GetComponentInParent<Light>());
+            LuzPorta.Add(Portas[x].GetComponentInChildren<Light>());
         }
 
-        for (int x = 0; x < Luz.Count; x++)
+        LuzAlavanca.color = Color.white;
+        for (int x = 0; x < LuzPorta.Count; x++)
         {
-            Luz[x].color = Color.white;
+            LuzPorta[x].color = CorAtivado;
+            LuzPorta[x].intensity = intensidadeLonge;
         }
     }
 
@@ -64,9 +67,9 @@ public class Interruptor : MonoBehaviour
     {
         print("Ativando interruptor");
         estadoInterruptor = true;
-        for (int x = 0; x < Luz.Count; x++)
+        for (int x = 0; x < LuzPorta.Count; x++)
         {
-            Luz[x].color = CorAtivado;
+            LuzPorta[x].color = CorAtivado;
         }
         anim.SetInteger("Alavanca", (int)Alavanca.Ativar);
         for (int x = 0; x < Portas.Length; x++)
@@ -77,9 +80,9 @@ public class Interruptor : MonoBehaviour
 
     public void TrocaIntensidade(float i)
     {
-        for (int x = 0; x < Luz.Count; x++)
+        for (int x = 0; x < LuzPorta.Count; x++)
         {
-            Luz[x].intensity = i;
+            LuzPorta[x].intensity = i;
         }
     }
 }

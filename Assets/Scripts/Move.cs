@@ -23,6 +23,8 @@ public class Move : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (Selecionados.LojaAberta)
+            return;
         h = Input.GetAxis(playerIndice.ToString() + "Horizontal");
         v = Input.GetAxis(playerIndice.ToString() + "Vertical");
         h += Input.GetAxis(playerIndice.ToString() + "Right/Left");
@@ -37,7 +39,7 @@ public class Move : MonoBehaviour
             redutor = 1;
 
         hv = Mathf.Abs(h) + Mathf.Abs(v);
-        if (!ctrAnim.Morto && !ctrAnim.Atacando && Mathf.Abs(h) + Mathf.Abs(v) > .4f)
+        if (!ctrAnim.Morto && !ctrAnim.Atacando)
         {
             if (aceleracao < 1)
                 aceleracao += velAceleracao;
@@ -55,7 +57,7 @@ public class Move : MonoBehaviour
 
     void Update()
     {
-        if (ctrAnim.Morto)
+        if (ctrAnim.Morto || Selecionados.LojaAberta)
             return;
 
         if (velMovimento() == 0)
@@ -114,7 +116,7 @@ public class Move : MonoBehaviour
 
     float velMovimento()
     {
-        if (Mathf.Abs(v) + Mathf.Abs(h) < 0.3f)
+        if (Mathf.Abs(v) + Mathf.Abs(h) < 0.4f)
         {
             aceleracao = 0;
             return 0;

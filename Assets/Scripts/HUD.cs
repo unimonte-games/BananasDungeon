@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HUD : MonoBehaviour
 {
@@ -33,20 +34,26 @@ public class HUD : MonoBehaviour
                     switch (Selecionados.Jogadores[x].playerIndice)
                     {
                         case Dados.PlayerIndice.P1:
-                            posInicial += Vector3.forward;
+                            posInicial += Vector3.forward * 2;
                             break;
                         case Dados.PlayerIndice.P2:
-                            posInicial += Vector3.left;
+                            posInicial += Vector3.left * 2;
                             break;
                         case Dados.PlayerIndice.P3:
-                            posInicial += Vector3.right;
+                            posInicial += Vector3.right * 2;
                             break;
                         case Dados.PlayerIndice.P4:
-                            posInicial += Vector3.back;
+                            posInicial += Vector3.back * 2;
                             break;
                     }
                     var gbj = Instantiate(Personagens[y], posInicial, Quaternion.identity);
                     gbj.GetComponent<Move>().playerIndice = Selecionados.Jogadores[x].playerIndice;
+                    var barra = BarraDeVida[(int)Selecionados.Jogadores[x].playerIndice - 1];
+                    barra.SetActive(true);
+                    var atb = gbj.GetComponent<Atributos>();
+                    atb.barraVida = barra.GetComponentInChildren<Slider>();
+                    atb.barraVida.maxValue = atb.Vida;
+                    atb.barraVida.value = atb.vidaAtual;
                     gbj.SetActive(true);
                     break;
                 }

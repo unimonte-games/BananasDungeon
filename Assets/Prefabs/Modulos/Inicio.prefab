@@ -13143,21 +13143,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5324261076867248829, guid: d83ae1551fcbbdd4890be632797f1c18,
         type: 3}
-      propertyPath: Portas.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5324261076867248829, guid: d83ae1551fcbbdd4890be632797f1c18,
-        type: 3}
-      propertyPath: Portas
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5324261076867248829, guid: d83ae1551fcbbdd4890be632797f1c18,
-        type: 3}
-      propertyPath: Porta
-      value: 
-      objectReference: {fileID: 8971399676763710359}
-    - target: {fileID: 5324261076867248829, guid: d83ae1551fcbbdd4890be632797f1c18,
-        type: 3}
       propertyPath: Portas.Array.data[0]
       value: 
       objectReference: {fileID: 8971399676763710359}
