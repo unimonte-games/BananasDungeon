@@ -62,9 +62,9 @@ public class IAInimigo : MonoBehaviour
 
         int rnd = Random.Range(1, 101);
         if (rnd > aFraco)
+            return 0;
+        else
             return 1;
-
-        return 0;
     }
 
     public GameObject AlvoPerto()
