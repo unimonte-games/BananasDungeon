@@ -23,6 +23,24 @@ public class DetectorDeDano : MonoBehaviour
         Dano = GetComponent<DanoArma>();
     }
 
+    void Update()
+    {
+        switch (Principal.tag)
+        {
+            case "Player":
+                if (Principal.GetComponent<ControleDeAnimacao>().Atacando)
+                    GetComponent<BoxCollider>().enabled = true;
+                else
+                    GetComponent<BoxCollider>().enabled = false;
+                break;
+            case "Enemy":
+                if (Principal.GetComponent<ControledeAnimacaoInimigo>().Atacando)
+                    GetComponent<CapsuleCollider>().enabled = true;
+                else
+                    GetComponent<CapsuleCollider>().enabled = false;
+                break;
+        }
+    }
 
     void OnTriggerEnter(Collider other)
     {
@@ -32,6 +50,7 @@ public class DetectorDeDano : MonoBehaviour
                 print("Player: " + other.tag);
                 if (!Principal.GetComponent<ControleDeAnimacao>().Atacando && GetComponent<NivelArma>().arma != Dados.Armas.Arco && GetComponent<NivelArma>().arma != Dados.Armas.Cajado)
                     return;
+
                 if (other.CompareTag("Enemy"))
                 {
                     ControleDeArmas ctrArma = Principal.GetComponent<ControleDeArmas>();
@@ -50,11 +69,12 @@ public class DetectorDeDano : MonoBehaviour
                 print("Enemy: " + other.tag);
                 if (!Principal.GetComponent<ControledeAnimacaoInimigo>().Atacando)
                     return;
+
                 if (other.CompareTag("Player"))
                 {
                     danoArma = GetComponent<DanoArma>();
                     atb = other.GetComponent<Atributos>();
-                    
+
                     DisparadordeSons.PlayOneShot(SomDano);
                     
                     int danoCalculado = (int)(danoArma.Dano);

@@ -9,6 +9,7 @@ public class ControledeAnimacaoInimigo : MonoBehaviour
     Animator Anim;
     enum Estado
     {
+        Morte = -1,
         Idle = 0,
         Walk,
         Ataque
@@ -38,19 +39,17 @@ public class ControledeAnimacaoInimigo : MonoBehaviour
     public void Morte()
     {
         print("Morte");
-        Anim.SetInteger("Move", -1);
+        Anim.SetInteger("Move", (int)Estado.Morte);
     }
     
     #region Evento de animação
     public void IniciouAtaque()
     {
-        print("Iniciou o Ataque");
         Atacando = true;
     }
 
     public void ParouAtaque()
     {
-        print("Terminou o Ataque");
         Atacando = false;
     }
     #endregion

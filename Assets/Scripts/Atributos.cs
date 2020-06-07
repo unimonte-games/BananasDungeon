@@ -12,6 +12,7 @@ public class Atributos : MonoBehaviour
     public int vidaAtual = 1000;
     public Slider barraVida;
 
+
     void Awake()
     {
         if (SceneManager.GetActiveScene().name != "Game")
@@ -20,7 +21,6 @@ public class Atributos : MonoBehaviour
         if (gameObject.CompareTag("Player"))
         {
             var aux = GetComponent<Move>().playerIndice;
-            //barraVida = FindObjectOfType<HUD>().PegarBarra(GetComponent<Move>().playerIndice).GetComponentInChildren<Slider>();
             barraVida.maxValue = Vida;
             barraVida.value = vidaAtual;
         }
@@ -38,7 +38,9 @@ public class Atributos : MonoBehaviour
                 multiEspecialidade = 1.5f;
                 break;
         }
+
         vidaAtual -= (int)(Dano * multiEspecialidade);
+
         if (vidaAtual <= 0)
         {
             if (gameObject.CompareTag("Player"))

@@ -133,6 +133,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5410207050707395575}
   - component: {fileID: 2279778635051986192}
+  - component: {fileID: 979570398}
+  - component: {fileID: 979570399}
   m_Layer: 0
   m_Name: "Cabe\xE7a"
   m_TagString: Untagged
@@ -170,6 +172,38 @@ CapsuleCollider:
   m_Height: 611.8833
   m_Direction: 1
   m_Center: {x: -206.8084, y: 95.49361, z: 199.03856}
+--- !u!114 &979570398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857296230156791011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf8f298f3a3a9cb4c8a1b2c5c5b70e1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Principal: {fileID: 1658156942106582157}
+  Dano: {fileID: 0}
+  SomDano: {fileID: 0}
+  DisparadordeSons: {fileID: 0}
+  ctrArma: {fileID: 0}
+  danoArma: {fileID: 0}
+  atb: {fileID: 0}
+--- !u!114 &979570399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857296230156791011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61fb1c56c69aa4b4d826539254777b9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dano: 10
 --- !u!1 &973765979434004031
 GameObject:
   m_ObjectHideFlags: 0
@@ -339,7 +373,7 @@ GameObject:
   - component: {fileID: 2833600464145482720}
   m_Layer: 0
   m_Name: AranhaP
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
