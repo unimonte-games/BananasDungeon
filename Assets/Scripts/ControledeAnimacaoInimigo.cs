@@ -6,6 +6,12 @@ public class ControledeAnimacaoInimigo : MonoBehaviour
 {
     public bool Atacando = false;
     public bool Morto = false;
+    [Space(20)]
+    public float velAnimAtaqueForte = 1;
+    public float velAnimAtaqueFraco = 1;
+    public float velAnimAndar = 1;
+    float velAnim = 1;
+
     Animator Anim;
     enum Estado
     {
@@ -22,16 +28,27 @@ public class ControledeAnimacaoInimigo : MonoBehaviour
 
     public void Idle()
     {
+        Anim.speed = velAnim;
         Anim.SetInteger("Move", (int)Estado.Idle);
     }
 
     public void Walk()
     {
+        Anim.speed = velAnimAndar;
         Anim.SetInteger("Move", (int)Estado.Walk);
     }
 
     public void Ataque(int a)
     {
+        switch (a)
+        {
+            case 0:
+                Anim.speed = velAnimAtaqueFraco;
+                break;
+            case 1:
+                Anim.speed = velAnimAtaqueForte;
+                break;
+        }
         Anim.SetInteger("Move", (int)Estado.Ataque);
         Anim.SetInteger("Ataque", a);
     }
@@ -39,6 +56,7 @@ public class ControledeAnimacaoInimigo : MonoBehaviour
     public void Morte()
     {
         print("Morte");
+        Anim.speed = velAnim;
         Anim.SetInteger("Move", (int)Estado.Morte);
     }
     
