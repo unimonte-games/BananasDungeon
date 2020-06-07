@@ -1794,6 +1794,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3456369158263707375}
+  - component: {fileID: 6159266547351386267}
   m_Layer: 0
   m_Name: "Cabe\xE7a"
   m_TagString: Untagged
@@ -1817,6 +1818,20 @@ Transform:
   m_Father: {fileID: 2172070800174557376}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &6159266547351386267
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8000132001230232059}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 324.57288
+  m_Height: 1074.7562
+  m_Direction: 1
+  m_Center: {x: -247.53532, y: 274.50067, z: 235.9891}
 --- !u!1 &8268695002827626428
 GameObject:
   m_ObjectHideFlags: 0
@@ -1891,8 +1906,12 @@ GameObject:
   m_Component:
   - component: {fileID: 5024393097222314886}
   - component: {fileID: 3112050183887189756}
+  - component: {fileID: -5297914039742732995}
+  - component: {fileID: -2940470470642225353}
+  - component: {fileID: 3636297968718917576}
+  - component: {fileID: 6737289756204015063}
   m_Layer: 0
-  m_Name: Aranha Model (1)
+  m_Name: AranhaG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1945,6 +1964,68 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-5297914039742732995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8350064302669605269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85de0593b6c767143873598f875115f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  players: []
+  distMinimaAtaque: 10
+  distAtaque: 2
+  velMov: 4.8
+--- !u!114 &-2940470470642225353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8350064302669605269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d631c853a0b34424b9606d2ba6d3ce0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Personagem: 0
+  Especialidade: 0
+  Vida: 1000
+  vidaAtual: 1000
+  barraVida: {fileID: 0}
+--- !u!114 &3636297968718917576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8350064302669605269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 563e71023cc579a41b11582f87621f5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  Atacando: 0
+  Morto: 0
+--- !u!136 &6737289756204015063
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8350064302669605269}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 5.0360584
+  m_Height: 11.696975
+  m_Direction: 1
+  m_Center: {x: 0, y: 5.732137, z: 0.022569656}
 --- !u!1 &8473658809105581099
 GameObject:
   m_ObjectHideFlags: 0

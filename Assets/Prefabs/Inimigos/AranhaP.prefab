@@ -132,6 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5410207050707395575}
+  - component: {fileID: 2279778635051986192}
   m_Layer: 0
   m_Name: "Cabe\xE7a"
   m_TagString: Untagged
@@ -155,6 +156,20 @@ Transform:
   m_Father: {fileID: 8847085246096727512}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &2279778635051986192
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857296230156791011}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 243.7139
+  m_Height: 611.8833
+  m_Direction: 1
+  m_Center: {x: -206.8084, y: 95.49361, z: 199.03856}
 --- !u!1 &973765979434004031
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,6 +333,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2403142284754988702}
   - component: {fileID: 5752133483583374308}
+  - component: {fileID: -4741485830870920878}
+  - component: {fileID: 9161931573218528939}
+  - component: {fileID: 691234363674314595}
+  - component: {fileID: 839649527259852673}
   m_Layer: 0
   m_Name: AranhaP
   m_TagString: Untagged
@@ -372,6 +391,68 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-4741485830870920878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658156942106582157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85de0593b6c767143873598f875115f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  players: []
+  distMinimaAtaque: 10
+  distAtaque: 2
+  velMov: 4.8
+--- !u!114 &9161931573218528939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658156942106582157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d631c853a0b34424b9606d2ba6d3ce0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Personagem: 0
+  Especialidade: 0
+  Vida: 1000
+  vidaAtual: 1000
+  barraVida: {fileID: 0}
+--- !u!114 &691234363674314595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658156942106582157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 563e71023cc579a41b11582f87621f5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  Atacando: 0
+  Morto: 0
+--- !u!136 &839649527259852673
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658156942106582157}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 4.718957
+  m_Height: 29.629412
+  m_Direction: 1
+  m_Center: {x: 0, y: 14.554582, z: -0.14900684}
 --- !u!1 &1705766747116049389
 GameObject:
   m_ObjectHideFlags: 0
