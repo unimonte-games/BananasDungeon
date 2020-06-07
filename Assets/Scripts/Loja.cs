@@ -130,7 +130,7 @@ public class Loja : MonoBehaviour
 
     void TrocaTitulo(Dados.Armas a)
     {
-        Titulo.text = string.Format("{0} - {1}", Personagem.ToString(), NomeArma(a));
+        Titulo.text = string.Format("{0} - {1}", Player.ToString(), NomeArma(a));
     }
 
     string NomeArma(Dados.Armas a)
