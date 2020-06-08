@@ -22,6 +22,7 @@ public class Move : MonoBehaviour
     {
         ctrAnim = GetComponent<ControleDeAnimacao>();
         SFX = GameObject.Find("SFX").GetComponent<AudioSource>();
+        SFX.clip = SomPassos;
     }
 
     void FixedUpdate()
@@ -63,9 +64,15 @@ public class Move : MonoBehaviour
             return;
 
         if (velMovimento() == 0)
+        {
             ctrAnim.Idle(-1);
+            SFX.Stop();
+        }
         else
+        {
+            SFX.Play();
             ctrAnim.Andar();
+        }
 
         if (Input.GetAxisRaw(playerIndice.ToString() + "Right/Left") != 0)
             print("Right/Left: " + Input.GetAxisRaw(playerIndice.ToString() + "Right/Left"));
