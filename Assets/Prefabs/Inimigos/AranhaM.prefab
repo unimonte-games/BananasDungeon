@@ -1703,6 +1703,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2809090202110654780}
   - component: {fileID: 5600301463104702072}
+  - component: {fileID: 1276467080}
+  - component: {fileID: 1276467081}
   m_Layer: 0
   m_Name: "Cabe\xE7a"
   m_TagString: Untagged
@@ -1740,6 +1742,38 @@ CapsuleCollider:
   m_Height: 686.9133
   m_Direction: 1
   m_Center: {x: -231.49832, y: 124.30676, z: 229.17775}
+--- !u!114 &1276467080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7352887679696598568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61fb1c56c69aa4b4d826539254777b9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dano: 20
+--- !u!114 &1276467081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7352887679696598568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf8f298f3a3a9cb4c8a1b2c5c5b70e1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Principal: {fileID: 8858011977120990790}
+  Dano: {fileID: 0}
+  SomDano: {fileID: 8300000, guid: 2dbcab1ed4eae304a97a5a6e71ff1f75, type: 3}
+  DisparadordeSons: {fileID: 0}
+  ctrArma: {fileID: 0}
+  danoArma: {fileID: 0}
+  atb: {fileID: 0}
 --- !u!1 &7699214401687322076
 GameObject:
   m_ObjectHideFlags: 0
@@ -2043,9 +2077,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   players: []
-  distMinimaAtaque: 10
+  distMinimaAtaque: 30
   distAtaque: 2
-  velMov: 4.8
+  velMov: 4
 --- !u!114 &-8654678844974860581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2058,7 +2092,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d631c853a0b34424b9606d2ba6d3ce0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Personagem: 0
+  Personagem: -1
   Especialidade: 0
   Vida: 1000
   vidaAtual: 1000
@@ -2091,6 +2125,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Atacando: 0
   Morto: 0
+  velAnimAtaqueForte: 2
+  velAnimAtaqueFraco: 3
+  velAnimAndar: 4
 --- !u!1 &8920741922435233903
 GameObject:
   m_ObjectHideFlags: 0

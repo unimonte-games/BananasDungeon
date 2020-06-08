@@ -186,7 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Principal: {fileID: 1658156942106582157}
   Dano: {fileID: 0}
-  SomDano: {fileID: 0}
+  SomDano: {fileID: 8300000, guid: 2dbcab1ed4eae304a97a5a6e71ff1f75, type: 3}
   DisparadordeSons: {fileID: 0}
   ctrArma: {fileID: 0}
   danoArma: {fileID: 0}
@@ -439,8 +439,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   players: []
   distMinimaAtaque: 10
-  distAtaque: 0.3
-  velMov: 3
+  distAtaque: 1
+  velMov: 6
 --- !u!114 &9161931573218528939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -486,6 +486,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Atacando: 0
   Morto: 0
+  velAnimAtaqueForte: 2
+  velAnimAtaqueFraco: 5
+  velAnimAndar: 6
 --- !u!1 &1705766747116049389
 GameObject:
   m_ObjectHideFlags: 0
