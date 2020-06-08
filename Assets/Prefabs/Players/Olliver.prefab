@@ -3131,20 +3131,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arco
       objectReference: {fileID: 0}
+    - target: {fileID: 1222219628698072703, guid: 4350078af53abe44786cf347739e28af,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2787002071727473772, guid: 4350078af53abe44786cf347739e28af,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.002
+      value: -0.175
       objectReference: {fileID: 0}
     - target: {fileID: 2787002071727473772, guid: 4350078af53abe44786cf347739e28af,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.591
+      value: -0.857
       objectReference: {fileID: 0}
     - target: {fileID: 2787002071727473772, guid: 4350078af53abe44786cf347739e28af,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.255
+      value: 1.174
       objectReference: {fileID: 0}
     - target: {fileID: 2787002071727473772, guid: 4350078af53abe44786cf347739e28af,
         type: 3}
