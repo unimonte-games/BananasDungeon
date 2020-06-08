@@ -187,6 +187,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: AranhaG
       objectReference: {fileID: 0}
+    - target: {fileID: 8350064302669605269, guid: 901de132342f33741838beb1574c9111,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 901de132342f33741838beb1574c9111, type: 3}
 --- !u!20 &617423095 stripped
@@ -297,6 +302,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AranhaP
+      objectReference: {fileID: 0}
+    - target: {fileID: 1658156942106582157, guid: a63060cd3fc46a3479276fd0be45b1d9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2403142284754988702, guid: a63060cd3fc46a3479276fd0be45b1d9,
         type: 3}
@@ -659,6 +669,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Guarda
       objectReference: {fileID: 0}
+    - target: {fileID: 6576367741833988751, guid: 2f7b48b651f88a74499db7c169f63283,
+        type: 3}
+      propertyPath: velAnimAtaqueFraco
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f7b48b651f88a74499db7c169f63283, type: 3}
 --- !u!1001 &5258187880260355804
@@ -851,6 +866,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AranhaM
+      objectReference: {fileID: 0}
+    - target: {fileID: 8858011977120990790, guid: 5a9413d5a92624c4eaf47b31e6aa913a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a9413d5a92624c4eaf47b31e6aa913a, type: 3}
