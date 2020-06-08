@@ -13,13 +13,14 @@ public class Atributos : MonoBehaviour
     public int vidaAtual = 1000;
     public Slider barraVida;
     [Space(20)]
-    AudioSource EfeitoSonoros;
+    AudioSource SFX;
     public AudioClip SomDano;
     public AudioClip SomMorte;
 
 
     void Awake()
     {
+        SFX = GameObject.Find("SFX").GetComponent<AudioSource>();
         if (SceneManager.GetActiveScene().name != "Jogo")
             return;
         
@@ -48,6 +49,7 @@ public class Atributos : MonoBehaviour
 
         if (vidaAtual <= 0)
         {
+            SFX.PlayOneShot(SomMorte);
             if (gameObject.CompareTag("Player"))
             {
                 barraVida.value = 0;
@@ -59,5 +61,7 @@ public class Atributos : MonoBehaviour
                 GetComponent<ControledeAnimacaoInimigo>().Morte();
             }
         }
+        else
+            SFX.PlayOneShot(SomDano);
     }
 }

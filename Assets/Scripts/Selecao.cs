@@ -11,7 +11,7 @@ public class Selecao : MonoBehaviour
     bool liberaTimer = false;
     float timer = 6;
     [Space(20)]
-    AudioSource EfeitoSonoros;
+    public AudioSource SFX;
     public AudioClip SomClick;
     public AudioClip SomStart;
 
@@ -19,6 +19,7 @@ public class Selecao : MonoBehaviour
     void Start()
     {
         txtTimer.text = "";
+        SFX = GameObject.Find("SFX").GetComponent<AudioSource>();
     }
 
     void Update()
@@ -57,6 +58,7 @@ public class Selecao : MonoBehaviour
                 if (Iniciar)
                 {
                     Selecionados.Jogadores.Clear();
+                    SFX.PlayOneShot(SomStart);
                     Contagem(true);
                 }
             }
@@ -64,6 +66,7 @@ public class Selecao : MonoBehaviour
 
         if (Input.GetButtonDown("P1B"))
         {
+            SFX.PlayOneShot(SomClick);
             Contagem(false);
         }
     }

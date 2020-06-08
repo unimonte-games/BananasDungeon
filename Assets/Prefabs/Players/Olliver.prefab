@@ -2547,7 +2547,6 @@ MonoBehaviour:
   vidaAtual: 1000
   barraVida: {fileID: 0}
   SomDano: {fileID: 8300000, guid: 995c97acfc9b67945af88ce5fe32881b, type: 3}
-  SomMorte: {fileID: 8300000, guid: 7611b54fff24c6c47b2aada28ca2fb1e, type: 3}
 --- !u!114 &142251222134595536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3272,6 +3271,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Espada
       objectReference: {fileID: 0}
+    - target: {fileID: 2521666057688917569, guid: 355a3db27457fe14e9b70a27d77ad252,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9111273987497113871, guid: 355a3db27457fe14e9b70a27d77ad252,
         type: 3}
       propertyPath: Principal
@@ -3442,6 +3446,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Machado
+      objectReference: {fileID: 0}
+    - target: {fileID: 7567844306890386281, guid: bca260c9c82763e48a1bbf60f02039fd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bca260c9c82763e48a1bbf60f02039fd, type: 3}

@@ -14,16 +14,18 @@ public class ControledeTrap : MonoBehaviour
     public TipoDano Tipo = TipoDano.Fixo;
     public GameObject espinhos;
     int estado = 1;
+    [Space(20)]
+    AudioSource SFX;
     public AudioClip TrapAcionando;
-    public AudioSource Reprodutor;
 
     public enum TipoDano
     {
         Percentual, Fixo
     }
+    
     void Awake()
     {
-        Reprodutor = GetComponent<AudioSource>();
+        SFX = GameObject.Find("SFX").GetComponent<AudioSource>();
     }
 
     void Update()
@@ -43,7 +45,7 @@ public class ControledeTrap : MonoBehaviour
 
     IEnumerator Ativar()
     {
-        Reprodutor.PlayOneShot(TrapAcionando);
+        SFX.PlayOneShot(TrapAcionando);
         do
         {
             espinhos.transform.position = NormalizaSubindo(espinhos.transform.position, velSubida, 0);

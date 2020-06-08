@@ -14,13 +14,14 @@ public class Move : MonoBehaviour
     float aceleracao = 0;
     public float velAceleracao = .5f;
     [Space(20)]
-    AudioSource EfeitoSonoros;
+    AudioSource SFX;
     public AudioClip SomPassos;
 
 
     void Awake()
     {
         ctrAnim = GetComponent<ControleDeAnimacao>();
+        SFX = GameObject.Find("SFX").GetComponent<AudioSource>();
     }
 
     void FixedUpdate()

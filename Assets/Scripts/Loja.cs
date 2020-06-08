@@ -23,13 +23,14 @@ public class Loja : MonoBehaviour
     }
     int indice = 0;
     [Space(20)]
-    AudioSource EfeitoSonoros;
+    AudioSource SFX;
     public AudioClip SomClick;
 
 
     void Awake()
     {
         IniciaNivelArma();
+        SFX = GameObject.Find("SFX").GetComponent<AudioSource>();
     }
 
     void Update()
@@ -59,7 +60,7 @@ public class Loja : MonoBehaviour
 
         if (Input.GetButtonDown(Player.ToString() + "A") && delayTempo > delayBotao)//Selecionar Arma
         {
-
+            SFX.PlayOneShot(SomClick);
         }
     }
 
@@ -88,6 +89,7 @@ public class Loja : MonoBehaviour
 
     public void TrocaArma()
     {
+        SFX.PlayOneShot(SomClick);
         if (indice > Itens.Length - 1)
             indice = 0;
 

@@ -15,7 +15,13 @@ public class SelecaoDePersonagem : MonoBehaviour
     public Dados.Personagens Person = Dados.Personagens.Nenhum;
     public bool Confirmado = false;
     public Selecionados.Jogador PersonagemSelecionado;
+    Selecao selecao;
 
+
+    void Awake()
+    {
+        selecao = FindObjectOfType<Selecao>();
+    }
 
     void Start()
     {
@@ -71,6 +77,7 @@ public class SelecaoDePersonagem : MonoBehaviour
                 if (FindObjectOfType<Selecao>().PodeSelecionar(Person))
                 {
                     print("A");
+                    selecao.SFX.PlayOneShot(selecao.SomClick);
                     Confirmado = true;
                     Personagens[indice].GetComponent<ControleDeAnimacao>().Selecionar();
                     GetComponent<Image>().color = Color.yellow;
@@ -84,6 +91,7 @@ public class SelecaoDePersonagem : MonoBehaviour
                 if (Confirmado)
                 {
                     print("B");
+                    selecao.SFX.PlayOneShot(selecao.SomClick);
                     Confirmado = false;
                     Personagens[indice].GetComponent<ControleDeAnimacao>().DesSelecionar();
                     GetComponent<Image>().color = Color.white;
@@ -92,6 +100,7 @@ public class SelecaoDePersonagem : MonoBehaviour
                 }
                 else
                 {
+                    selecao.SFX.PlayOneShot(selecao.SomClick);
                     Selecao = false;
                     for (int x = 0; x < Personagens.Length; x++)
                     {
@@ -108,6 +117,7 @@ public class SelecaoDePersonagem : MonoBehaviour
         if (Input.GetButtonDown(playerIndice.ToString() + "Start") && !Selecao)
         {
             Selecao = true;
+            selecao.SFX.PlayOneShot(selecao.SomStart);
             Debug.Log(Personagens.Length, gameObject);
             Personagens[0].SetActive(true);
             Personagens[0].GetComponent<ControleDeAnimacao>().Idle(1);
@@ -120,6 +130,7 @@ public class SelecaoDePersonagem : MonoBehaviour
 
     public void MudarPersonagem(int i)
     {
+        selecao.SFX.PlayOneShot(selecao.SomClick);
         if (i > Personagens.Length - 1)
             i = 0;
 
