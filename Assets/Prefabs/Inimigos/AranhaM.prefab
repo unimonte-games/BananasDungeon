@@ -2080,7 +2080,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   players: []
   distMinimaAtaque: 30
-  distAtaque: 2
+  distAtaque: 2.2
   velMov: 4
 --- !u!114 &-8654678844974860581
 MonoBehaviour:
@@ -2131,7 +2131,7 @@ MonoBehaviour:
   Atacando: 0
   Morto: 0
   velAnimAtaqueForte: 2
-  velAnimAtaqueFraco: 3
+  velAnimAtaqueFraco: 2.5
   velAnimAndar: 4
 --- !u!114 &-462170613280837129
 MonoBehaviour:

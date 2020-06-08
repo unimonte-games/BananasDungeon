@@ -492,7 +492,7 @@ MonoBehaviour:
   Atacando: 0
   Morto: 0
   velAnimAtaqueForte: 2
-  velAnimAtaqueFraco: 5
+  velAnimAtaqueFraco: 4
   velAnimAndar: 6
 --- !u!114 &8745448604450252059
 MonoBehaviour:

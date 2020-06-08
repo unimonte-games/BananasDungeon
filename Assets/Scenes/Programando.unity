@@ -130,7 +130,7 @@ PrefabInstance:
     - target: {fileID: 5024393097222314886, guid: 901de132342f33741838beb1574c9111,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.49
+      value: 15.96
       objectReference: {fileID: 0}
     - target: {fileID: 5024393097222314886, guid: 901de132342f33741838beb1574c9111,
         type: 3}
@@ -459,7 +459,7 @@ PrefabInstance:
     - target: {fileID: 6873067033206773139, guid: a1e33c8534df1544c9e7707a2bbaa491,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 5.26
       objectReference: {fileID: 0}
     - target: {fileID: 6873067033206773139, guid: a1e33c8534df1544c9e7707a2bbaa491,
         type: 3}
@@ -668,6 +668,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Guarda
+      objectReference: {fileID: 0}
+    - target: {fileID: 2909921880125164444, guid: 2f7b48b651f88a74499db7c169f63283,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6576367741833988751, guid: 2f7b48b651f88a74499db7c169f63283,
         type: 3}
