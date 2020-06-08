@@ -63,5 +63,6 @@ public class Atributos : MonoBehaviour
         }
         else
             SFX.PlayOneShot(SomDano);
+        barraVida.value = vidaAtual;
     }
 }
