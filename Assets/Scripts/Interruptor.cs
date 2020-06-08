@@ -31,6 +31,8 @@ public class Interruptor : MonoBehaviour
         }
 
         LuzAlavanca.color = Color.white;
+        LuzAlavanca.intensity = intensidadeLonge;
+
         for (int x = 0; x < LuzPorta.Count; x++)
         {
             LuzPorta[x].color = CorAtivado;
@@ -42,7 +44,7 @@ public class Interruptor : MonoBehaviour
     {
         if (colisor.tag == "Player")
         {
-            TrocaIntensidade(intensidadePerto);
+            TrocaIntensidadeAlavanca(intensidadePerto);
         }
     }
 
@@ -59,7 +61,7 @@ public class Interruptor : MonoBehaviour
     {
         if (colisor.tag == "Player")
         {
-            TrocaIntensidade(intensidadeLonge);
+            TrocaIntensidadeAlavanca(intensidadeLonge);
         }
     }
 
@@ -67,10 +69,7 @@ public class Interruptor : MonoBehaviour
     {
         print("Ativando interruptor");
         estadoInterruptor = true;
-        for (int x = 0; x < LuzPorta.Count; x++)
-        {
-            LuzPorta[x].color = CorAtivado;
-        }
+        LuzAlavanca.color = CorAtivado;
         anim.SetInteger("Alavanca", (int)Alavanca.Ativar);
         for (int x = 0; x < Portas.Length; x++)
         {
@@ -78,11 +77,8 @@ public class Interruptor : MonoBehaviour
         }
     }
 
-    public void TrocaIntensidade(float i)
+    public void TrocaIntensidadeAlavanca(float i)
     {
-        for (int x = 0; x < LuzPorta.Count; x++)
-        {
-            LuzPorta[x].intensity = i;
-        }
+        LuzAlavanca.intensity = i;
     }
 }
