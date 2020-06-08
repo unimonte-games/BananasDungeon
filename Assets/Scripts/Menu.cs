@@ -10,6 +10,11 @@ public class Menu : MonoBehaviour
     public GameObject btnJogar;
     public GameObject btnConfig;
     public GameObject btnSair;
+    [Space(20)]
+    AudioSource Musica;
+    AudioSource EfeitoSonoros;
+    public AudioClip SomClick;
+    public AudioClip SomJogar;
 
 #if UNITY_WSA
     void Awake()
@@ -30,7 +35,6 @@ public class Menu : MonoBehaviour
     
     public void Sair()
     {
-        print("Sair");
         Application.Quit();
     }
 }

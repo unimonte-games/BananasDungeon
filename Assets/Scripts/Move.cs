@@ -7,13 +7,15 @@ public class Move : MonoBehaviour
     //UNITY_WSA
     public Dados.PlayerIndice playerIndice;
     ControleDeAnimacao ctrAnim;
-    public float h = 0, v = 0;
-    public float hv = 0;
+    float h = 0, v = 0;
     public float vel = 5;
     public float slow = 0.7f;
     float redutor = 1;
-    public float aceleracao = 0;
+    float aceleracao = 0;
     public float velAceleracao = .5f;
+    [Space(20)]
+    AudioSource EfeitoSonoros;
+    public AudioClip SomPassos;
 
 
     void Awake()
@@ -38,7 +40,6 @@ public class Move : MonoBehaviour
         else
             redutor = 1;
 
-        hv = Mathf.Abs(h) + Mathf.Abs(v);
         if (!ctrAnim.Morto && !ctrAnim.Atacando)
         {
             if (aceleracao < 1)

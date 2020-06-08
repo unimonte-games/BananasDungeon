@@ -12,11 +12,15 @@ public class Atributos : MonoBehaviour
     public int Vida = 1000;
     public int vidaAtual = 1000;
     public Slider barraVida;
+    [Space(20)]
+    AudioSource EfeitoSonoros;
+    public AudioClip SomDano;
+    public AudioClip SomMorte;
 
 
     void Awake()
     {
-        if (SceneManager.GetActiveScene().name != "Game")
+        if (SceneManager.GetActiveScene().name != "Jogo")
             return;
         
         if (gameObject.CompareTag("Player"))

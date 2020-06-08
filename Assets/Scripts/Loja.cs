@@ -8,7 +8,8 @@ public class Loja : MonoBehaviour
 {
     public GameObject loja;
     public Text Titulo;
-    float delayBotao = .5f;
+    public float delayBotao = .3f;
+    public float delayTempo = .3f;
     Dados.Personagens Personagem;
     Dados.Armas Arma;
     public Dados.PlayerIndice Player;
@@ -20,8 +21,10 @@ public class Loja : MonoBehaviour
         public Dados.Armas Arma;
         public GameObject[] ArmaNiveis;
     }
-    [Space(20)]
     int indice = 0;
+    [Space(20)]
+    AudioSource EfeitoSonoros;
+    public AudioClip SomClick;
 
 
     void Awake()
@@ -34,17 +37,17 @@ public class Loja : MonoBehaviour
         if (Player == Dados.PlayerIndice.Vazio)
             return;
 
-        delayBotao += Time.deltaTime;
+        delayTempo += Time.deltaTime;
 
-        if (Input.GetButtonDown(Player.ToString() + "RB") && delayBotao > .5f)//Próximo
+        if (Input.GetButtonDown(Player.ToString() + "RB") && delayTempo > delayBotao)//Próximo
         {
-            delayBotao = 0;
+            delayTempo = 0;
             ArmaSeguinte();
         }
 
-        if (Input.GetButtonDown(Player.ToString() + "LB") && delayBotao > .5f)//Anterior
+        if (Input.GetButtonDown(Player.ToString() + "LB") && delayTempo > delayBotao)//Anterior
         {
-            delayBotao = 0;
+            delayTempo = 0;
             ArmaAnterior();
         }
 
@@ -54,7 +57,7 @@ public class Loja : MonoBehaviour
             FecharLoja();
         }
 
-        if (Input.GetButtonDown(Player.ToString() + "A") && delayBotao > .5f)//Selecionar Arma
+        if (Input.GetButtonDown(Player.ToString() + "A") && delayTempo > delayBotao)//Selecionar Arma
         {
 
         }

@@ -10,6 +10,10 @@ public class Selecao : MonoBehaviour
     public SelecaoDePersonagem[] selecao;
     bool liberaTimer = false;
     float timer = 6;
+    [Space(20)]
+    AudioSource EfeitoSonoros;
+    public AudioClip SomClick;
+    public AudioClip SomStart;
 
 
     void Start()
@@ -19,15 +23,6 @@ public class Selecao : MonoBehaviour
 
     void Update()
     {
-        for (int x = 1; x < 9; x++)
-        {
-            for (int y = 0; y < 20; y++)
-            {
-                if (Input.GetKeyDown("joystick " + x.ToString() + " button " + y.ToString()))
-                    print("joystick" + x + "button " + y);
-            }
-        }
-
         if (liberaTimer)
         {
             timer -= Time.deltaTime;
@@ -51,7 +46,6 @@ public class Selecao : MonoBehaviour
 
             if (SelecionarP1)
             {
-                print("Seleção: " + "P1Start");
                 bool Iniciar = true;
                 
                 for (int x = 0; x < selecao.Length; x++)
@@ -70,7 +64,6 @@ public class Selecao : MonoBehaviour
 
         if (Input.GetButtonDown("P1B"))
         {
-            print("P1B");
             Contagem(false);
         }
     }
@@ -79,18 +72,13 @@ public class Selecao : MonoBehaviour
     {
         if (Iniciar)
         {
-            print("Inicio da contagem");
             liberaTimer = true;
             if (Selecionados.Jogadores.Count == 0)
             {
-                print("Adicionando jogadores: " + selecao.Length);
                 for (int x = 0; x < selecao.Length; x++)
                 {
-                    print(selecao[x].PersonagemSelecionado.playerIndice.ToString());
-                    print(selecao[x].PersonagemSelecionado.personagem.ToString());
                     Selecionados.Jogadores.Add(selecao[x].PersonagemSelecionado);
                 }
-                print("Adicionado jogadores: " + selecao.Length);
             }
         }
         else
