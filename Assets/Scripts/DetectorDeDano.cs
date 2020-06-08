@@ -19,7 +19,7 @@ public class DetectorDeDano : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "Jogo")
             DisparadordeSons = GameObject.Find("EfeitoSonoro").GetComponent<AudioSource>();
-            
+
         Dano = GetComponent<DanoArma>();
     }
 
@@ -56,13 +56,16 @@ public class DetectorDeDano : MonoBehaviour
                     ControleDeArmas ctrArma = Principal.GetComponent<ControleDeArmas>();
                     DanoArma danoArma = GetComponent<DanoArma>();
                     Atributos atb = other.GetComponent<Atributos>();
-                    
+
                     DisparadordeSons.PlayOneShot(SomDano);
 
                     int danoCalculado = (int)(danoArma.Dano * ctrArma.multi);
-                    int variacao = Random.Range(-5, 6);
-                    atb.CausarDano(ctrArma.PegarArma().GetComponent<NivelArma>().arma, danoCalculado + variacao);
 
+                    if (atb.Especialidade == ctrArma.arma)
+                        danoCalculado = (int)(danoArma.Dano * atb.multiEspecialidade);
+
+                    float variacao = Random.Range(.9f, 1.1f);
+                    atb.CausarDano(ctrArma.PegarArma().GetComponent<NivelArma>().arma, (int)(danoCalculado * variacao));
                 }
                 break;
             case "Enemy":
@@ -76,7 +79,7 @@ public class DetectorDeDano : MonoBehaviour
                     atb = other.GetComponent<Atributos>();
 
                     DisparadordeSons.PlayOneShot(SomDano);
-                    
+
                     int danoCalculado = (int)(danoArma.Dano);
                     int variacao = Random.Range(-5, 6);
                     atb.CausarDano(Dados.Armas.Nenhum, danoCalculado + variacao);

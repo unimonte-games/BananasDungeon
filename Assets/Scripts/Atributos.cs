@@ -8,6 +8,7 @@ public class Atributos : MonoBehaviour
 {
     public Dados.Personagens Personagem;
     public Dados.Armas Especialidade = Dados.Armas.Nenhum;
+    public float multiEspecialidade = 1.2f;
     public int Vida = 1000;
     public int vidaAtual = 1000;
     public Slider barraVida;
