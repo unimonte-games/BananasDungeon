@@ -371,6 +371,7 @@ GameObject:
   - component: {fileID: 9161931573218528939}
   - component: {fileID: 839649527259852673}
   - component: {fileID: 2833600464145482720}
+  - component: {fileID: 8745448604450252059}
   m_Layer: 0
   m_Name: AranhaP
   m_TagString: Enemy
@@ -455,9 +456,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Personagem: -1
   Especialidade: 0
+  multiEspecialidade: 1.2
   Vida: 1000
   vidaAtual: 1000
   barraVida: {fileID: 0}
+  SomDano: {fileID: 0}
+  SomMorte: {fileID: 0}
 --- !u!136 &839649527259852673
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -489,6 +493,19 @@ MonoBehaviour:
   velAnimAtaqueForte: 2
   velAnimAtaqueFraco: 5
   velAnimAndar: 6
+--- !u!114 &8745448604450252059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658156942106582157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 446b0256bde40fd4eb4e04a2b775ae75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TipoInimigo: 1
 --- !u!1 &1705766747116049389
 GameObject:
   m_ObjectHideFlags: 0

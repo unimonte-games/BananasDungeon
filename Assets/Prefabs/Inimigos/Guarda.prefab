@@ -752,6 +752,7 @@ GameObject:
   - component: {fileID: 6576367741833988751}
   - component: {fileID: 6576367741833988744}
   - component: {fileID: 6576367741833988745}
+  - component: {fileID: -1897797329099005727}
   m_Layer: 0
   m_Name: Guarda
   m_TagString: Untagged
@@ -880,6 +881,19 @@ MonoBehaviour:
   barraVida: {fileID: 0}
   SomDano: {fileID: 0}
   SomMorte: {fileID: 0}
+--- !u!114 &-1897797329099005727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2909921880125164444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 446b0256bde40fd4eb4e04a2b775ae75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TipoInimigo: 0
 --- !u!1 &2977717042312754885
 GameObject:
   m_ObjectHideFlags: 0

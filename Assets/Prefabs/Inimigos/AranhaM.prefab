@@ -2010,6 +2010,7 @@ GameObject:
   - component: {fileID: -8654678844974860581}
   - component: {fileID: 6850838738173944322}
   - component: {fileID: 1173380357440767028}
+  - component: {fileID: -462170613280837129}
   m_Layer: 0
   m_Name: AranhaM
   m_TagString: Enemy
@@ -2094,9 +2095,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Personagem: -1
   Especialidade: 0
+  multiEspecialidade: 1.2
   Vida: 1000
   vidaAtual: 1000
   barraVida: {fileID: 0}
+  SomDano: {fileID: 0}
+  SomMorte: {fileID: 0}
 --- !u!136 &6850838738173944322
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2128,6 +2132,19 @@ MonoBehaviour:
   velAnimAtaqueForte: 2
   velAnimAtaqueFraco: 3
   velAnimAndar: 4
+--- !u!114 &-462170613280837129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8858011977120990790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 446b0256bde40fd4eb4e04a2b775ae75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TipoInimigo: 1
 --- !u!1 &8920741922435233903
 GameObject:
   m_ObjectHideFlags: 0
