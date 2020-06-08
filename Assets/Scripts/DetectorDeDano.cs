@@ -81,8 +81,8 @@ public class DetectorDeDano : MonoBehaviour
                     DisparadordeSons.PlayOneShot(SomDano);
 
                     int danoCalculado = (int)(danoArma.Dano);
-                    int variacao = Random.Range(-5, 6);
-                    atb.CausarDano(Dados.Armas.Nenhum, danoCalculado + variacao);
+                    float variacao = Random.Range(.9f, 1.1f);
+                    atb.CausarDano(Dados.Armas.Nenhum, (int)(danoCalculado * variacao));
                 }
                 break;
         }
