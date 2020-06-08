@@ -536,6 +536,8 @@ MonoBehaviour:
   btnJogar: {fileID: 437811676}
   btnConfig: {fileID: 1391897345}
   btnSair: {fileID: 1581022922}
+  SomClick: {fileID: 8300000, guid: f46eb1f3ab2cc5049a52a2bd37222ede, type: 3}
+  SomJogar: {fileID: 8300000, guid: b24b60788d795ea439668ff2ed485db4, type: 3}
 --- !u!114 &537088252
 MonoBehaviour:
   m_ObjectHideFlags: 0

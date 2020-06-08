@@ -1411,6 +1411,8 @@ MonoBehaviour:
   - {fileID: 1234883383}
   - {fileID: 1247502238}
   - {fileID: 1303297580}
+  SomClick: {fileID: 8300000, guid: f46eb1f3ab2cc5049a52a2bd37222ede, type: 3}
+  SomStart: {fileID: 8300000, guid: b24b60788d795ea439668ff2ed485db4, type: 3}
 --- !u!1 &1717890221
 GameObject:
   m_ObjectHideFlags: 0

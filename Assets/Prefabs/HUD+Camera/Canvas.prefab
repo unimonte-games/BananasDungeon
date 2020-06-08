@@ -52,6 +52,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loja: {fileID: 6677347571419155219}
   Titulo: {fileID: 2068894173}
+  delayBotao: 0.3
+  delayTempo: 0.3
   Player: 0
   Itens:
   - Arma: 2
@@ -75,6 +77,7 @@ MonoBehaviour:
     - {fileID: 6611114241008034186}
     - {fileID: 5875188089358734493}
     - {fileID: 2115046029739967559}
+  SomClick: {fileID: 8300000, guid: f46eb1f3ab2cc5049a52a2bd37222ede, type: 3}
 --- !u!222 &2114766955
 CanvasRenderer:
   m_ObjectHideFlags: 0

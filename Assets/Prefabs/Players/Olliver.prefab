@@ -2524,13 +2524,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerIndice: 1
-  h: 0
-  v: 0
-  hv: 0
   vel: 5
   slow: 0.55
-  aceleracao: 0
   velAceleracao: 0.03
+  SomPassos: {fileID: 8300000, guid: 7cc460d8aadd4984caf479836f443ff5, type: 3}
 --- !u!114 &9047682931744112393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2545,9 +2542,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Personagem: 1
   Especialidade: 6
+  multiEspecialidade: 1.2
   Vida: 1000
   vidaAtual: 1000
   barraVida: {fileID: 0}
+  SomDano: {fileID: 8300000, guid: 995c97acfc9b67945af88ce5fe32881b, type: 3}
+  SomMorte: {fileID: 8300000, guid: 7611b54fff24c6c47b2aada28ca2fb1e, type: 3}
 --- !u!114 &142251222134595536
 MonoBehaviour:
   m_ObjectHideFlags: 0

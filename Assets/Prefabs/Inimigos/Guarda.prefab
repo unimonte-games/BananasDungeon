@@ -841,6 +841,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Atacando: 0
   Morto: 0
+  velAnimAtaqueForte: 1
+  velAnimAtaqueFraco: 1
+  velAnimAndar: 1
 --- !u!114 &6576367741833988744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -871,9 +874,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Personagem: -1
   Especialidade: 0
+  multiEspecialidade: 1.2
   Vida: 100
   vidaAtual: 100
   barraVida: {fileID: 0}
+  SomDano: {fileID: 0}
+  SomMorte: {fileID: 0}
 --- !u!1 &2977717042312754885
 GameObject:
   m_ObjectHideFlags: 0
