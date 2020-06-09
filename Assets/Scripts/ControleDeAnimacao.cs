@@ -51,6 +51,7 @@ public class ControleDeAnimacao : MonoBehaviour
 
     public void Morte()
     {
+        Morto = true;
         int i = Random.Range(0,2);
 
         anim.SetInteger(Estado.Morte.ToString(), i);

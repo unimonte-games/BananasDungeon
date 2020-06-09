@@ -38,7 +38,7 @@ public class Atributos : MonoBehaviour
     {
         vidaAtual -= (int)(Dano);
         Instantiate(ParticulaDano, transform.position, Quaternion.identity);
-        if (vidaAtual <= 0)
+        if (vidaAtual <= 0 && !GetComponent<ControleDeAnimacao>().Morto)
         {
             SFX.PlayOneShot(SomMorte);
             if (gameObject.CompareTag("Player"))
