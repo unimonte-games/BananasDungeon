@@ -2134,6 +2134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Atacando: 0
   Morto: 0
+  velAnimMorte: 2
   velAnimAtaqueForte: 2
   velAnimAtaqueFraco: 2.5
   velAnimAndar: 4
