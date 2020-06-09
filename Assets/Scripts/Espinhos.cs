@@ -23,35 +23,7 @@ public class Espinhos : MonoBehaviour
     {
         if (other.CompareTag("Player") || other.CompareTag("Enemy"))
         {
-            Alvos.Add(other.gameObject);
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player") || other.CompareTag("Enemy"))
-        {
-            if (Alvos.Contains(other.gameObject))
-                Alvos.Remove(other.gameObject);
-            if (Alvos.Count == 0)
-                timer = 0;
-        }
-    }
-
-    void OnTriggerStay(Collider col)
-    {
-        if (Alvos.Count > 0)
-            timer += Time.deltaTime;
-        else
-            return;
-        
-        if (timer >= ctr.delayDano)
-        {
-            for (int x = 0; x < Alvos.Count; x++)
-            {
-                AplicarDano(Alvos[x]);
-            }
-            timer = 0;
+            AplicarDano(other.gameObject);
         }
     }
 
