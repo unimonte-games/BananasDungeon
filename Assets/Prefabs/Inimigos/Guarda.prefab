@@ -755,7 +755,7 @@ GameObject:
   - component: {fileID: -1897797329099005727}
   m_Layer: 0
   m_Name: Guarda
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -881,6 +881,8 @@ MonoBehaviour:
   barraVida: {fileID: 0}
   SomDano: {fileID: 0}
   SomMorte: {fileID: 0}
+  ParticulaDano: {fileID: 0}
+  ParticulaMorte: {fileID: 0}
 --- !u!114 &-1897797329099005727
 MonoBehaviour:
   m_ObjectHideFlags: 0
