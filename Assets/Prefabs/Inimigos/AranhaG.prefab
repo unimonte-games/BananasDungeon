@@ -1866,7 +1866,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61fb1c56c69aa4b4d826539254777b9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Dano: 50
+  Dano: 30
   Flecha: {fileID: 0}
 --- !u!1 &8268695002827626428
 GameObject:
@@ -2033,8 +2033,8 @@ MonoBehaviour:
   Personagem: -1
   Especialidade: 0
   multiEspecialidade: 1.2
-  Vida: 300
-  vidaAtual: 300
+  Vida: 250
+  vidaAtual: 250
   barraVida: {fileID: 0}
   SomDano: {fileID: 0}
   SomMorte: {fileID: 0}
