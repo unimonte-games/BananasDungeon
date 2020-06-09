@@ -56,6 +56,7 @@ public class ControledeAnimacaoInimigo : MonoBehaviour
     public void Morte()
     {
         print("Morte");
+        Morto = true;
         Anim.speed = velAnim;
         Anim.SetInteger("Move", (int)Estado.Morte);
     }

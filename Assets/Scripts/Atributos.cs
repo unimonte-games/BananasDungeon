@@ -20,7 +20,7 @@ public class Atributos : MonoBehaviour
     public GameObject ParticulaMorte;
 
 
-    void Awake()
+    void Start()
     {
         SFX = GameObject.Find("SFX").GetComponent<AudioSource>();
         if (SceneManager.GetActiveScene().name != "Jogo")
@@ -28,7 +28,6 @@ public class Atributos : MonoBehaviour
         
         if (gameObject.CompareTag("Player"))
         {
-            var aux = GetComponent<Move>().playerIndice;
             barraVida.maxValue = Vida;
             barraVida.value = vidaAtual;
         }
@@ -37,24 +36,30 @@ public class Atributos : MonoBehaviour
     public void CausarDano(int Dano)
     {
         vidaAtual -= (int)(Dano);
-        if (vidaAtual <= 0 && !GetComponent<ControleDeAnimacao>().Morto)
+        if (vidaAtual <= 0)
         {
             SFX.PlayOneShot(SomMorte);
-            if (gameObject.CompareTag("Player"))
+            if (gameObject.CompareTag("Player") && !GetComponent<ControleDeAnimacao>().Morto)
             {
                 barraVida.value = 0;
                 barraVida.value = vidaAtual;
                 GetComponent<ControleDeAnimacao>().Morte();
                 Instantiate(ParticulaMorte, transform.position, Quaternion.identity);
             }
-            else
+
+            if (gameObject.CompareTag("Enemy") && !GetComponent<ControledeAnimacaoInimigo>().Morto)
+            {
                 GetComponent<ControledeAnimacaoInimigo>().Morte();
+            }
         }
         else
         {
             if (gameObject.CompareTag("Player"))
+            {
                 Instantiate(ParticulaDano, transform.position, Quaternion.identity);
-                
+                barraVida.value = vidaAtual;
+            }
+
             SFX.PlayOneShot(SomDano);
         }
     }
