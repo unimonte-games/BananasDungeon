@@ -113,7 +113,8 @@ public class ControleDeAnimacao : MonoBehaviour
         var detector = arco.GetComponent<DetectorDeDano>();
 
         SFX.PlayOneShot(detector.SomDano);
-        Instantiate(dano.Flecha, transform.position, transform.rotation);
+        var gbj = Instantiate(dano.Flecha, transform.position, transform.rotation);
+        gbj.SetActive(true);
     }
 
     public void IniciouAtaque()
