@@ -460,8 +460,8 @@ MonoBehaviour:
   Personagem: -1
   Especialidade: 0
   multiEspecialidade: 1.2
-  Vida: 30
-  vidaAtual: 30
+  Vida: 40
+  vidaAtual: 40
   barraVida: {fileID: 0}
   SomDano: {fileID: 0}
   SomMorte: {fileID: 0}
