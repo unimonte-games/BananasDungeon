@@ -12,6 +12,8 @@ public class Interruptor : MonoBehaviour
     public Color CorAtivado = Color.white;
     bool estadoInterruptor = false;
     Animator anim;
+    AudioSource SFX;
+    public AudioClip somAlavanca;
 
     public enum Alavanca
     {
@@ -23,6 +25,7 @@ public class Interruptor : MonoBehaviour
     void Awake()
     {
         anim = GetComponent<Animator>();
+        SFX  = GameObject.Find("SFX").GetComponent<AudioSource>();
 
         LuzAlavanca = GetComponentInChildren<Light>();
         for (int x = 0; x < Portas.Length; x++)
@@ -74,6 +77,7 @@ public class Interruptor : MonoBehaviour
         for (int x = 0; x < Portas.Length; x++)
         {
             Portas[x].GetComponent<Animator>().SetBool("Abrir", true);
+            SFX.PlayOneShot(somAlavanca);
         }
     }
 
