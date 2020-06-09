@@ -6,6 +6,7 @@ public class ParticulaDestrutiva : MonoBehaviour
 {
     void Start()
     {
-        Destroy(gameObject, 0.5f);
+        float tempo = GetComponent<ParticleSystem>().main.duration;
+        Destroy(gameObject, tempo);
     }
 }
