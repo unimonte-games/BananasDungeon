@@ -186,8 +186,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Principal: {fileID: 1658156942106582157}
   Dano: {fileID: 0}
-  SomDano: {fileID: 8300000, guid: 2dbcab1ed4eae304a97a5a6e71ff1f75, type: 3}
   DisparadordeSons: {fileID: 0}
+  SomDano: {fileID: 8300000, guid: 2dbcab1ed4eae304a97a5a6e71ff1f75, type: 3}
+  ParticulaDano: {fileID: 0}
   ctrArma: {fileID: 0}
   danoArma: {fileID: 0}
   atb: {fileID: 0}
@@ -204,6 +205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Dano: 10
+  Flecha: {fileID: 0}
 --- !u!1 &973765979434004031
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,11 +460,13 @@ MonoBehaviour:
   Personagem: -1
   Especialidade: 0
   multiEspecialidade: 1.2
-  Vida: 1000
-  vidaAtual: 1000
+  Vida: 30
+  vidaAtual: 30
   barraVida: {fileID: 0}
   SomDano: {fileID: 0}
   SomMorte: {fileID: 0}
+  ParticulaDano: {fileID: 0}
+  ParticulaMorte: {fileID: 0}
 --- !u!136 &839649527259852673
 CapsuleCollider:
   m_ObjectHideFlags: 0
