@@ -7,8 +7,9 @@ public class DetectorDeDano : MonoBehaviour
 {
     public GameObject Principal = null;
     public DanoArma Dano;
-    public AudioClip SomDano;
     public AudioSource DisparadordeSons;
+    public AudioClip SomDano;
+    public GameObject ParticulaDano;
 
     public ControleDeArmas ctrArma;
     public DanoArma danoArma;
@@ -65,7 +66,7 @@ public class DetectorDeDano : MonoBehaviour
                         danoCalculado = (int)(danoArma.Dano * atb.multiEspecialidade);
 
                     float variacao = Random.Range(.9f, 1.1f);
-                    atb.CausarDano(ctrArma.PegarArma().GetComponent<NivelArma>().arma, (int)(danoCalculado * variacao));
+                    atb.CausarDano((int)(danoCalculado * variacao));
                 }
                 break;
             case "Enemy":
@@ -82,7 +83,7 @@ public class DetectorDeDano : MonoBehaviour
 
                     int danoCalculado = (int)(danoArma.Dano);
                     float variacao = Random.Range(.9f, 1.1f);
-                    atb.CausarDano(Dados.Armas.Nenhum, (int)(danoCalculado * variacao));
+                    atb.CausarDano((int)(danoCalculado * variacao));
                 }
                 break;
         }

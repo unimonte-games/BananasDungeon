@@ -11,6 +11,7 @@ public class ControleDeAnimacao : MonoBehaviour
         Andando,
         Atacando
     }
+    public AudioSource SFX;
     public Animator anim;
     public bool Atacando = false;
     public bool Morto = false;
@@ -19,6 +20,7 @@ public class ControleDeAnimacao : MonoBehaviour
     void Awake()
     {
         anim = GetComponent<Animator>();
+        SFX = GameObject.Find("SFX").GetComponent<AudioSource>();
     }
 
     public float Velocidade(float vel)
@@ -92,7 +94,28 @@ public class ControleDeAnimacao : MonoBehaviour
         anim.SetBool(arma.ToString(), true);
     }
 
+
     #region Evento de animação
+    public void Disparo()
+    {
+        print("Disparo do Arco!");
+        GameObject arco = null;
+        var ctrArmas = GetComponent<ControleDeArmas>();
+        for (int x = 0; x < ctrArmas.Arsenal.Length; x++)
+        {
+            if (ctrArmas.Arsenal[x].Arma == Dados.Armas.Arco)
+            {
+                arco = ctrArmas.Arsenal[x].Local;
+                break;
+            }
+        }
+        var dano = arco.GetComponent<DanoArma>();
+        var detector = arco.GetComponent<DetectorDeDano>();
+
+        SFX.PlayOneShot(detector.SomDano);
+        Instantiate(dano.Flecha, transform.position, transform.rotation);
+    }
+
     public void IniciouAtaque()
     {
         print("Iniciou o Ataque");

@@ -61,11 +61,11 @@ public class Espinhos : MonoBehaviour
         switch (ctr.Tipo)
         {
             case ControledeTrap.TipoDano.Fixo:
-                atb.CausarDano(Dados.Armas.Nenhum, (int)ctr.danoFixo);
+                atb.CausarDano((int)ctr.danoFixo);
                 break;
             case ControledeTrap.TipoDano.Percentual:
                 float dano = ((ctr.danoPercentual / 100) * atb.Vida);
-                atb.CausarDano(Dados.Armas.Nenhum, (int)dano);
+                atb.CausarDano((int)dano);
                 break;
         }
     }

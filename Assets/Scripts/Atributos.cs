@@ -16,6 +16,8 @@ public class Atributos : MonoBehaviour
     AudioSource SFX;
     public AudioClip SomDano;
     public AudioClip SomMorte;
+    public GameObject ParticulaDano;
+    public GameObject ParticulaMorte;
 
 
     void Awake()
@@ -32,37 +34,24 @@ public class Atributos : MonoBehaviour
         }
     }
 
-    public void CausarDano(Dados.Armas arma, int Dano)
+    public void CausarDano(int Dano)
     {
-        float multiEspecialidade = 1;
-        switch (arma)
-        {
-            case Dados.Armas.Nenhum:
-                multiEspecialidade = 1f;
-                break;
-            default:
-                multiEspecialidade = 1.5f;
-                break;
-        }
-
-        vidaAtual -= (int)(Dano * multiEspecialidade);
-
+        vidaAtual -= (int)(Dano);
+        Instantiate(ParticulaDano, transform.position, Quaternion.identity);
         if (vidaAtual <= 0)
         {
             SFX.PlayOneShot(SomMorte);
             if (gameObject.CompareTag("Player"))
             {
                 barraVida.value = 0;
+                barraVida.value = vidaAtual;
                 GetComponent<ControleDeAnimacao>().Morte();
+                Instantiate(ParticulaMorte, transform.position, Quaternion.identity);
             }
             else
-            {
-                barraVida.value = vidaAtual;
                 GetComponent<ControledeAnimacaoInimigo>().Morte();
-            }
         }
         else
             SFX.PlayOneShot(SomDano);
-        barraVida.value = vidaAtual;
     }
 }

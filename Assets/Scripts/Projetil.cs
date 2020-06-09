@@ -7,6 +7,7 @@ public class Projetil : MonoBehaviour
     public GameObject Atirador;
     Vector3 posInicial;
     public float velocidade = 3;
+    public GameObject ParticulaDano;
 
     void Start()
     {
@@ -25,7 +26,8 @@ public class Projetil : MonoBehaviour
     {
         if (c.gameObject.tag == "Enemy")
         {
-            Destroy(c.gameObject);
+            Instantiate(ParticulaDano, transform.position, Quaternion.identity);
+            
             Destroy(gameObject);
         }
     }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6364401928575319915}
   - component: {fileID: 6364401928575319914}
   - component: {fileID: 6364401928575319913}
+  - component: {fileID: 3636879193734284553}
   m_Layer: 0
   m_Name: Dano
   m_TagString: Untagged
@@ -4829,3 +4830,15 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &3636879193734284553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6364401928575319912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b42b02d0c37b7c24b8024c1592b78a4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
