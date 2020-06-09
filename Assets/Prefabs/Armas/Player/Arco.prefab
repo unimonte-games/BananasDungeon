@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Dano: 10
+  Flecha: {fileID: 24835308936872289, guid: 09287eaf901407941944841b9a0980ee, type: 3}
 --- !u!114 &4763492086652453313
 MonoBehaviour:
   m_ObjectHideFlags: 0
