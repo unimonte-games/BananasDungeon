@@ -37,7 +37,6 @@ public class Atributos : MonoBehaviour
     public void CausarDano(int Dano)
     {
         vidaAtual -= (int)(Dano);
-        Instantiate(ParticulaDano, transform.position, Quaternion.identity);
         if (vidaAtual <= 0 && !GetComponent<ControleDeAnimacao>().Morto)
         {
             SFX.PlayOneShot(SomMorte);
@@ -52,6 +51,11 @@ public class Atributos : MonoBehaviour
                 GetComponent<ControledeAnimacaoInimigo>().Morte();
         }
         else
+        {
+            if (gameObject.CompareTag("Player"))
+                Instantiate(ParticulaDano, transform.position, Quaternion.identity);
+                
             SFX.PlayOneShot(SomDano);
+        }
     }
 }
