@@ -117,7 +117,7 @@ public class SelecaoDePersonagem : MonoBehaviour
         if (Input.GetButtonDown(playerIndice.ToString() + "Start") && !Selecao)
         {
             Selecao = true;
-            selecao.SFX.PlayOneShot(selecao.SomStart);
+            selecao.SFX.PlayOneShot(selecao.SomClick);
             Debug.Log(Personagens.Length, gameObject);
             Personagens[0].SetActive(true);
             Personagens[0].GetComponent<ControleDeAnimacao>().Idle(1);
