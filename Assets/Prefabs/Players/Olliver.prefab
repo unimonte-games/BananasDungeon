@@ -3499,6 +3499,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9066825897015788708, guid: bca260c9c82763e48a1bbf60f02039fd,
+        type: 3}
+      propertyPath: Dano
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bca260c9c82763e48a1bbf60f02039fd, type: 3}
 --- !u!1 &4558710025840519838 stripped
