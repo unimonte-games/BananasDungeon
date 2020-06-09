@@ -876,8 +876,8 @@ MonoBehaviour:
   Personagem: -1
   Especialidade: 0
   multiEspecialidade: 1.2
-  Vida: 100
-  vidaAtual: 100
+  Vida: 180
+  vidaAtual: 180
   barraVida: {fileID: 0}
   SomDano: {fileID: 0}
   SomMorte: {fileID: 0}
@@ -2585,6 +2585,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6446621227225628240}
     m_Modifications:
+    - target: {fileID: -118249496240058977, guid: f42b4b240d7e126498e3bc7c1d87c9bc,
+        type: 3}
+      propertyPath: Dano
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 4823647018361369301, guid: f42b4b240d7e126498e3bc7c1d87c9bc,
         type: 3}
       propertyPath: Principal

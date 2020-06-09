@@ -1754,7 +1754,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61fb1c56c69aa4b4d826539254777b9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Dano: 20
+  Dano: 10
   Flecha: {fileID: 0}
 --- !u!114 &1276467081
 MonoBehaviour:
@@ -2099,8 +2099,8 @@ MonoBehaviour:
   Personagem: -1
   Especialidade: 0
   multiEspecialidade: 1.2
-  Vida: 80
-  vidaAtual: 80
+  Vida: 150
+  vidaAtual: 150
   barraVida: {fileID: 0}
   SomDano: {fileID: 0}
   SomMorte: {fileID: 0}
