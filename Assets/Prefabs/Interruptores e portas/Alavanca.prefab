@@ -443,3 +443,4 @@ MonoBehaviour:
   Portas:
   - {fileID: 0}
   CorAtivado: {r: 0.5594963, g: 0.9339623, b: 0.8369761, a: 1}
+  somAlavanca: {fileID: 8300000, guid: 2cf875d85b0815e4b840b4bd2601b3f3, type: 3}
