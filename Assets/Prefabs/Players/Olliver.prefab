@@ -2548,6 +2548,10 @@ MonoBehaviour:
   barraVida: {fileID: 0}
   SomDano: {fileID: 8300000, guid: 995c97acfc9b67945af88ce5fe32881b, type: 3}
   SomMorte: {fileID: 0}
+  ParticulaDano: {fileID: 6364401928575319912, guid: e227925cbea13f94cac76e44895a9206,
+    type: 3}
+  ParticulaMorte: {fileID: 7077682673337659498, guid: eb2dee412e1e3504cb206dac046c7cb2,
+    type: 3}
 --- !u!114 &142251222134595536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2560,6 +2564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 563e71023cc579a41b11582f87621f5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SFX: {fileID: 0}
   anim: {fileID: 0}
   Atacando: 0
   Morto: 0
@@ -3111,6 +3116,12 @@ PrefabInstance:
       propertyPath: Principal
       value: 
       objectReference: {fileID: 7582183625574721408}
+    - target: {fileID: 5349771612667265519, guid: 724193c3e9b6dd9468e2eed4070974fa,
+        type: 3}
+      propertyPath: ParticulaDano
+      value: 
+      objectReference: {fileID: 6364401928575319912, guid: e227925cbea13f94cac76e44895a9206,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 724193c3e9b6dd9468e2eed4070974fa, type: 3}
 --- !u!4 &2138991331057053891 stripped
@@ -3191,11 +3202,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3294387203292505542, guid: 4350078af53abe44786cf347739e28af,
+        type: 3}
+      propertyPath: Flecha
+      value: 
+      objectReference: {fileID: 24835308936872289, guid: 09287eaf901407941944841b9a0980ee,
+        type: 3}
     - target: {fileID: 4763492086652453313, guid: 4350078af53abe44786cf347739e28af,
         type: 3}
       propertyPath: Principal
       value: 
       objectReference: {fileID: 7582183625574721408}
+    - target: {fileID: 4763492086652453313, guid: 4350078af53abe44786cf347739e28af,
+        type: 3}
+      propertyPath: ParticulaDano
+      value: 
+      objectReference: {fileID: 6364401928575319912, guid: e227925cbea13f94cac76e44895a9206,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4350078af53abe44786cf347739e28af, type: 3}
 --- !u!4 &1451447006002453051 stripped
@@ -3287,6 +3310,12 @@ PrefabInstance:
       propertyPath: Principal
       value: 
       objectReference: {fileID: 7582183625574721408}
+    - target: {fileID: 9111273987497113871, guid: 355a3db27457fe14e9b70a27d77ad252,
+        type: 3}
+      propertyPath: ParticulaDano
+      value: 
+      objectReference: {fileID: 6364401928575319912, guid: e227925cbea13f94cac76e44895a9206,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 355a3db27457fe14e9b70a27d77ad252, type: 3}
 --- !u!1 &7718631090569599451 stripped
@@ -3373,6 +3402,12 @@ PrefabInstance:
       propertyPath: Principal
       value: 
       objectReference: {fileID: 7582183625574721408}
+    - target: {fileID: 7209252328800435895, guid: 2092ef54b429ab142a2a5c1d04fcfeb0,
+        type: 3}
+      propertyPath: ParticulaDano
+      value: 
+      objectReference: {fileID: 6364401928575319912, guid: e227925cbea13f94cac76e44895a9206,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2092ef54b429ab142a2a5c1d04fcfeb0, type: 3}
 --- !u!4 &4838322400493766015 stripped
@@ -3393,6 +3428,12 @@ PrefabInstance:
       propertyPath: Principal
       value: 
       objectReference: {fileID: 7582183625574721408}
+    - target: {fileID: 4215014360842433196, guid: bca260c9c82763e48a1bbf60f02039fd,
+        type: 3}
+      propertyPath: ParticulaDano
+      value: 
+      objectReference: {fileID: 6364401928575319912, guid: e227925cbea13f94cac76e44895a9206,
+        type: 3}
     - target: {fileID: 6871714121402751354, guid: bca260c9c82763e48a1bbf60f02039fd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3539,6 +3580,12 @@ PrefabInstance:
       propertyPath: Principal
       value: 
       objectReference: {fileID: 7582183625574721408}
+    - target: {fileID: 2286361873477794294, guid: 043f563583db3984e91d929821794cc2,
+        type: 3}
+      propertyPath: ParticulaDano
+      value: 
+      objectReference: {fileID: 6364401928575319912, guid: e227925cbea13f94cac76e44895a9206,
+        type: 3}
     - target: {fileID: 4486082871662264010, guid: 043f563583db3984e91d929821794cc2,
         type: 3}
       propertyPath: m_Name
