@@ -4564,6 +4564,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1356622787}
     m_Modifications:
+    - target: {fileID: 1239671175366903954, guid: 03020aab9adeeb54f9194380cf49b4a7,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.6156863
+      objectReference: {fileID: 0}
+    - target: {fileID: 1239671175366903954, guid: 03020aab9adeeb54f9194380cf49b4a7,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.23137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 1239671175366903954, guid: 03020aab9adeeb54f9194380cf49b4a7,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.78431374
+      objectReference: {fileID: 0}
     - target: {fileID: 2786515585994572967, guid: 03020aab9adeeb54f9194380cf49b4a7,
         type: 3}
       propertyPath: m_RootOrder
@@ -4642,6 +4657,11 @@ PrefabInstance:
     - target: {fileID: 8971399676813624536, guid: 03020aab9adeeb54f9194380cf49b4a7,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8971399676813624615, guid: 03020aab9adeeb54f9194380cf49b4a7,
+        type: 3}
+      propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -13176,6 +13196,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1356622787}
     m_Modifications:
+    - target: {fileID: 1239671175366903954, guid: 03020aab9adeeb54f9194380cf49b4a7,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.6156863
+      objectReference: {fileID: 0}
+    - target: {fileID: 1239671175366903954, guid: 03020aab9adeeb54f9194380cf49b4a7,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.23137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 1239671175366903954, guid: 03020aab9adeeb54f9194380cf49b4a7,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.78431374
+      objectReference: {fileID: 0}
     - target: {fileID: 3067265777076493733, guid: 03020aab9adeeb54f9194380cf49b4a7,
         type: 3}
       propertyPath: m_Controller
@@ -13244,6 +13279,11 @@ PrefabInstance:
     - target: {fileID: 8971399676813624536, guid: 03020aab9adeeb54f9194380cf49b4a7,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8971399676813624615, guid: 03020aab9adeeb54f9194380cf49b4a7,
+        type: 3}
+      propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
