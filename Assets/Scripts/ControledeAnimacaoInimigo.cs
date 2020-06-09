@@ -7,6 +7,7 @@ public class ControledeAnimacaoInimigo : MonoBehaviour
     public bool Atacando = false;
     public bool Morto = false;
     [Space(20)]
+    public float velAnimMorte = 1;
     public float velAnimAtaqueForte = 1;
     public float velAnimAtaqueFraco = 1;
     public float velAnimAndar = 1;
@@ -57,7 +58,7 @@ public class ControledeAnimacaoInimigo : MonoBehaviour
     {
         print("Morte");
         Morto = true;
-        Anim.speed = velAnim;
+        Anim.speed = velAnimMorte;
         Anim.SetInteger("Move", (int)Estado.Morte);
     }
     
