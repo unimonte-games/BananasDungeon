@@ -20,7 +20,7 @@ public class Menu : MonoBehaviour
     void Awake()
     {
 #if UNITY_WSA
-        Sair.SetActive(false);
+        btnSair.SetActive(false);
 #endif
         SFX = GameObject.Find("SFX").GetComponent<AudioSource>();
     }
