@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 
@@ -16,12 +16,18 @@ public class Menu : MonoBehaviour
     public AudioClip SomClick;
     public AudioClip SomJogar;
 
+
     void Awake()
     {
 #if UNITY_WSA
         Sair.SetActive(false);
 #endif
         SFX = GameObject.Find("SFX").GetComponent<AudioSource>();
+    }
+
+    void Start()
+    {
+        EventSystem.current.SetSelectedGameObject(btnJogar);
     }
 
     public void Jogar()

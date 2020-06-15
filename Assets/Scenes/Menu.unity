@@ -722,6 +722,8 @@ MonoBehaviour:
   ArmaPadrao:
   - player: 1
     arma: 6
+  - player: 0
+    arma: 2
 --- !u!1 &569533852
 GameObject:
   m_ObjectHideFlags: 0

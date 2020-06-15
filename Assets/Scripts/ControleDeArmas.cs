@@ -49,17 +49,4 @@ public class ControleDeArmas : MonoBehaviour
             }
         }
     }
-
-    public GameObject PegarArma()
-    {
-        for (int x = 0; x < Arsenal.Length; x++)
-        {
-            if (Arsenal[x].Arma == arma)
-            {
-                return Arsenal[x].Local;
-            }
-        }
-
-        return null;
-    }
 }

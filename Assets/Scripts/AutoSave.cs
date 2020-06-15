@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class AutoSave : MonoBehaviour
 {
-    public Dados.Armas[] Armas;
-    public PlayerArma[] ArmaPadrao;
+    public static Dados.Armas[] Armas = { Dados.Armas.Arco, Dados.Armas.Espada, Dados.Armas.Machado};
+    public static List<PlayerArma> ArmaPadrao = new List<PlayerArma>();
 
     public static List<ArmaNivel> ArmasNiveis = new List<ArmaNivel>();
     public struct ArmaNivel
@@ -21,31 +21,36 @@ public class AutoSave : MonoBehaviour
         public Dados.Armas arma;
     }
 
+    public static int Sangue = 0;
+
     void Awake()
     {
         if (PlayersArmas.Count != 0)
             return;
 
-        //sanguineo
-        
-        //pergaminho da arma
-
         CarregarArmaPlayer();
 
         CarregarArmaNivel();
+
+        //CarregarSangue();
+
+        //Pergaminhos das armas
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            print("LimpandoSave");
+            print("Limpando save");
             PlayerPrefs.DeleteAll();
-            print("SaveLimpo");
+            print("Save limpo");
+            CarregarArmaPlayer();
+            CarregarArmaNivel();
+            print("Save inicial");
         }
     }
 
-    public void AddPlayerArma(Dados.Personagens player, Dados.Armas arma)
+    public static void AddPlayerArma(Dados.Personagens player, Dados.Armas arma)
     {
         PlayerArma p;
         p.player = player;
@@ -53,7 +58,7 @@ public class AutoSave : MonoBehaviour
         PlayersArmas.Add(p);
     }
 
-    public void AddNivelArma(Dados.Armas arma, Dados.ArmaNivel nivel)
+    public static void AddNivelArma(Dados.Armas arma, Dados.ArmaNivel nivel)
     {
         ArmaNivel a;
         a.arma = arma;
@@ -81,7 +86,17 @@ public class AutoSave : MonoBehaviour
         return Dados.ArmaNivel.Nivel1;
     }
 
-    public void AtualizarNivelArma(Dados.Armas arma)
+    public static void AtualizarSangue(int q, bool adicionar)
+    {
+        if (adicionar)
+            Sangue += q;
+        else
+            Sangue -= q;
+
+        PlayerPrefs.SetInt("Sangue", Sangue);
+    }
+
+    public static void AtualizarNivelArma(Dados.Armas arma)
     {
         for (int x = 0; x < ArmasNiveis.Count; x++)
         {
@@ -93,10 +108,26 @@ public class AutoSave : MonoBehaviour
         CarregarArmaNivel();
     }
 
-    void CarregarArmaPlayer()
+    public static void AtualizarArma(Dados.Personagens perso, Dados.Armas gun)
     {
+        PlayerPrefs.SetInt(perso.ToString() + "Arma", (int)gun);
+        CarregarArmaPlayer();
+    }
+
+    static void CarregarArmaPlayer()
+    {
+        PlayerArma Oliver;
+        Oliver.player = Dados.Personagens.Oliver;
+        Oliver.arma = Dados.Armas.Machado;
+
+        PlayerArma Amazona;
+        Amazona.player = Dados.Personagens.Amazona;
+        Amazona.arma = Dados.Armas.Arco;
+        ArmaPadrao.Add(Oliver);
+        ArmaPadrao.Add(Amazona);
+
         PlayersArmas.Clear();
-        for (int x = 0; x < ArmaPadrao.Length; x++)
+        for (int x = 0; x < ArmaPadrao.Count; x++)
         {
             if (!PlayerPrefs.HasKey(ArmaPadrao[x].player.ToString() + "Arma"))
             {
@@ -111,7 +142,7 @@ public class AutoSave : MonoBehaviour
         }
     }
 
-    void CarregarArmaNivel()
+    static void CarregarArmaNivel()
     {
         ArmasNiveis.Clear();
         for (int x = 0; x < Armas.Length; x++)
@@ -126,6 +157,20 @@ public class AutoSave : MonoBehaviour
                 int nivel = PlayerPrefs.GetInt(Armas[x].ToString() + "Nivel");
                 AddNivelArma(Armas[x], (Dados.ArmaNivel)nivel);
             }
+        }
+    }
+
+    void CarregarSangue()
+    {
+        if (!PlayerPrefs.HasKey("Sangue"))
+        {
+            PlayerPrefs.SetInt("Nivel", 0);
+            Sangue = 0;
+        }
+        else
+        {
+            int saldo = PlayerPrefs.GetInt("Sangue");
+            Sangue = saldo;
         }
     }
 }

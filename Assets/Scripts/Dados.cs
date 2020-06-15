@@ -39,4 +39,6 @@ public static class Dados
         Nivel4,
         Nivel5
     }
+
+    public static int[] CustoNivel = {0, 100, 150, 250, 350};
 }

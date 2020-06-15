@@ -2868,8 +2868,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.5853057, y: 19.98287, z: 19.370092}
-  m_Center: {x: -0.58265305, y: -0.3370572, z: 0.59479946}
+  m_Size: {x: 8, y: 25, z: 19.370092}
+  m_Center: {x: -3, y: 0, z: 0}
 --- !u!1 &7460596458227001391
 GameObject:
   m_ObjectHideFlags: 0
@@ -38308,6 +38308,11 @@ PrefabInstance:
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 4777223796884156729, guid: e0fae956155c312419de7a1dc4517d42,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4777223796884156730, guid: e0fae956155c312419de7a1dc4517d42,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -38432,7 +38437,7 @@ PrefabInstance:
     - target: {fileID: 7724465635840049830, guid: c90cd98081af735429ba934c46c84091,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -48.17
+      value: -46.84
       objectReference: {fileID: 0}
     - target: {fileID: 7724465635840049830, guid: c90cd98081af735429ba934c46c84091,
         type: 3}
@@ -38493,6 +38498,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Center.z
       value: -0.7274022
+      objectReference: {fileID: 0}
+    - target: {fileID: 8304720265676802711, guid: c90cd98081af735429ba934c46c84091,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 3.1822033
+      objectReference: {fileID: 0}
+    - target: {fileID: 8304720265676802711, guid: c90cd98081af735429ba934c46c84091,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 1.0911016
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c90cd98081af735429ba934c46c84091, type: 3}
@@ -38595,6 +38610,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8350064302669605269, guid: 901de132342f33741838beb1574c9111,
         type: 3}
+    - target: {fileID: -5177982449882267467, guid: 348444adaea052a43908803ee852936e,
+        type: 3}
+      propertyPath: TipoSpawn
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4042366307695865539, guid: 348444adaea052a43908803ee852936e,
         type: 3}
       propertyPath: m_LocalPosition.x

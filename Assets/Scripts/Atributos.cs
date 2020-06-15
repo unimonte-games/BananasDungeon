@@ -11,6 +11,8 @@ public class Atributos : MonoBehaviour
     public float multiEspecialidade = 1.2f;
     public int Vida = 1000;
     public int vidaAtual = 1000;
+    public int Regeneracao = 10;
+    public float DelayRegen = 3f;
     public Slider barraVida;
     [Space(20)]
     AudioSource SFX;
@@ -30,7 +32,14 @@ public class Atributos : MonoBehaviour
         {
             barraVida.maxValue = Vida;
             barraVida.value = vidaAtual;
+            InvokeRepeating("RegenVida", 0, DelayRegen);
         }
+    }
+
+    void RegenVida()
+    {
+        if(vidaAtual > Vida)
+            vidaAtual += Regeneracao;
     }
 
     public void CausarDano(int Dano)
@@ -50,6 +59,12 @@ public class Atributos : MonoBehaviour
             if (gameObject.CompareTag("Enemy") && !GetComponent<ControledeAnimacaoInimigo>().Morto)
             {
                 GetComponent<ControledeAnimacaoInimigo>().Morte();
+                var ini = GetComponent<Inimigo>();
+                ini.Drop();
+                if (ini.TipoInimigo == Inimigo.Tipo.Boss)
+                {
+                    FindObjectOfType<PortalFinal>().AtivarPortal();
+                }
             }
         }
         else

@@ -462,9 +462,11 @@ MonoBehaviour:
   multiEspecialidade: 1.2
   Vida: 80
   vidaAtual: 80
+  Regeneracao: 10
+  DelayRegen: 3
   barraVida: {fileID: 0}
-  SomDano: {fileID: 0}
-  SomMorte: {fileID: 0}
+  SomDano: {fileID: 8300000, guid: c573305f4f5303b40aca70e529e4738f, type: 3}
+  SomMorte: {fileID: 8300000, guid: 90530f9541aa59a47809b955f54dd8de, type: 3}
   ParticulaDano: {fileID: 0}
   ParticulaMorte: {fileID: 0}
 --- !u!136 &839649527259852673
@@ -512,6 +514,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TipoInimigo: 1
+  Drops:
+    inicio: 10
+    fim: 15
 --- !u!54 &-4904198315809705683
 Rigidbody:
   m_ObjectHideFlags: 0
