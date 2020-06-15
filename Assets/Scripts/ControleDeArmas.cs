@@ -35,7 +35,6 @@ public class ControleDeArmas : MonoBehaviour
 
     public void AtivarArma(Dados.Armas A, Dados.ArmaNivel N)
     {
-        print("Ativar arma");
         ctrAnim.TrocaArma(A);
         for (int x = 0; x < Arsenal.Length; x++)
         {
@@ -43,8 +42,6 @@ public class ControleDeArmas : MonoBehaviour
             {
                 Arsenal[x].Local.SetActive(true);
                 multi = Arsenal[x].Local.GetComponent<NivelArma>().DefinirNivel(N);
-                print(A.ToString());
-                print(multi);
                 break;
             }
         }

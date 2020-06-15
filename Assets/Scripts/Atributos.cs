@@ -32,14 +32,17 @@ public class Atributos : MonoBehaviour
         {
             barraVida.maxValue = Vida;
             barraVida.value = vidaAtual;
-            InvokeRepeating("RegenVida", 0, DelayRegen);
+            InvokeRepeating("RegenVida", 1, DelayRegen);
         }
     }
 
     void RegenVida()
     {
-        if(vidaAtual > Vida)
+        if(vidaAtual < Vida)
+        {
             vidaAtual += Regeneracao;
+            barraVida.value = vidaAtual;
+        }
     }
 
     public void CausarDano(int Dano)
@@ -53,7 +56,7 @@ public class Atributos : MonoBehaviour
                 barraVida.value = 0;
                 barraVida.value = vidaAtual;
                 GetComponent<ControleDeAnimacao>().Morte();
-                Instantiate(ParticulaMorte, transform.position, Quaternion.identity);
+                Instantiate(ParticulaMorte, transform.position, new Quaternion(-90, 0, 0, 0));
             }
 
             if (gameObject.CompareTag("Enemy") && !GetComponent<ControledeAnimacaoInimigo>().Morto)
@@ -62,9 +65,7 @@ public class Atributos : MonoBehaviour
                 var ini = GetComponent<Inimigo>();
                 ini.Drop();
                 if (ini.TipoInimigo == Inimigo.Tipo.Boss)
-                {
                     FindObjectOfType<PortalFinal>().AtivarPortal();
-                }
             }
         }
         else

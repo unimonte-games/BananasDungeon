@@ -31,7 +31,6 @@ public class NivelArma : MonoBehaviour
 
     public float DefinirNivel(Dados.ArmaNivel nivel)
     {
-        print("Arma: " + arma.ToString() + " Nível: " + nivel.ToString());
         switch (arma)
         {
             case Dados.Armas.Alabarda:

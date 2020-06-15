@@ -16,20 +16,12 @@ public class HUD : MonoBehaviour
 
     void Start()
     {
-        print("Start HUD");
-        print(Selecionados.Jogadores.Count);
-        print(Personagens.Length);
         for (int x = 0; x < Selecionados.Jogadores.Count; x++)
         {
-            print("teste1");
-            print(Selecionados.Jogadores[x].personagem.ToString() + " " + x);
             for (int y = 0; y < Personagens.Length; y++)
             {
-                print("teste2");
-                print(Personagens[y].ToString() + " " + y);
                 if (Selecionados.Jogadores[x].personagem == Personagens[y].GetComponent<Atributos>().Personagem)
                 {
-                    print("teste3");
                     Vector3 posInicial = Vector3.zero;
                     switch (Selecionados.Jogadores[x].playerIndice)
                     {

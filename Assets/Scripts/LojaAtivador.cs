@@ -7,7 +7,7 @@ public class LojaAtivador : MonoBehaviour
     void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
-            if (Input.GetButtonDown(other.GetComponent<Move>().playerIndice + "Y") && !Selecionados.LojaAberta && Selecionados.VezLoja == Dados.PlayerIndice.Vazio)
+            if (Input.GetButtonDown(other.GetComponent<Move>().playerIndice + "Select") && !Selecionados.LojaAberta && Selecionados.VezLoja == Dados.PlayerIndice.Vazio)
                 FindObjectOfType<Loja>().AbrirLoja(other.gameObject);
     }
 }

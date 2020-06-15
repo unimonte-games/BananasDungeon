@@ -32,9 +32,6 @@ public class CameraMove : MonoBehaviour
                     pos = (((p1 - p2) *- 1) / 2);
                     
                     break;
-                default:
-                    print("Nenhum player na cena");
-                    break;
             }
         }
     }

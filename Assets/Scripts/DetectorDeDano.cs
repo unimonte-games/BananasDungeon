@@ -48,7 +48,6 @@ public class DetectorDeDano : MonoBehaviour
         switch (Principal.tag)
         {
             case "Player":
-                // print("Player: " + other.tag);
                 if (!Principal.GetComponent<ControleDeAnimacao>().Atacando && GetComponent<NivelArma>().arma != Dados.Armas.Arco && GetComponent<NivelArma>().arma != Dados.Armas.Cajado)
                     return;
 
@@ -70,7 +69,6 @@ public class DetectorDeDano : MonoBehaviour
                 }
                 break;
             case "Enemy":
-                // print("Enemy: " + other.tag);
                 if (!Principal.GetComponent<ControledeAnimacaoInimigo>().Atacando)
                     return;
 

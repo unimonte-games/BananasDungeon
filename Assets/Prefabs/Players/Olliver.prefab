@@ -2524,6 +2524,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerIndice: 1
+  h: 0
+  v: 0
   vel: 5
   slow: 0.55
   velAceleracao: 0.03
@@ -2545,6 +2547,8 @@ MonoBehaviour:
   multiEspecialidade: 1.2
   Vida: 1000
   vidaAtual: 1000
+  Regeneracao: 50
+  DelayRegen: 3
   barraVida: {fileID: 0}
   SomDano: {fileID: 8300000, guid: 995c97acfc9b67945af88ce5fe32881b, type: 3}
   SomMorte: {fileID: 0}

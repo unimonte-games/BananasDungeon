@@ -42,7 +42,6 @@ public class ControleDeSpawn : MonoBehaviour
 
     IEnumerator AtivandoHordas()
     {
-        print("Inicando hordas");
         for (int x = 0; x < Hordas.Length; x++)
         {
             for (int s = 0; s < Hordas[x].Spawns.Length; s++)
@@ -51,6 +50,5 @@ public class ControleDeSpawn : MonoBehaviour
             }
             yield return new WaitForSeconds(Hordas[x].delayEntreHordas);
         }
-        print("Fim das hordas");
     }
 }

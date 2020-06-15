@@ -156,7 +156,7 @@ MonoBehaviour:
   m_CancelButton: P1B
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
+  m_ForceModuleActive: 1
 --- !u!114 &202012797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -718,12 +718,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc88d8b795cafd04da42da5425d5d1ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Armas: 020000000400000006000000
-  ArmaPadrao:
-  - player: 1
-    arma: 6
-  - player: 0
-    arma: 2
 --- !u!1 &569533852
 GameObject:
   m_ObjectHideFlags: 0

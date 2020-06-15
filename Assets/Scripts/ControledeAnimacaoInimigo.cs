@@ -60,8 +60,17 @@ public class ControledeAnimacaoInimigo : MonoBehaviour
         Morto = true;
         Anim.speed = velAnimMorte;
         Anim.SetInteger("Move", (int)Estado.Morte);
+        StartCoroutine(AutoDestruicao());
     }
     
+    IEnumerator AutoDestruicao()
+    {
+        GetComponent<Rigidbody>().isKinematic = true;
+        GetComponent<CapsuleCollider>().enabled = false;
+        yield return new WaitForSeconds(3);
+        Destroy(gameObject);
+    }
+
     #region Evento de animação
     public void IniciouAtaque()
     {

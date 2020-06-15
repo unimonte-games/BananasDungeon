@@ -49,12 +49,14 @@ public class Loja : MonoBehaviour
         if (Input.GetButtonDown(Player.ToString() + "RB") && delayTempo > delayBotao)//Próximo
         {
             delayTempo = 0;
+            SFX.PlayOneShot(SomClick);
             ArmaSeguinte();
         }
 
         if (Input.GetButtonDown(Player.ToString() + "LB") && delayTempo > delayBotao)//Anterior
         {
             delayTempo = 0;
+            SFX.PlayOneShot(SomClick);
             ArmaAnterior();
         }
 
@@ -76,6 +78,7 @@ public class Loja : MonoBehaviour
 
         if (Input.GetButtonDown(Player.ToString() + "A") && delayTempo > delayBotao)//Selecionar Arma
         {
+            delayTempo = 0;
             SFX.PlayOneShot(SomClick);
             alvoLoja.GetComponent<ControleDeArmas>().AtivarArma(Itens[indice].Arma, AutoSave.QualNivel(Itens[indice].Arma));
             TrocaArma();
@@ -111,7 +114,6 @@ public class Loja : MonoBehaviour
 
     public void TrocaArma()
     {
-        SFX.PlayOneShot(SomClick);
         if (indice > Itens.Length - 1)
             indice = 0;
 

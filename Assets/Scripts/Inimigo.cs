@@ -17,6 +17,7 @@ public class Inimigo : MonoBehaviour
 
     public void Drop()
     {
+        print("Drop de sangue");
         int qSangue = Random.Range(Drops.inicio, Drops.fim + 1);
         AutoSave.AtualizarSangue(qSangue, true);
     }

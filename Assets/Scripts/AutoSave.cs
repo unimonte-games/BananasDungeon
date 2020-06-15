@@ -32,7 +32,7 @@ public class AutoSave : MonoBehaviour
 
         CarregarArmaNivel();
 
-        //CarregarSangue();
+        CarregarSangue();
 
         //Pergaminhos das armas
     }
@@ -46,6 +46,7 @@ public class AutoSave : MonoBehaviour
             print("Save limpo");
             CarregarArmaPlayer();
             CarregarArmaNivel();
+            CarregarSangue();
             print("Save inicial");
         }
     }
@@ -88,10 +89,12 @@ public class AutoSave : MonoBehaviour
 
     public static void AtualizarSangue(int q, bool adicionar)
     {
+        print("Tinha: " + Sangue);
         if (adicionar)
             Sangue += q;
         else
             Sangue -= q;
+        print("Tem: " + Sangue);
 
         PlayerPrefs.SetInt("Sangue", Sangue);
     }

@@ -7,7 +7,7 @@ public class Move : MonoBehaviour
     //UNITY_WSA
     public Dados.PlayerIndice playerIndice;
     ControleDeAnimacao ctrAnim;
-    float h = 0, v = 0;
+    public float h = 0, v = 0;
     public float vel = 5;
     public float slow = 0.7f;
     float redutor = 1;
@@ -42,7 +42,7 @@ public class Move : MonoBehaviour
         else
             redutor = 1;
 
-        if (!ctrAnim.Morto && !ctrAnim.Atacando)
+        if (!ctrAnim.Morto && !ctrAnim.Atacando && velMovimento() > 0)
         {
             if (aceleracao < 1)
                 aceleracao += velAceleracao;

@@ -70,7 +70,6 @@ public class Interruptor : MonoBehaviour
 
     public void AtivarInterruptor()
     {
-        print("Ativando interruptor");
         estadoInterruptor = true;
         LuzAlavanca.color = CorAtivado;
         anim.SetInteger("Alavanca", (int)Alavanca.Ativar);

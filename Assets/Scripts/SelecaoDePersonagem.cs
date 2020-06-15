@@ -25,7 +25,6 @@ public class SelecaoDePersonagem : MonoBehaviour
 
     void Start()
     {
-        print("Seleção de personagem");
         if (Personagens.Length == 0)
             txtBotaoPlayer.text = "Em breve...";
 
@@ -56,17 +55,15 @@ public class SelecaoDePersonagem : MonoBehaviour
             if (Input.GetAxisRaw(playerIndice.ToString() + "Right/Left") != 0 && timer > 1f)
             {
                 timer = 0;
-                switch (Input.GetAxisRaw(playerIndice.ToString() + "Right/Left"))
+                switch ((int)Input.GetAxisRaw(playerIndice.ToString() + "Right/Left"))
                 {
                     case 1:
                         indice += 1;
                         MudarPersonagem(indice);
-                        print("Muda +");
                         break;
                     case -1:
                         indice -= 1;
                         MudarPersonagem(indice);
-                        print("Muda -");
                         break;
                 }
             }
@@ -138,7 +135,6 @@ public class SelecaoDePersonagem : MonoBehaviour
             i = Personagens.Length - 1;
         for (int x = 0; x < Personagens.Length; x++)
         {
-            print(Personagens[x].name + " " + (x == i ? true : false));
             Personagens[x].SetActive(x == i ? true : false);
             Person = Personagens[x].GetComponent<Atributos>().Personagem;
             ControleDeArmas ctrArmas = Personagens[x].GetComponent<ControleDeArmas>();

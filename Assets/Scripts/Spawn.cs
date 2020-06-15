@@ -12,11 +12,9 @@ public class Spawn : MonoBehaviour
 
     public IEnumerator IniciaSpawn()
     {
-        print("Iniciando spawn");
         for (int q = 0; q < quantidade; q++)
         {
             var ini = Inimigo.GetComponent<Inimigo>();
-            print("Nasceu um: " + ini.TipoInimigo.ToString());
             Vector3 pos = transform.position;
             switch (TipoSpawn)
             {
@@ -31,6 +29,5 @@ public class Spawn : MonoBehaviour
             gbj.SetActive(true);
             yield return new WaitForSeconds(delaySpawn);
         }
-        print("Fim do spawn");
     }
 }

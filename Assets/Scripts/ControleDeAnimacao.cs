@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ControleDeAnimacao : MonoBehaviour
 {
@@ -56,6 +57,7 @@ public class ControleDeAnimacao : MonoBehaviour
 
         anim.SetInteger(Estado.Morte.ToString(), i);
         anim.SetInteger("Move", (int)Estado.Morte);
+
     }
 
     public void Desequipar()
@@ -95,11 +97,16 @@ public class ControleDeAnimacao : MonoBehaviour
         anim.SetBool(arma.ToString(), true);
     }
 
+    IEnumerator GameOver()
+    {
+        print("Perdeu!");
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene("Menu");
+    }
 
     #region Evento de animação
     public void Disparo()
     {
-        print("Disparo do Arco!");
         GameObject arco = null;
         var ctrArmas = GetComponent<ControleDeArmas>();
         for (int x = 0; x < ctrArmas.Arsenal.Length; x++)
@@ -120,13 +127,11 @@ public class ControleDeAnimacao : MonoBehaviour
 
     public void IniciouAtaque()
     {
-        print("Iniciou o Ataque");
         Atacando = true;
     }
 
     public void ParouAtaque()
     {
-        print("Terminou o Ataque");
         Atacando = false;
     }
     #endregion

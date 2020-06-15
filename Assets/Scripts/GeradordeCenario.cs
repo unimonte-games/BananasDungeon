@@ -39,7 +39,6 @@ public class GeradordeCenario : MonoBehaviour
     void RandomizaMapa()
     {
         Modelo = RandomizaModelo();
-        print(Modelo);
 
         for (int x = 0; x < Modelo.Length; x++)
         {
