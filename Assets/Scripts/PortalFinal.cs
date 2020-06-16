@@ -12,7 +12,7 @@ public class PortalFinal : MonoBehaviour
     {
         if (other.CompareTag("Player") && BossMorto)
         {
-            SceneManager.LoadScene("Game");
+            SceneManager.LoadScene("Jogo");
         }
     }
 

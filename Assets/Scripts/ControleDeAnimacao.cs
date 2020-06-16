@@ -56,8 +56,8 @@ public class ControleDeAnimacao : MonoBehaviour
         int i = Random.Range(0,2);
 
         anim.SetInteger(Estado.Morte.ToString(), i);
-        anim.SetInteger("Move", (int)Estado.Morte);
-
+        anim.SetTrigger("Morrer");
+        StartCoroutine(GameOver());
     }
 
     public void Desequipar()
@@ -99,7 +99,6 @@ public class ControleDeAnimacao : MonoBehaviour
 
     IEnumerator GameOver()
     {
-        print("Perdeu!");
         yield return new WaitForSeconds(5);
         SceneManager.LoadScene("Menu");
     }
